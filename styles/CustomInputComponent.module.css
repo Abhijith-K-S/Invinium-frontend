@@ -1,0 +1,19 @@
+.main {
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.textStyle {
+    color: #ffffff;
+    margin-bottom: 0;
+}
+
+.inputStyle {
+    margin-top: 5px;
+    border-radius: 5px;
+    height: 35px;
+    width: auto;
+}
