@@ -24,15 +24,14 @@ export default function Registration() {
             confirmPassword == ""
         ) {
             alert("Please fill all the fields!")
-        }
-        if (password != confirmPassword) alert("Please check password!")
+        } else if (password != confirmPassword) alert("Please check password!")
         else {
             const request = JSON.stringify({
                 firstname: firstname,
                 lastname: lastname,
                 username: username,
                 email: email,
-                password: confirmPassword
+                password: password
             })
             try {
                 var response = await registerUser(request)
