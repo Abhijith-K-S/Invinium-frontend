@@ -11,20 +11,33 @@ export const registerUser = async (request) => {
             headers: requestHeader,
             body: request
         })
-        // .then((response) => {
-        //     if (response.ok == false) alert("not ok")
-        //     response.text()
-        // })
-        // .then((data) => {
-        //     if (response.ok == false) alert(data)
-        //     else alert("user created")
-        // })
+
         if (response.ok) {
             let json = await response.json()
             return json
         } else {
             let msg = await response.text()
             alert(msg)
+        }
+    } catch (error) {
+        console.error(error)
+    }
+}
+
+export const loginUser = async (request) => {
+    try {
+        const response = await fetch(BASE_URL + "/api/user/login", {
+            mode: "cors",
+            method: "POST",
+            headers: requestHeader,
+            body: request
+        })
+
+        if (response.ok) {
+            let token = await response.text()
+            return token
+        } else {
+            alert("Login error")
         }
     } catch (error) {
         console.error(error)
