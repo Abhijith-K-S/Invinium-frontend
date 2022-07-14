@@ -1,0 +1,38 @@
+/* .body{
+    background-color: white;
+} */
+.top{
+    display: flex;
+    justify-content: center;  
+    background-color: #041C32;
+    height: 14vh;
+    padding: 8px;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: x-large;
+}
+.h1{
+    font-size:xx-large;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+}
+.lleft{
+    display: flex;
+    align-items: center; 
+    flex-direction: column;
+    /* justify-content: center; */
+    background-color: #041C32;
+    height: 64vh;
+    width: 44vw;
+    padding: 8px;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: x-large;
+    border-radius: 10px;
+}
+.bottom{
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    height: 85vh;
+}

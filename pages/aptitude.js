@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import CustomInputComponent from "../components/CustomInputComponent"
 import styles from "../styles/aptitude.module.css"
 import { MdArrowBackIos,MdArrowForwardIos } from "react-icons/md"
 import data from '../generated.json'
@@ -15,8 +14,9 @@ export default function Aptitude(){
     const left = () => {
         if(counter>0)setCounter(counter - 1)
     }
-  
-    console.log(data[counter])
+    const arr = Array(20).fill(1)
+
+    // console.log(data[counter])
     
     return (
         <>
