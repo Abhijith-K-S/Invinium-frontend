@@ -4,6 +4,7 @@ import React, { useState } from "react"
 import styles from "../styles/registration.module.css"
 import CustomInputComponent from "../components/CustomInputComponent"
 import handshake from "../assets/handshake.jpg"
+import { registerUser } from "../service/authService"
 
 export default function Registration() {
     const [firstname, setFirstName] = useState("")
@@ -13,14 +14,7 @@ export default function Registration() {
     const [password, setPassword] = useState("")
     const [confirmPassword, setConfirmPassword] = useState("")
 
-    function processRegistration() {
-        // console.log("firstname:" + firstname)
-        // console.log("lastname:" + lastname)
-        // console.log("username:" + username)
-        // console.log("email:" + email)
-        // console.log("password:" + password)
-        // console.log("confirm:" + confirmPassword)
-
+    async function processRegistration() {
         if (
             firstname == "" ||
             lastname == "" ||
@@ -30,6 +24,21 @@ export default function Registration() {
             confirmPassword == ""
         ) {
             alert("Please fill all the fields!")
+        } else if (password != confirmPassword) alert("Please check password!")
+        else {
+            const request = JSON.stringify({
+                firstname: firstname,
+                lastname: lastname,
+                username: username,
+                email: email,
+                password: password
+            })
+            try {
+                var response = await registerUser(request)
+                console.log(response)
+            } catch (error) {
+                console.error(error)
+            }
         }
     }
 
