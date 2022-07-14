@@ -1,0 +1,84 @@
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 25vh;
+    margin-right: 25vh;
+    margin-top: 10vh;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #041c32;
+}
+
+.header {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    background-color: #57799d;
+}
+
+.textStyle {
+    color: #ffffff;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.subTextStyle {
+    color: #ffffff;
+    margin-top: 5%;
+    align-self: center;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.contentStyle {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-left: 5vh;
+    padding-right: 5vh;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+.imagePanel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    align-self: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 5vh;
+    width: 60%;
+}
+
+.imageIconStyle {
+    flex: 1;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.imageIconStyle > span {
+    height: 100% !important;
+}
+
+.buttonStyle {
+    margin: 0 auto;
+    display: flex;
+    border-radius: 20px;
+    padding: 15px;
+    background-color: #57799d80;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.buttonStyle :hover {
+    background-color: #57799d;
+}
