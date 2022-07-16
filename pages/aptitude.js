@@ -37,6 +37,23 @@ export default function Aptitude() {
         setCurrentSelection(option)
     }
 
+    const evaluateAnswers = () => {
+        for (var i = 0; i < data.length; ++i) {
+            if (data[i].answer == answers[i]) {
+                var score = answerMap.get(data[i].category)
+                score = score + 1
+                answerMap.set(data[i].category, score)
+                console.log("set" + data[i].category + "to " + score)
+            }
+        }
+
+        if (typeof window !== "undefined") {
+            localStorage.setItem("answerMap", JSON.stringify(Object.fromEntries(answerMap)))
+        }
+
+        router.push("/result")
+    }
+
     useEffect(() => {
         const fetchQuestion = async () => {
             try {
@@ -161,9 +178,9 @@ export default function Aptitude() {
                 </div>
                 <div className={styles.buttonPanel}>
                     {testOver ? (
-                        <button className={styles.buttonStyle} onClick={() => evaluateAnswers()}>
-                            Submit Test
-                        </button>
+                    <button className={styles.buttonStyle} onClick={() => evaluateAnswers()}>
+                        Submit Test
+                    </button>
                     ) : null}
                 </div>
             </>
