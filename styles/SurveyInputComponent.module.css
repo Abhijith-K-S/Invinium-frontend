@@ -1,0 +1,41 @@
+.main {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.mainChoice {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.rightComponent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: flex-end;
+    margin-left: 10px;
+}
+
+.textStyle {
+    display: flex;
+    flex: 1;
+}
+
+.valStyle {
+    display: flex;
+    margin-right: 15px;
+}
+
+.choiceLayout {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-evenly;
+}

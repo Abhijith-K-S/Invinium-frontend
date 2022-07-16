@@ -1,5 +1,6 @@
 import Head from "next/head"
 import Image from "next/image"
+import { useRouter } from "next/router"
 import React, { useState } from "react"
 import styles from "../styles/registration.module.css"
 import CustomInputComponent from "../components/CustomInputComponent"
@@ -7,6 +8,8 @@ import handshake from "../assets/handshake.jpg"
 import { registerUser } from "../service/authService"
 
 export default function Registration() {
+    const router = useRouter()
+
     const [firstname, setFirstName] = useState("")
     const [lastname, setLastname] = useState("")
     const [username, setUsername] = useState("")
@@ -35,7 +38,7 @@ export default function Registration() {
             })
             try {
                 var response = await registerUser(request)
-                console.log(response)
+                if (response) router.push("/login")
             } catch (error) {
                 console.error(error)
             }

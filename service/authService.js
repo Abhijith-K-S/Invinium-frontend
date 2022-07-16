@@ -43,3 +43,22 @@ export const loginUser = async (request) => {
         console.error(error)
     }
 }
+
+export const fetchQuestionTen = async (request) => {
+    try {
+        const response = await fetch(BASE_URL + "/api/question/ten", {
+            mode: "cors",
+            method: "GET",
+            headers: requestHeader
+        })
+
+        if (response.ok) {
+            let questionData = await response.json()
+            return questionData
+        } else {
+            alert("Error fetching questions")
+        }
+    } catch (error) {
+        console.log(error)
+    }
+}

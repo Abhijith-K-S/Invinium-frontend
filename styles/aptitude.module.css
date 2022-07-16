@@ -1,0 +1,67 @@
+.arrow {
+    font-size: 50px;
+    color: bisque;
+}
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    background-color: #204469;
+    align-items: center;
+    margin-top: 8%;
+    padding: 18px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.textfield {
+    background-color: white;
+    color: black;
+    padding: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 8px;
+    width: 50vw;
+}
+.top {
+    display: flex;
+    justify-content: space-between;
+    background-color: #041c32;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.qnc {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+}
+
+.qncLeft {
+    flex: 1;
+    display: flex;
+}
+
+.qncRight {
+    display: flex;
+    text-align: right;
+}
+
+.buttonPanel {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.buttonStyle {
+    padding: 15px;
+    border-radius: 20px;
+    font-size: medium;
+    font-weight: bold;
+    background-color: #57799d;
+    color: #ffffff;
+}
+
+.buttonStyle :hover {
+    background-color: "green";
+}

@@ -24,6 +24,11 @@
     color: #6A9CD1;
 
 }
+.acclink{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
 .card {
     display: flex;
     flex-direction: row;
@@ -35,19 +40,28 @@
     height: 100vh;
     border-radius: 10px;
     background-color: #041c32;
-    overflow: hidden;
+    overflow: auto;
     align-items: stretch;
     
+}
+.box {
+    display: flex;
+    min-height: min-content; /* needs vendor prefixes */
 }
 
 .cardLeft {
     flex: 1;
     margin-inline: 0px;
+    flex-direction: row;
+    height: 100%;
+    align-content: flex-start;
+    position: relative;
 }
 @media only screen and (max-width: 1026px) {
-    .cardLeft {
-        display: none;
-    }
+    .card {
+        display: flex;
+        flex-direction: column;
+    } 
 }
 
 .cardRight {
@@ -55,11 +69,11 @@
     flex: 1;
     flex-direction: column;
     height: 100%;
-    /* align-content: flex-start; */
+    align-content: flex-start;
     padding-bottom: 40px;
-    display: flex;
-    align-items: center; 
-    justify-content: center;
+    padding-top: 100px;
+    padding-left: 60px;
+    padding-right: 60px;
 }
 
 .headingText {
@@ -78,6 +92,12 @@
     display: flex;
     flex-direction: row;
     flex: 1;
+}
+.logoStyle{
+    position: relative;
+    color: black;
+    position: absolute;
+    z-index: 9;
 }
 .imageStyle {
     height: 100%;

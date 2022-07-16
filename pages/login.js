@@ -1,12 +1,16 @@
 import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
+import { useRouter } from "next/router"
 import React, { useState } from "react"
 import CustomInputComponent from "../components/CustomInputComponent"
 import styles from "../styles/login.module.css"
 import { loginUser } from "../service/authService"
+import { Logo } from "../components/LogoComponent"
 
 export default function Home() {
+    const router = useRouter()
+
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
 
@@ -20,6 +24,7 @@ export default function Home() {
             })
             try {
                 var token = await loginUser(request)
+                if (token) router.push("/intro")
             } catch (error) {
                 console.error(error)
             }
@@ -27,11 +32,19 @@ export default function Home() {
     }
     return (
         <>
+            <Head>
+                <title>Invinium: Login</title>
+                <meta name="Invinium" content="Login" />
+                <link rel="icon" href="./favicon.ico" />
+            </Head>
             <div className={styles.card}>
                 <div className={styles.cardLeft}>
+                    <div className={styles.logoStyle}>
+                        <Logo />
+                    </div>
                     <div className={styles.imageStyle}>
                         <Image
-                            src="/bg.jpg"
+                            src="/cg.png"
                             alt="image"
                             objectFit="cover"
                             width="100%"
@@ -63,12 +76,12 @@ export default function Home() {
                     <button className={styles.buttonStyle} onClick={() => processLogin()}>
                         Login
                     </button>
-
-                    <h4 className={styles.account}>{"Don't have an account?"}</h4>
-
-                    <div className={styles.alink}>
-                        <Link href="/registration">
-                            <a>Create Account</a>
+                    <div className={styles.acclink}>
+                        <h4 className={styles.account}>{"Don't have an account?"}</h4>
+                        <Link href="/registration" >
+                        <a className={styles.alink}>
+                            Create Account
+                            </a>
                         </Link>
                     </div>
                 </div>
