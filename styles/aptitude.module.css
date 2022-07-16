@@ -30,6 +30,23 @@
     color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.qnc {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+}
+
+.qncLeft {
+    flex: 1;
+    display: flex;
+}
+
+.qncRight {
+    display: flex;
+    text-align: right;
+}
+
 .buttonPanel {
     display: flex;
     justify-content: center;

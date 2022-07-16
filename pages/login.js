@@ -1,4 +1,6 @@
+import Head from "next/head"
 import Image from "next/image"
+import Link from "next/link"
 import { useRouter } from "next/router"
 import React, { useState } from "react"
 import CustomInputComponent from "../components/CustomInputComponent"
@@ -30,6 +32,11 @@ export default function Home() {
     }
     return (
         <>
+            <Head>
+                <title>Invinium: Login</title>
+                <meta name="Invinium" content="Login" />
+                <link rel="icon" href="./favicon.ico" />
+            </Head>
             <div className={styles.card}>
                 <div className={styles.cardLeft}>
                     <div className={styles.logoStyle}>
@@ -71,11 +78,12 @@ export default function Home() {
                     </button>
                     <div className={styles.acclink}>
                         <h4 className={styles.account}>{"Don't have an account?"}</h4>
-                            <a href="/registration" className={styles.alink}>
-                                Create Account
+                        <Link href="/registration" >
+                        <a className={styles.alink}>
+                            Create Account
                             </a>
+                        </Link>
                     </div>
-                    
                 </div>
             </div>
         </>

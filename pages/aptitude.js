@@ -1,3 +1,4 @@
+import Head from "next/head"
 import React, { useState, useEffect } from "react"
 import styles from "../styles/aptitude.module.css"
 import { Timer } from "../components/TimerComponent"
@@ -88,6 +89,11 @@ export default function Aptitude() {
     if (data)
         return (
             <>
+                <Head>
+                    <title>Invinium: Aptitude test</title>
+                    <meta name="Invinium" content="Aptitude" />
+                    <link rel="icon" href="./favicon.ico" />
+                </Head>
                 <div className={styles.top}>
                     <div>
                         <Logo />
@@ -108,8 +114,17 @@ export default function Aptitude() {
                         <MdArrowBackIos className={styles.arrow} onClick={left}></MdArrowBackIos>
                     </div>
                     <div className={styles.textfield}>
-                        <p>Q : {data[counter].questionid}</p>
+                        <div className={styles.qnc}>
+                            <p className={styles.qncLeft}>Q : {data[counter].questionid}</p>
+                            <p className={styles.qncRight}>
+                                Category:
+                                {" " +
+                                    data[counter].category.charAt(0).toUpperCase() +
+                                    data[counter].category.slice(1)}
+                            </p>
+                        </div>
                         <p>{data[counter].question}</p>
+
                         <div>
                             <input
                                 type="radio"
@@ -178,9 +193,9 @@ export default function Aptitude() {
                 </div>
                 <div className={styles.buttonPanel}>
                     {testOver ? (
-                    <button className={styles.buttonStyle} onClick={() => evaluateAnswers()}>
-                        Submit Test
-                    </button>
+                        <button className={styles.buttonStyle} onClick={() => evaluateAnswers()}>
+                            Submit Test
+                        </button>
                     ) : null}
                 </div>
             </>

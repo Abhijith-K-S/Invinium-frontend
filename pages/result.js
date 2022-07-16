@@ -1,32 +1,29 @@
+import Head from "next/head"
 import React, { useState } from "react"
-import CustomInputComponent from "../components/CustomInputComponent"
 import styles from "../styles/result.module.css"
 export default function Result() {
     const [choice, setChoice] = useState("Biology Science")
 
     const [counter, setCounter] = useState(0)
-    var answerMap, tmp
+    var answerMap, answer, surveyMap, survey
 
-    // const right = () => {
-    //   if(counter<data.length-1) setCounter(counter + 1)
-    // }
-
-    // const left = () => {
-    //     if(counter>0)setCounter(counter - 1)
-    // }
-    // const arr = Array(20).fill(1)
-
-    // console.log(data[counter])
-    const getAnswerMap = async () => {
+    const getResultInput = async () => {
         if (typeof window !== "undefined") {
-            tmp = JSON.parse(localStorage.getItem("answerMap"))
-            answerMap = new Map(Object.entries(tmp))
+            answer = JSON.parse(localStorage.getItem("answerMap"))
+            answerMap = new Map(Object.entries(answer))
+            survey = JSON.parse(localStorage.getItem("suveyMap"))
+            surveyMap = new Map(Object.entries(survey))
         }
     }
-    getAnswerMap()
+    getResultInput()
 
     return (
         <>
+            <Head>
+                <title>Invinium: Result</title>
+                <meta name="Invinium" content="Result" />
+                <link rel="icon" href="./favicon.ico" />
+            </Head>
             <div className={styles.top}>
                 <div>
                     <div>
