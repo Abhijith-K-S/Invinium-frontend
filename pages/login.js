@@ -1,12 +1,15 @@
 import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
+import { useRouter } from "next/router"
 import React, { useState } from "react"
 import CustomInputComponent from "../components/CustomInputComponent"
 import styles from "../styles/login.module.css"
 import { loginUser } from "../service/authService"
 
 export default function Home() {
+    const router = useRouter()
+
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
 
@@ -20,6 +23,7 @@ export default function Home() {
             })
             try {
                 var token = await loginUser(request)
+                if (token) router.push("/intro")
             } catch (error) {
                 console.error(error)
             }

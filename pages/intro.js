@@ -1,6 +1,6 @@
 import Head from "next/head"
 import Image from "next/image"
-import Link from "next/link"
+import { useRouter } from "next/router"
 import React, { useState } from "react"
 import styles from "../styles/intro.module.css"
 import programmer from "../assets/programmer.png"
@@ -8,6 +8,8 @@ import scientist from "../assets/scientist.png"
 import manager from "../assets/commerce.png"
 
 export default function Intro() {
+    const router = useRouter()
+
     return (
         <div className={styles.main}>
             <Head>
@@ -40,8 +42,9 @@ export default function Intro() {
                     interests.
                 </h4>
                 <h4 className={styles.subTextStyle}>Click Begin Test wheneven you are ready</h4>
-                <button className={styles.buttonStyle}
-                onClick={()=>alert("hello")}>Begin Test</button>
+                <button className={styles.buttonStyle} onClick={() => router.push("/aptitude")}>
+                    Begin Test
+                </button>
             </div>
         </div>
     )
