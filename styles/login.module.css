@@ -57,7 +57,7 @@
     align-content: flex-start;
     position: relative;
 }
-@media only screen and (max-width: 1026px) {
+@media only screen and (max-width: 720px) {
     .card {
         display: flex;
         flex-direction: column;
@@ -94,9 +94,10 @@
     flex: 1;
 }
 .logoStyle{
-    position: relative;
-    color: black;
-    position: absolute;
+    color: white;
+    text-shadow: #041c32;
+    text-align: center;
+    align-content: center;
     z-index: 9;
 }
 .imageStyle {

@@ -13,8 +13,23 @@ export default function Home() {
             </Head>
 
             <main>
-                <HeaderComponent />
-                <button className={styles.card}></button>
+                {/* <HeaderComponent /> */}
+                <div className={styles.card}>
+                    <div className={styles.cardLeft}>
+
+                    </div>
+                    <div className={styles.cardRight}>
+                    <Image
+                            src="/home.png"
+                            alt="image"
+                            objectFit="cover"
+                            width="100%"
+                            height="100%"
+                            layout="responsive"
+                        />
+                    </div>
+                </div>
+                <button ></button>
             </main>
         </div>
     )
