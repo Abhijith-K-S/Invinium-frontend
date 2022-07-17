@@ -41,19 +41,19 @@ export default function Survey() {
             alert("Please fill all entries")
         } else {
             const surveyMap = new Map([
-                ["gender", gender],
-                ["boardTen", boardTen],
-                ["boardTwelve", boardTwelve],
-                ["likedStream", likedStream],
-                ["selectedStream", selectedStream],
-                ["tution", tution],
-                ["learningMethod", learningMethod],
-                ["socialPreference", socialPreference],
-                ["approach", approach],
-                ["jobPreference", jobPreference],
-                ["research", research],
-                ["studyHours", studyHours],
-                ["extracurricular", extracurricular]
+                ["gender", parseInt(gender)],
+                ["boardTen", parseInt(boardTen)],
+                ["boardTwelve", parseInt(boardTwelve)],
+                ["likedStream", parseInt(likedStream)],
+                ["selectedStream", parseInt(selectedStream)],
+                ["tution", parseInt(tution)],
+                ["learningMethod", parseInt(learningMethod)],
+                ["socialPreference", parseInt(socialPreference)],
+                ["approach", parseInt(approach)],
+                ["jobPreference", parseInt(jobPreference)],
+                ["research", parseInt(research)],
+                ["studyHours", parseInt(studyHours)],
+                ["extracurricular", parseInt(extracurricular)]
             ])
 
             if (typeof window !== "undefined") {

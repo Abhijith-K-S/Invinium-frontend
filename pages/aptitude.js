@@ -27,8 +27,7 @@ export default function Aptitude() {
         ["physics", 0],
         ["chemistry", 0],
         ["biology", 0],
-        ["social", 0],
-        ["english", 0]
+        ["social", 0]
     ])
 
     const trackAnswers = (option) => {
@@ -42,7 +41,11 @@ export default function Aptitude() {
         for (var i = 0; i < data.length; ++i) {
             if (data[i].answer == answers[i]) {
                 var score = answerMap.get(data[i].category)
-                score = score + 1
+
+                if (data[i].level.toLowerCase() == "easy") score = score + 1
+                else if (data[i].level.toLowerCase() == "moderate") score = score + 2
+                else if (data[i].level.toLowerCase() == "hard") score = score + 3
+
                 answerMap.set(data[i].category, score)
                 console.log("set" + data[i].category + "to " + score)
             }

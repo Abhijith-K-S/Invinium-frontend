@@ -1,21 +1,56 @@
 import Head from "next/head"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import styles from "../styles/result.module.css"
+import { fetchResultTen } from "../service/authService"
+
 export default function Result() {
     const [choice, setChoice] = useState("Biology Science")
-
-    const [counter, setCounter] = useState(0)
+    const [result, setResult] = useState("")
     var answerMap, answer, surveyMap, survey
 
-    const getResultInput = async () => {
+    const getResult = async () => {
         if (typeof window !== "undefined") {
             answer = JSON.parse(localStorage.getItem("answerMap"))
             answerMap = new Map(Object.entries(answer))
-            survey = JSON.parse(localStorage.getItem("suveyMap"))
+            survey = JSON.parse(localStorage.getItem("surveyMap"))
             surveyMap = new Map(Object.entries(survey))
+
+            var input = [
+                surveyMap.get("gender"),
+                answerMap.get("maths"),
+                answerMap.get("physics"),
+                answerMap.get("chemistry"),
+                answerMap.get("biology"),
+                answerMap.get("social"),
+                answerMap.get("verbal"),
+                surveyMap.get("boardTen"),
+                surveyMap.get("boardTwelve"),
+                surveyMap.get("studyHours"),
+                surveyMap.get("tution"),
+                surveyMap.get("learningMethod"),
+                surveyMap.get("socialPreference"),
+                surveyMap.get("extracurricular"),
+                surveyMap.get("approach"),
+                surveyMap.get("jobPreference"),
+                surveyMap.get("research"),
+                answerMap.get("logical"),
+                answerMap.get("quantitative"),
+                answerMap.get("analytical"),
+                answerMap.get("verbal")
+            ]
+
+            var response = await fetchResultTen(JSON.stringify(input))
+            if (response) {
+                console.log("response = " + response)
+                setResult(response)
+            }
+            console.log(JSON.stringify(input))
         }
     }
-    getResultInput()
+
+    useEffect(() => {
+        getResult()
+    }, [setResult])
 
     return (
         <>
