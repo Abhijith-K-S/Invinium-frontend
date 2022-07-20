@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react"
 import styles from "../styles/aptitude.module.css"
-import { Timer } from "../components/TimerComponent"
+import { Timer } from "../../components/TimerComponent"
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md"
-import { fetchQuestionTen } from "../service/authService"
+import { fetchQuestionTen } from "../../service/authService"
 import { useRouter } from "next/router"
-import { Logo } from "../components/LogoComponent"
+import { Logo } from "../../components/LogoComponent"
 
-export default function Aptitude() {
+export default function AptitudeTen() {
     const router = useRouter()
 
     const [data, setData] = useState("")

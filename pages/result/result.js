@@ -1,7 +1,7 @@
 import React, { useState } from "react"
-import CustomInputComponent from "../components/CustomInputComponent"
+import CustomInputComponent from "../../components/CustomInputComponent"
 import styles from "../styles/result.module.css"
-export default function Result() {
+export default function ResultTen() {
     const [choice, setChoice] = useState("Biology Science")
 
     const [counter, setCounter] = useState(0)
