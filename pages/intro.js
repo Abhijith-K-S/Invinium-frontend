@@ -26,9 +26,9 @@ export default function Intro() {
             <div className={styles.contentStyle}>
                 <h3 className={styles.textStyle}>
                     Hello user and welcome to Invinium, the ultimate carrer guidance tool. Confused
-                    about your future? Can't decide which career to choose? Well fear no more as you
-                    have come to the right place. Invinium can help you to identify your ideal field
-                    of interest
+                    about your future? {"Can't"} decide which career to choose? Well fear no more as
+                    you have come to the right place. Invinium can help you to identify your ideal
+                    field of interest
                 </h3>
 
                 <div className={styles.imagePanel}>
@@ -41,7 +41,7 @@ export default function Intro() {
                     Attempt a questionnaire to identify your academic potential and areas of
                     interests.
                 </h4>
-                <h4 className={styles.subTextStyle}>Click Begin Test wheneven you are ready</h4>
+                <h4 className={styles.subTextStyle}>Click Begin Test whenever you are ready</h4>
                 <button className={styles.buttonStyle} onClick={() => router.push("/aptitude")}>
                     Begin Test
                 </button>

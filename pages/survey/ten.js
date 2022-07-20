@@ -1,18 +1,17 @@
 import Head from "next/head"
 import { useRouter } from "next/router"
 import React, { useState } from "react"
-import styles from "../styles/survey.module.css"
-import SurveyInputSliderComponent from "../components/SurveyInputComponent/SurveyInputSliderComponent"
-import SurveyInputChoiceComponent from "../components/SurveyInputComponent/SurveyInputChoiceComponent"
+import styles from "../../styles/survey.module.css"
+import SurveyInputSliderComponent from "../../components/SurveyInputComponent/SurveyInputSliderComponent"
+import SurveyInputChoiceComponent from "../../components/SurveyInputComponent/SurveyInputChoiceComponent"
 
-export default function Survey() {
+export default function SurveyTen() {
     const router = useRouter()
 
     const [gender, setGender] = useState(0)
     const [boardTen, setBoardTen] = useState(0)
     const [boardTwelve, setBoardTwelve] = useState(0)
     const [likedStream, setLikedStream] = useState(0)
-    const [selectedStream, setSelectedStream] = useState(0)
     const [tution, setTution] = useState(0)
     const [learningMethod, setlearningMethod] = useState(0)
     const [socialPreference, setSocialPreference] = useState(0)
@@ -28,7 +27,6 @@ export default function Survey() {
             boardTen == "" ||
             boardTwelve == "" ||
             likedStream == "" ||
-            selectedStream == "" ||
             tution == "" ||
             learningMethod == "" ||
             socialPreference == "" ||
@@ -40,12 +38,11 @@ export default function Survey() {
         ) {
             alert("Please fill all entries")
         } else {
-            const surveyMap = new Map([
+            const surveyMapTen = new Map([
                 ["gender", parseInt(gender)],
                 ["boardTen", parseInt(boardTen)],
                 ["boardTwelve", parseInt(boardTwelve)],
                 ["likedStream", parseInt(likedStream)],
-                ["selectedStream", parseInt(selectedStream)],
                 ["tution", parseInt(tution)],
                 ["learningMethod", parseInt(learningMethod)],
                 ["socialPreference", parseInt(socialPreference)],
@@ -57,10 +54,13 @@ export default function Survey() {
             ])
 
             if (typeof window !== "undefined") {
-                localStorage.setItem("surveyMap", JSON.stringify(Object.fromEntries(surveyMap)))
+                localStorage.setItem(
+                    "surveyMapTen",
+                    JSON.stringify(Object.fromEntries(surveyMapTen))
+                )
             }
 
-            router.push("/aptitude")
+            router.push("/aptitude/ten")
         }
     }
 
@@ -91,14 +91,9 @@ export default function Survey() {
                 getData={setBoardTwelve}
             />
             <SurveyInputChoiceComponent
-                question={"What stream did you wish to choose after class 10"}
+                question={"What stream do you wish to choose after class 10"}
                 options={{ "Computer Science": 1, Biology: 2, Humanities: 3, Commerce: 4 }}
                 getData={setLikedStream}
-            />
-            <SurveyInputChoiceComponent
-                question={"What stream did you end up choosing"}
-                options={{ "Computer Science": 1, Biology: 2, Humanities: 3, Commerce: 4 }}
-                getData={setSelectedStream}
             />
             <SurveyInputChoiceComponent
                 question={"Do you attend extra classes after school"}
@@ -106,7 +101,7 @@ export default function Survey() {
                 getData={setTution}
             />
             <SurveyInputChoiceComponent
-                question={"Which learning method do you prefer"}
+                question={"What learning method do you prefer"}
                 options={{ Practical: 0, Theoretical: 1 }}
                 getData={setlearningMethod}
             />
