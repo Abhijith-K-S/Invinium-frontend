@@ -32,10 +32,10 @@ export default function Intro() {
             <div className={styles.contentStyle}>
                 <p className={styles.textStyle}>
                     Hello user and welcome to Invinium, the ultimate carrer guidance tool. Confused
-                    about your future? Can't decide which career to choose? Well fear no more as you
-                    have come to the right place. Invinium can help you to identify your ideal field
-                    of interest
-                </p>
+                    about your future? {"Can't"} decide which career to choose? Well fear no more as
+                    you have come to the right place. Invinium can help you to identify your ideal
+                    field of interest
+                </h3>
 
                 <div className={styles.imagePanel}>
                     <ImageComponent imageUri={programmer} />

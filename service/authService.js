@@ -62,3 +62,22 @@ export const fetchQuestionTen = async (request) => {
         console.log(error)
     }
 }
+
+export const fetchResultTen = async (request) => {
+    try {
+        const response = await fetch(BASE_URL + "/api/question/ten/result/" + request, {
+            mode: "cors",
+            method: "GET",
+            headers: requestHeader
+        })
+
+        if (response.ok) {
+            let questionData = await response.json()
+            return questionData
+        } else {
+            alert("Error fetching result")
+        }
+    } catch (error) {
+        console.log(error)
+    }
+}

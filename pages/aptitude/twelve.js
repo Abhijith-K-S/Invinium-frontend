@@ -7,7 +7,7 @@ import { Timer } from "../../components/TimerComponent"
 import { fetchQuestionTen } from "../../service/authService"
 import { Logo } from "../../components/LogoComponent"
 
-export default function AptitudeTen() {
+export default function AptitudeTwelve() {
     const router = useRouter()
 
     const [data, setData] = useState("")
@@ -27,7 +27,10 @@ export default function AptitudeTen() {
         ["physics", 0],
         ["chemistry", 0],
         ["biology", 0],
-        ["social", 0]
+        ["cmaths", 0],
+        ["accountancy", 0],
+        ["business", 0],
+        ["economics", 0]
     ])
 
     const trackAnswers = (option) => {
@@ -52,10 +55,10 @@ export default function AptitudeTen() {
         }
 
         if (typeof window !== "undefined") {
-            localStorage.setItem("answerMapTen", JSON.stringify(Object.fromEntries(answerMap)))
+            localStorage.setItem("answerMapTwelve", JSON.stringify(Object.fromEntries(answerMap)))
         }
 
-        router.push("/result/ten")
+        router.push("/result/twelve")
     }
 
     useEffect(() => {
