@@ -4,12 +4,16 @@
     flex-direction: column;
     margin-left: 25vh;
     margin-right: 25vh;
-    margin-top: 10vh;
+    overflow:hidden;
     border-radius: 20px;
-    overflow: hidden;
     background-color: #041c32;
+    /* height: 90vh; */
 }
-
+.inputStyle{
+    color: #ffffff;
+    align-items: center;
+    text-align: center;
+}
 .header {
     flex: 1;
     display: flex;
@@ -19,7 +23,16 @@
     padding-bottom: 2vh;
     background-color: #57799d;
 }
-
+.option1{
+    padding-right: 13px;
+}
+.logoStyle{
+    color: white;
+    text-shadow: #041c32;
+    margin: 1px;
+    /* text-align: center;
+    align-content: center; */
+}
 .textStyle {
     color: #ffffff;
     margin-bottom: 0px;
@@ -28,7 +41,7 @@
 
 .subTextStyle {
     color: #ffffff;
-    margin-top: 5%;
+    margin-top: 1%;
     align-self: center;
     padding-left: 10%;
     padding-right: 10%;

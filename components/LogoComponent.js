@@ -9,7 +9,7 @@ export const Logo = () => {
             <div className={styles.imageStyle}>
                 <Image src={logo} alt="image" />
             </div>
-            <h1>Invinium</h1>
+            <h2>Invinium</h2>
         </div>
     )
 }

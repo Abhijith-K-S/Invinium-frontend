@@ -39,9 +39,6 @@ export default function Home() {
             </Head>
             <div className={styles.card}>
                 <div className={styles.cardLeft}>
-                    <div className={styles.logoStyle}>
-                        <Logo />
-                    </div>
                     <div className={styles.imageStyle}>
                         <Image
                             src="/cg.png"
@@ -58,6 +55,9 @@ export default function Home() {
                     {/* <div className={styles.heading}>
                     <h2 className={styles.headingText}>User Login</h2>
                 </div> */}
+                    <div className={styles.logoStyle}>
+                        <Logo />
+                    </div>
                     <div className="input">
                         <CustomInputComponent
                             input="Username"
