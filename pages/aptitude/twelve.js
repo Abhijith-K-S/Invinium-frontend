@@ -1,13 +1,13 @@
 import Head from "next/head"
 import React, { useState, useEffect } from "react"
-import styles from "../styles/aptitude.module.css"
-import { Timer } from "../components/TimerComponent"
-import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md"
-import { fetchQuestionTen } from "../service/authService"
 import { useRouter } from "next/router"
-import { Logo } from "../components/LogoComponent"
+import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md"
+import styles from "../../styles/aptitude.module.css"
+import { Timer } from "../../components/TimerComponent"
+import { fetchQuestionTen } from "../../service/authService"
+import { Logo } from "../../components/LogoComponent"
 
-export default function Aptitude() {
+export default function AptitudeTwelve() {
     const router = useRouter()
 
     const [data, setData] = useState("")
@@ -27,8 +27,10 @@ export default function Aptitude() {
         ["physics", 0],
         ["chemistry", 0],
         ["biology", 0],
-        ["social", 0],
-        ["english", 0]
+        ["cmaths", 0],
+        ["accountancy", 0],
+        ["business", 0],
+        ["economics", 0]
     ])
 
     const trackAnswers = (option) => {
@@ -42,17 +44,21 @@ export default function Aptitude() {
         for (var i = 0; i < data.length; ++i) {
             if (data[i].answer == answers[i]) {
                 var score = answerMap.get(data[i].category)
-                score = score + 1
+
+                if (data[i].level.toLowerCase() == "easy") score = score + 1
+                else if (data[i].level.toLowerCase() == "moderate") score = score + 2
+                else if (data[i].level.toLowerCase() == "hard") score = score + 3
+
                 answerMap.set(data[i].category, score)
                 console.log("set" + data[i].category + "to " + score)
             }
         }
 
         if (typeof window !== "undefined") {
-            localStorage.setItem("answerMap", JSON.stringify(Object.fromEntries(answerMap)))
+            localStorage.setItem("answerMapTwelve", JSON.stringify(Object.fromEntries(answerMap)))
         }
 
-        router.push("/result")
+        router.push("/result/twelve")
     }
 
     useEffect(() => {
@@ -115,7 +121,9 @@ export default function Aptitude() {
                     </div>
                     <div className={styles.textfield}>
                         <div className={styles.qnc}>
-                            <p className={styles.qncLeft}>Q : {data[counter].questionid}</p>
+                            <p className={styles.qncLeft}>
+                                Q : {String(counter + 1).padStart(2, "0")}
+                            </p>
                             <p className={styles.qncRight}>
                                 Category:
                                 {" " +

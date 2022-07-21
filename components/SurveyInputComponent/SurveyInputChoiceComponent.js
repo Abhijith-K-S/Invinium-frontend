@@ -17,6 +17,7 @@ export default function SurveyInputChoiceComponent(props) {
                     <div key={option[0]}>
                         <input
                             type="radio"
+                            className={styles.radio}
                             name={props.question}
                             value={option[1]}
                             onChange={(event) => {

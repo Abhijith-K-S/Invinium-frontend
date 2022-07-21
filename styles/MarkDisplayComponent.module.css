@@ -1,0 +1,92 @@
+.layout {
+    display: flex;
+    flex: 1;
+    margin-top: 2vh;
+}
+
+.layout:hover{
+    ;
+}
+
+.leftLayout {
+    display: flex;
+    flex: 1;
+    margin: auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 2vh;
+    background-color: #031b52;
+    border-radius: 20px;
+    margin-left: 40px;
+}
+
+.rightLayout {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: auto;
+    padding: 2vh;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: center;
+}
+
+.outerContainer {
+    display: flex;
+    margin: 0;
+    width: 15vh;
+    height: 15vh;
+    border-radius: 60px;
+    padding: 5px;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+    margin: 10px;
+}
+
+.container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f5f5f5;
+    border-radius: 20px;
+    padding: 5px;
+    border-radius: 60px;
+    align-items: center;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    word-break: break-all;
+}
+
+.titleStyle {
+    display: flex;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+.markStyle {
+    display: flex;
+    font-weight: 100;
+    margin-top: 0;
+}
+
+.totalScore {
+    display: flex;
+    flex:1;
+    font-size: 75px;
+    font-weight: 900;
+    margin-bottom: 0;
+    color:white
+}
+
+.score {
+    display: flex;
+    font-size: 50px;
+    font-weight: 500;
+    margin-top: 0;
+    color:white
+}
