@@ -1,7 +1,4 @@
-const BASE_URL = "http://127.0.0.1:8080"
-
-const requestHeader = new Headers()
-requestHeader.append("Content-Type", "application/json")
+import { BASE_URL, requestHeader } from "./network"
 
 export const registerUser = async (request) => {
     try {
@@ -37,47 +34,13 @@ export const loginUser = async (request) => {
             let token = await response.text()
             return token
         } else {
-            alert("Login error")
+            alert("Invalid credentials")
         }
     } catch (error) {
-        console.error(error)
-    }
-}
-
-export const fetchQuestionTen = async (request) => {
-    try {
-        const response = await fetch(BASE_URL + "/api/question/ten", {
-            mode: "cors",
-            method: "GET",
-            headers: requestHeader
-        })
-
-        if (response.ok) {
-            let questionData = await response.json()
-            return questionData
-        } else {
-            alert("Error fetching questions")
-        }
-    } catch (error) {
-        console.log(error)
-    }
-}
-
-export const fetchResultTen = async (request) => {
-    try {
-        const response = await fetch(BASE_URL + "/api/question/ten/result/" + request, {
-            mode: "cors",
-            method: "GET",
-            headers: requestHeader
-        })
-
-        if (response.ok) {
-            let questionData = await response.json()
-            return questionData
-        } else {
-            alert("Error fetching result")
-        }
-    } catch (error) {
-        console.log(error)
+        console.log(error.message)
+        if (error.message == "Failed to fetch")
+            throw new Error("Unable to communicate with server!")
+        else 
+            throw new Error(error.message)
     }
 }

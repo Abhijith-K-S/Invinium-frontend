@@ -2,7 +2,7 @@ import React from "react"
 import styles from "../styles/MarkDisplayComponent.module.css"
 
 export default function MarkDisplayComponent(props) {
-    let val = Array.from(Object.entries(props.answerMap))
+    let val = Array.from(Object.fromEntries(props.answerMap))
 
     val.sort((a, b) => {
         return b[1] - a[1]
@@ -38,7 +38,9 @@ export default function MarkDisplayComponent(props) {
                 ))}
             </div>
             <div className={styles.rightLayout}>
-                <h1 className={styles.totalScore}><u>Total score</u></h1>
+                <h1 className={styles.totalScore}>
+                    <u>Total score</u>
+                </h1>
                 <h2 className={styles.score}>
                     {score}/{total}
                 </h2>
