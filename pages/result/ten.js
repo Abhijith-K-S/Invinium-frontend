@@ -2,7 +2,7 @@ import Head from "next/head"
 import React, { useEffect, useState } from "react"
 import styles from "../../styles/result.module.css"
 import MarkDisplayComponent from "../../components/MarkDisplayComponent"
-import { fetchResultTen } from "../../service/authService"
+import { fetchResultTen } from "../../service/fetchResult"
 
 export default function ResultTen() {
     const [choice, setChoice] = useState("Biology Science")
@@ -44,13 +44,14 @@ export default function ResultTen() {
             if (response) {
                 console.log("response = " + response)
                 setResult(response)
+                console.log(response)
             }
-            console.log(JSON.stringify(input))
         }
     }
 
     useEffect(() => {
         getResult()
+        console.log(answerMapTen)
     })
 
     return (
@@ -67,7 +68,7 @@ export default function ResultTen() {
                     </div>
                 </div>
             </div>
-            <MarkDisplayComponent answerMap={answerMapTen} />
+            {/* <MarkDisplayComponent answerMap={answerMapTen} /> */}
             <div className={styles.bottom}>
                 <div className={styles.lleft}>
                     <h3>Your potential career path is</h3>

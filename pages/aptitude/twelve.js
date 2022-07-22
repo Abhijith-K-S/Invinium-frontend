@@ -4,7 +4,7 @@ import { useRouter } from "next/router"
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md"
 import styles from "../../styles/aptitude.module.css"
 import { Timer } from "../../components/TimerComponent"
-import { fetchQuestionTen } from "../../service/authService"
+import { fetchQuestionTwelve } from "../../service/fetchQuestion"
 import { Logo } from "../../components/LogoComponent"
 
 export default function AptitudeTwelve() {
@@ -27,7 +27,6 @@ export default function AptitudeTwelve() {
         ["physics", 0],
         ["chemistry", 0],
         ["biology", 0],
-        ["cmaths", 0],
         ["accountancy", 0],
         ["business", 0],
         ["economics", 0]
@@ -64,7 +63,7 @@ export default function AptitudeTwelve() {
     useEffect(() => {
         const fetchQuestion = async () => {
             try {
-                const questionData = await fetchQuestionTen()
+                const questionData = await fetchQuestionTwelve(router.query.stream)
                 setData(questionData)
             } catch (error) {
                 console.log(error)
@@ -74,7 +73,7 @@ export default function AptitudeTwelve() {
         const timeSet = new Date()
         timeSet.setMinutes(timeSet.getMinutes() + 30)
         setTime(timeSet)
-    }, [])
+    }, [setTime])
 
     const right = () => {
         if (counter < data.length - 1) {

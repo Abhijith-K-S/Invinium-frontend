@@ -58,11 +58,19 @@ export default function SurveyTwelve() {
             if (typeof window !== "undefined") {
                 localStorage.setItem(
                     "surveyMapTwelve",
-                    JSON.stringify(Object.fromEntries(surveyMap))
+                    JSON.stringify(Object.fromEntries(surveyMapTwelve))
                 )
             }
+            
+            let streamName
+            if(stream==0)
+                streamName = "biology"
+            else if(stream==1)
+                streamName = "cs"
+            else if(stream==2)
+                streamName = "commerce"
 
-            router.push("/aptitude/twelve")
+            router.push({pathname:"/aptitude/twelve",query:{"stream":streamName}})
         }
     }
 
@@ -115,7 +123,7 @@ export default function SurveyTwelve() {
                     Nursing: 5,
                     Management: 6
                 }}
-                getData={setTution}
+                getData={setLikedCareer}
             />
             <SurveyInputChoiceComponent
                 question={"Which learning method do you prefer"}

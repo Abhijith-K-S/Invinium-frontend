@@ -4,7 +4,7 @@ import { useRouter } from "next/router"
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md"
 import styles from "../../styles/aptitude.module.css"
 import { Timer } from "../../components/TimerComponent"
-import { fetchQuestionTen } from "../../service/authService"
+import { fetchQuestionTen } from "../../service/fetchQuestion"
 import { Logo } from "../../components/LogoComponent"
 
 export default function AptitudeTen() {
@@ -53,9 +53,8 @@ export default function AptitudeTen() {
 
         if (typeof window !== "undefined") {
             localStorage.setItem("answerMapTen", JSON.stringify(Object.fromEntries(answerMap)))
+            router.push("/result/ten")
         }
-
-        router.push("/result/ten")
     }
 
     useEffect(() => {

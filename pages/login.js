@@ -26,7 +26,7 @@ export default function Home() {
                 var token = await loginUser(request)
                 if (token) router.push("/intro")
             } catch (error) {
-                console.error(error)
+                alert(error.message)
             }
         }
     }
@@ -78,10 +78,8 @@ export default function Home() {
                     </button>
                     <div className={styles.acclink}>
                         <h4 className={styles.account}>{"Don't have an account?"}</h4>
-                        <Link href="/registration" >
-                        <a className={styles.alink}>
-                            Create Account
-                            </a>
+                        <Link href="/registration">
+                            <a className={styles.alink}>Create Account</a>
                         </Link>
                     </div>
                 </div>

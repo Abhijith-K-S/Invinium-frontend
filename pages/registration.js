@@ -40,7 +40,7 @@ export default function Registration() {
                 var response = await registerUser(request)
                 if (response) router.push("/login")
             } catch (error) {
-                console.error(error)
+                alert(error.message)
             }
         }
     }

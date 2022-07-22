@@ -1,12 +1,17 @@
 .arrow {
-    font-size: 50px;
+    font-size: 60px;
     color: bisque;
+    margin-top: 15vh;
 }
+
+.arrow:hover {
+    background-color: #ffffff20;
+}
+
 .bottom {
     display: flex;
     justify-content: space-between;
     background-color: #204469;
-    align-items: center;
     margin-top: 8%;
     padding: 18px;
     color: white;
