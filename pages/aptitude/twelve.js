@@ -25,6 +25,7 @@ export default function AptitudeTwelve() {
         ["verbal", 0],
         ["maths", 0],
         ["physics", 0],
+        ["cs", 0],
         ["chemistry", 0],
         ["biology", 0],
         ["accountancy", 0],
@@ -63,7 +64,11 @@ export default function AptitudeTwelve() {
     useEffect(() => {
         const fetchQuestion = async () => {
             try {
-                const questionData = await fetchQuestionTwelve(router.query.stream)
+                let streamName
+                if (typeof window !== "undefined") {
+                    streamName = localStorage.getItem("stream")
+                }
+                const questionData = await fetchQuestionTwelve(streamName)
                 setData(questionData)
             } catch (error) {
                 console.log(error)

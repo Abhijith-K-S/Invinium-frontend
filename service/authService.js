@@ -34,7 +34,7 @@ export const loginUser = async (request) => {
             let token = await response.text()
             return token
         } else {
-            alert("Invalid credentials")
+            throw new Error("Invalid credentials")
         }
     } catch (error) {
         console.log(error.message)

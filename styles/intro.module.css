@@ -92,6 +92,6 @@
     font-size: 20px;
 }
 
-.buttonStyle :hover {
+.buttonStyle:hover {
     background-color: #57799d;
 }

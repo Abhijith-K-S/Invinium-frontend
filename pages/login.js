@@ -3,6 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import React, { useState } from "react"
+import { Bars } from "react-loading-icons"
 import CustomInputComponent from "../components/CustomInputComponent"
 import styles from "../styles/login.module.css"
 import { loginUser } from "../service/authService"
@@ -13,8 +14,10 @@ export default function Home() {
 
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
+    const [isLoading, setIsLoading] = useState(0)
 
     async function processLogin() {
+        setIsLoading(1)
         if (username == "" || password == "") {
             alert("Please fill all the fields!")
         } else {
@@ -29,7 +32,9 @@ export default function Home() {
                 alert(error.message)
             }
         }
+        setIsLoading(0)
     }
+
     return (
         <>
             <Head>
@@ -76,6 +81,14 @@ export default function Home() {
                     <button className={styles.buttonStyle} onClick={() => processLogin()}>
                         Login
                     </button>
+                    <Bars
+                        className={styles.loadingIcon}
+                        stroke="#00000020"
+                        fill="#ffffff"
+                        fill-opacity={isLoading}
+                        height="30"
+                        width="30"
+                    />
                     <div className={styles.acclink}>
                         <h4 className={styles.account}>{"Don't have an account?"}</h4>
                         <Link href="/registration">
