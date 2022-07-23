@@ -2,31 +2,44 @@ import Head from "next/head"
 import React, { useEffect, useState } from "react"
 import styles from "../../styles/result.module.css"
 import MarkDisplayComponent from "../../components/MarkDisplayComponent"
-import { fetchResultTen } from "../../service/fetchResult"
+import { fetchResultTwelve } from "../../service/fetchResult"
 
-export default function ResultTen() {
+export default function ResultTwelve() {
     const [choice, setChoice] = useState("Biology Science")
     const [result, setResult] = useState("")
-    const [answerMapTen, setAnswerMapTen] = useState(new Map())
+    const [stream, setStream] = useState("")
+
+    const [answerMapTwelve, setAnswerMapTwelve] = useState(new Map())
 
     const getResult = async () => {
         if (typeof window !== "undefined") {
-            let answer = JSON.parse(localStorage.getItem("answerMapTen"))
-            let answerMapTen = new Map(Object.entries(answer))
-            let survey = JSON.parse(localStorage.getItem("surveyMapTen"))
+            let answer = JSON.parse(localStorage.getItem("answerMapTwelve"))
+            let answerMapTwelve = new Map(Object.entries(answer))
+            let survey = JSON.parse(localStorage.getItem("surveyMapTwelve"))
+
+            let phyOrAcc, chemOrBs
+            let stream = localStorage.getItem("stream")
+
+            if (stream == "commerce") {
+                phyOrAcc = "accountancy"
+                chemOrBs = "business"
+            } else {
+                phyOrAcc = "physics"
+                chemOrBs = "chemistry"
+            }
 
             var input = [
                 survey["gender"],
-                answer["maths"],
-                answer["physics"],
-                answer["chemistry"],
-                answer["biology"],
-                answer["social"],
-                answer["verbal"],
-                survey["boardTen"],
                 survey["boardTwelve"],
+                survey["stream"],
+                answer["maths"],
+                answer[phyOrAcc],
+                answer[chemOrBs],
+                answer[stream],
+                answer["verbal"],
                 survey["studyHours"],
                 survey["tution"],
+                survey["entrance"],
                 survey["learningMethod"],
                 survey["socialPreference"],
                 survey["extracurricular"],
@@ -39,9 +52,11 @@ export default function ResultTen() {
                 answer["verbal"]
             ]
 
-            setAnswerMapTen(answerMapTen)
-            
-            // var response = await fetchResultTen(JSON.stringify(input))
+            console.log(input)
+            setAnswerMapTwelve(answerMapTwelve)
+            setStream(localStorage.getItem("stream"))
+
+            // var response = await fetchResultTwelve(JSON.stringify(input))
             // if (response) {
             //     console.log("response = " + response)
             //     setResult(response)
@@ -52,7 +67,7 @@ export default function ResultTen() {
 
     useEffect(() => {
         getResult()
-    },[setAnswerMapTen])
+    }, [setAnswerMapTwelve])
 
     return (
         <>
@@ -68,7 +83,9 @@ export default function ResultTen() {
                     </div>
                 </div>
             </div>
-            {answerMapTen ? <MarkDisplayComponent answerMap={answerMapTen} /> : null}
+            {answerMapTwelve ? (
+                <MarkDisplayComponent answerMap={answerMapTwelve} stream={stream} />
+            ) : null}
             <div className={styles.bottom}>
                 <div className={styles.lleft}>
                     <h3>Your potential career path is</h3>

@@ -2,14 +2,31 @@ import React from "react"
 import styles from "../styles/MarkDisplayComponent.module.css"
 
 export default function MarkDisplayComponent(props) {
-    let val = Array.from(Object.fromEntries(props.answerMap))
+    let answerMap = props.answerMap
+    let stream = props.stream
+    
+    if (stream != null) {
+        if (stream == "commerce") {
+            answerMap.delete("physics")
+            answerMap.delete("chemistry")
+            answerMap.delete("biology")
+            answerMap.delete("cs")
+        } else {
+            answerMap.delete("business")
+            answerMap.delete("economics")
+            answerMap.delete("accountancy")
+            if (stream == "cs") answerMap.delete("biology")
+            else if (stream == "biology") answerMap.delete("cs")
+        }
+    }
 
+    let val = Array.from(props.answerMap, ([key, value]) => ({ key, value }))
     val.sort((a, b) => {
-        return b[1] - a[1]
+        return b.value - a.value
     })
 
     let score = 0
-    for (let i = 0; i < val.length; ++i) score = score + val[i][1]
+    for (let i = 0; i < val.length; ++i) score = score + val[i].value
 
     let total = 10 * val.length
 
@@ -25,14 +42,14 @@ export default function MarkDisplayComponent(props) {
                 {val.map((marks) => (
                     <div
                         className={styles.outerContainer}
-                        style={{ backgroundColor: getColor(marks[1]) }}
-                        key={marks[0]}
+                        style={{ backgroundColor: getColor(marks.value) }}
+                        key={marks.key}
                     >
                         <div className={styles.container}>
                             <h5 className={styles.titleStyle}>
-                                {marks[0].charAt(0).toUpperCase() + marks[0].slice(1)}
+                                {marks.key.charAt(0).toUpperCase() + marks.key.slice(1)}
                             </h5>
-                            <h4 className={styles.markStyle}>{marks[1]}/10</h4>
+                            <h4 className={styles.markStyle}>{marks.value}/10</h4>
                         </div>
                     </div>
                 ))}

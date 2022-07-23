@@ -43,6 +43,7 @@ export default function SurveyTwelve() {
             const surveyMapTwelve = new Map([
                 ["gender", parseInt(gender)],
                 ["boardTwelve", parseInt(boardTwelve)],
+                ["stream", parseInt(stream)],
                 ["likedCareer", parseInt(likedCareer)],
                 ["tution", parseInt(tution)],
                 ["entrance", parseInt(entrance)],
@@ -60,17 +61,16 @@ export default function SurveyTwelve() {
                     "surveyMapTwelve",
                     JSON.stringify(Object.fromEntries(surveyMapTwelve))
                 )
-            }
-            
-            let streamName
-            if(stream==0)
-                streamName = "biology"
-            else if(stream==1)
-                streamName = "cs"
-            else if(stream==2)
-                streamName = "commerce"
 
-            router.push({pathname:"/aptitude/twelve",query:{"stream":streamName}})
+                let streamName
+                if (stream == 0) streamName = "biology"
+                else if (stream == 1) streamName = "cs"
+                else if (stream == 2) streamName = "commerce"
+
+                localStorage.setItem("stream", streamName)
+            }
+
+            router.push("/aptitude/twelve")
         }
     }
 

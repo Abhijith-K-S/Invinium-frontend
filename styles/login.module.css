@@ -1,5 +1,5 @@
-.account{
-    font-family: 'Noto Sans';
+.account {
+    font-family: "Noto Sans";
     font-style: normal;
     font-weight: 500;
     font-size: 22px;
@@ -8,11 +8,10 @@
     align-items: center;
     text-align: center;
     margin-top: 9vh;
-    color: #EDF1FC !important;
+    color: #edf1fc !important;
 }
-.alink{
-
-    font-family: 'Noto Sans';
+.alink {
+    font-family: "Noto Sans";
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
@@ -21,10 +20,9 @@
     align-items: center;
     text-align: center;
     text-decoration: underline;
-    color: #6A9CD1;
-
+    color: #6a9cd1;
 }
-.acclink{
+.acclink {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -42,7 +40,6 @@
     background-color: #041c32;
     overflow: auto;
     align-items: stretch;
-    
 }
 .box {
     display: flex;
@@ -61,7 +58,7 @@
     .card {
         display: flex;
         flex-direction: column;
-    } 
+    }
 }
 
 .cardRight {
@@ -93,7 +90,7 @@
     flex-direction: row;
     flex: 1;
 }
-.logoStyle{
+.logoStyle {
     color: white;
     text-shadow: #041c32;
     text-align: center;
@@ -107,7 +104,7 @@
 .imageStyle > span {
     height: 100% !important;
 }
-.input{
+.input {
     align-content: center;
 }
 .buttonStyle {
@@ -123,4 +120,12 @@
 
 .buttonStyle:hover {
     background-color: #57799d;
+}
+
+.loadingIcon {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    margin:0 auto;
+    margin-top: 8%;
 }

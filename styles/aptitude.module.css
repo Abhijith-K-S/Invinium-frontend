@@ -63,10 +63,10 @@
     border-radius: 20px;
     font-size: medium;
     font-weight: bold;
-    background-color: #57799d;
+    background-color: #57799d80;
     color: #ffffff;
 }
 
-.buttonStyle :hover {
-    background-color: "green";
+.buttonStyle:hover {
+    background-color: #57799d;
 }
