@@ -1,14 +1,23 @@
 import Head from "next/head"
 import React, { useEffect, useState } from "react"
 import styles from "../../styles/result.module.css"
+import Image from "next/image"
 import MarkDisplayComponent from "../../components/MarkDisplayComponent"
 import { fetchResultTen } from "../../service/authService"
+import data from '../../result_info.json'
+
 
 export default function ResultTen() {
     const [choice, setChoice] = useState("Biology Science")
     const [result, setResult] = useState("")
+    var subjects={
+        "biology":0,
+        "cs":1,
+        "commerce":2,
+        "humanities":3,
+    }
+    const [subject,setSubject]=useState(0)
     var answerMapTen, answer, surveyMapTen, survey
-
     // const getResult = async () => {
     //     if (typeof window !== "undefined") {
     //         answer = JSON.parse(localStorage.getItem("answerMapTen"))
@@ -72,18 +81,35 @@ export default function ResultTen() {
                 <div className={styles.lleft}>
                     <div className={styles.choice}>
                         <h3>Your potential career path is</h3>
-                        <br />
                         <p>{choice}</p>
+                        <div className={styles.imgHolder}>
+                            <Image
+                                src={data[subject].image}
+                                alt="image"
+                                objectFit="cover"
+                                width="10%"
+                                height="10%"
+                                layout="responsive"
+                            />
+                        </div>
                     </div>
                     <div className={styles.info}>
                         <details>
                             <summary className={styles.textSummary}>Know more about the course.</summary>
                             <span className={styles.textDetails}>
                                 <ul>
-                                    <li>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.</li>
-                                    <li>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</li>
-                                    <li>Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.</li>
-                                    <li>Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</li>
+                                    {/* <li>Science students have multiple career options such as MBBS, BE / B.Tech, BDS, BAMS, MBA, CS, CA, ME, Commercial Pilot Course, etc.</li>
+                                    <li>Best education institutes to study such as IITs, NITS, and AIIMs.</li>
+                                    <li>It helps to develop a creative mindset and problem-solving ability.</li>
+                                    <li>It helps to become a master in the technical field.</li>
+                                    <li>It is easy to find a job with a very good salary for science students.</li>
+                                    <li>Easy to switch stream.</li> */}
+                                    {data[subject].points.map(sample => <li >{sample.point}</li>)}
+                                    <h4>Compulsory Subjects</h4>
+                                    <li>{data[subject].compulsory}</li>
+                                    <h4>Optional Subjects</h4>
+                                    <li>{data[subject].optional}</li>
+                                    
                                 </ul>            
                             </span>
                         </details>

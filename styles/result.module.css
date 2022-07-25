@@ -34,7 +34,7 @@
     /* overflow: */
 }
 .bottom{
-    padding-top: 15vh;
+    padding-top: 5vh;
     padding-bottom: 3vh;
     display: flex;
     align-items: center; 
@@ -44,16 +44,21 @@
 .choice{
     
 }
+.imgHolder{
+    padding-left: 100px;
+    padding-right: 100px;
+}
 .info{
     bottom: 0%;
     text-align: left;
     align-self: flex-start;
-    padding-top: 50px;
+    padding-top: 20px;
     padding-left: 20px;
     padding-right: 40px;
 }
 .textSummary{
     font-size: large;
+    cursor: pointer;
 }
 .textDetails{
     bottom: 0%;
