@@ -2,6 +2,7 @@ import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
 import styles from "../styles/Home.module.css"
+import logo from "../assets/logo-circle.png"
 
 export default function Home() {
     return (
@@ -14,9 +15,13 @@ export default function Home() {
 
             <div className={styles.card}>
                 <a href=".">
-                    <img className={styles.logoStyle} src="./logo-circle.png" alt="image" />
+                    <div className={styles.logoStyle}>
+                    <Image src={logo} alt="logo"/>
+                    </div>
                 </a>
-                <img className={styles.imageStyle} src="/bg1.png" alt="image" />
+                <div className={styles.imageStyle} >
+                    <Image src={"/bg1.png"} layout="fill" alt="background" />
+                </div>
                 <div className={styles.textStyle}>
                     <div className={styles.typewriter}>
                         {" "}

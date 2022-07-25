@@ -4,7 +4,7 @@ import styles from "../styles/MarkDisplayComponent.module.css"
 export default function MarkDisplayComponent(props) {
     let answerMap = props.answerMap
     let stream = props.stream
-    
+
     if (stream != null) {
         if (stream == "commerce") {
             answerMap.delete("physics")
@@ -47,7 +47,9 @@ export default function MarkDisplayComponent(props) {
                     >
                         <div className={styles.container}>
                             <h5 className={styles.titleStyle}>
-                                {marks.key.charAt(0).toUpperCase() + marks.key.slice(1)}
+                                {marks.key == "cs"
+                                    ? "CS"
+                                    : marks.key.charAt(0).toUpperCase() + marks.key.slice(1)}
                             </h5>
                             <h4 className={styles.markStyle}>{marks.value}/10</h4>
                         </div>

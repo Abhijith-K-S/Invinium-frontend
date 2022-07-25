@@ -1,11 +1,12 @@
 import Head from "next/head"
 import React, { useEffect, useState } from "react"
+import { BallTriangle } from "react-loading-icons"
 import styles from "../../styles/result.module.css"
 import MarkDisplayComponent from "../../components/MarkDisplayComponent"
 import { fetchResultTwelve } from "../../service/fetchResult"
 
 export default function ResultTwelve() {
-    const [choice, setChoice] = useState("Biology Science")
+    const [choice, setChoice] = useState()
     const [result, setResult] = useState("")
     const [stream, setStream] = useState("")
 
@@ -56,12 +57,20 @@ export default function ResultTwelve() {
             setAnswerMapTwelve(answerMapTwelve)
             setStream(localStorage.getItem("stream"))
 
-            // var response = await fetchResultTwelve(JSON.stringify(input))
-            // if (response) {
-            //     console.log("response = " + response)
-            //     setResult(response)
-            //     console.log(response)
-            // }
+            var response = await fetchResultTwelve(JSON.stringify(input))
+            if (response) {
+                console.log("response = " + response)
+                setResult(response)
+                console.log(response)
+            }
+
+            let max = 0
+            Object.entries(response).forEach((item) => {
+                if (item[1] > max) {
+                    max = item[1]
+                    setChoice(item[0].charAt(0).toUpperCase() + item[0].slice(1))
+                }
+            })
         }
     }
 
@@ -90,7 +99,18 @@ export default function ResultTwelve() {
                 <div className={styles.lleft}>
                     <h3>Your potential career path is</h3>
                     <br />
-                    <p>{choice}</p>
+                    {choice ? (
+                        <p>{choice}</p>
+                    ) : (
+                        <BallTriangle
+                            className={styles.loadingIcon}
+                            stroke="#00000020"
+                            fill="#ffffff"
+                            fill-opacity={"#ffffff"}
+                            height="50"
+                            width="50"
+                        />
+                    )}
                 </div>
                 <div className={styles.rright}></div>
             </div>
