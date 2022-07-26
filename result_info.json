@@ -28,76 +28,61 @@
         "image": "/computer.png",
         "points": [
             {
-                "point": "Computer Science students have multiple career options such as Btech"
+                "point": "A computer science degree will prepare you for in-demand jobs today and it provides one of the highest salaried jobs"
             },
             {
-                "point": "Best education institutes to study such as IITs, NITS"
+                "point": "Best education institutes to study such as IITs, NITS."
             },
             {
-                "point": "It helps to develop a creative mindset and problem-solving ability."
+                "point": "Computer scientists or computer science researchers, Data scientists, Software engineers, Systems analysts,are some of the jobs that can be availed by a computer science degree. ."
             },
             {
                 "point": "It helps to become a master in the technical field."
             },
             {
-                "point": "It is easy to find a job with a very good salary for science students."
-            },
-            {
-                "point": "Easy to switch stream."
+                "point": "Computer technologies are integral to modern life and are likely in high demand across many different industries."
             }
         ],
-        "compulsory": "Computer Science, Physics, Chemistry, and English",
-        "optional": "Biotechnology, Home Science, Psychology, Mathematics, Economics, and Physical Education."
+        "compulsory": "Computer Science, Physics, Chemistry,Mathematics and English",
+        "optional": "Psychology, Economics, and Physical Education."
     },
     "Commerce": {
         "image": "/commerce.png",
         "points": [
             {
-                "point": "Computer Science students have multiple career options such as Btech"
+                "point": "Commerce sector is expanding daily with new work prospects flooding the market and employment rates rising globally."
             },
             {
-                "point": "Best education institutes to study such as IITs, NITS"
+                "point": "Commerce students have multiple career options such as MBA, MCom, MCA, CS, CA, CMA, etc."
             },
             {
-                "point": "It helps to develop a creative mindset and problem-solving ability."
+                "point": "Commerce field offers various well-paid career options for students and has seen an increase in demands for various job positions."
             },
             {
-                "point": "It helps to become a master in the technical field."
-            },
-            {
-                "point": "It is easy to find a job with a very good salary for science students."
-            },
-            {
-                "point": "Easy to switch stream."
+                "point": "The Commerce stream is the best stream after the 10th class in marketing, finance, accounting, banking, and management field."
             }
         ],
-        "compulsory": "Computer Science, Physics, Chemistry, and English",
-        "optional": "Biotechnology, Home Science, Psychology, Mathematics, Economics, and Physical Education."
+        "compulsory": "Economics, Business Studies, English and Accountancy",
+        "optional": "Information Practice, Mathematics,Entrepreneurship, Psychology,Computer Science, Fine Arts,Physical Education etc."
     },
     "Humanities": {
         "image": "/humanities.png",
         "points": [
             {
-                "point": "Computer Science students have multiple career options such as Btech"
+                "point": "A humanities major often prepares you to pursue roles that require an understanding of people, creativity, communication, planning."
             },
             {
-                "point": "Best education institutes to study such as IITs, NITS"
+                "point": "It is an academic discipline which deals with the study of the Human Condition, utilizing methodologies that are usually analytical, critical or speculative."
             },
             {
-                "point": "It helps to develop a creative mindset and problem-solving ability."
+                "point": "The courses in humanities help to improve the professional and analytical skills of students in writing, analysis, and reading skills."
             },
             {
-                "point": "It helps to become a master in the technical field."
-            },
-            {
-                "point": "It is easy to find a job with a very good salary for science students."
-            },
-            {
-                "point": "Easy to switch stream."
+                "point": "Humanities students have multiple career options such as LAW, Journalism, Public relations, Advertising etc."
             }
         ],
-        "compulsory": "Computer Science, Physics, Chemistry, and English",
-        "optional": "Biotechnology, Home Science, Psychology, Mathematics, Economics, and Physical Education."
+        "compulsory": "History, Geography, Sociology,Political Science and English",
+        "optional": "Philosophy,Psychology,Economics,Maths,Home Science,Informatics Practice,National Cadet Corps,Physical Education."
     },
     "Engineering": {
         "image": "/engineer.png",
