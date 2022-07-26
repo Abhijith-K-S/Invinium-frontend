@@ -1,14 +1,14 @@
 import Head from "next/head"
+import Image from "next/image"
 import React, { useEffect, useState } from "react"
 import { Bars } from "react-loading-icons"
 import styles from "../../styles/result.module.css"
-import Image from "next/image"
 import MarkDisplayComponent from "../../components/MarkDisplayComponent"
 import { fetchResultTen } from "../../service/fetchResult"
 import data from "../../result_info.json"
 
 export default function ResultTen() {
-    const [choice, setChoice] = useState("Computer Science")
+    const [choice, setChoice] = useState()
     const [result, setResult] = useState()
     const [subject, setSubject] = useState(0)
     const [answerMapTen, setAnswerMapTen] = useState(new Map())
@@ -52,15 +52,15 @@ export default function ResultTen() {
                 console.log(response)
             }
 
-            // let max = 0
-            // Object.entries(response).forEach((item) => {
-            //     if (item[1] > max) {
-            //         max = item[1]
-            //         if (item[0] == "cs") setChoice("Computer Science")
-            //         else if (item[0] == "biology") setChoice("Biology Science")
-            //         else setChoice(item[0].charAt(0).toUpperCase() + item[0].slice(1))
-            //     }
-            // })
+            let max = 0
+            Object.entries(response).forEach((item) => {
+                if (item[1] > max) {
+                    max = item[1]
+                    if (item[0] == "cs") setChoice("Computer Science")
+                    else if (item[0] == "biology") setChoice("Biology Science")
+                    else setChoice(item[0].charAt(0).toUpperCase() + item[0].slice(1))
+                }
+            })
         }
     }
 
@@ -85,7 +85,7 @@ export default function ResultTen() {
             {answerMapTen ? <MarkDisplayComponent answerMap={answerMapTen} /> : null}
 
             <div className={styles.bottom}>
-                {true? (
+                {choice? (
                     <div className={styles.lleft}>
                         <div className={styles.choice}>
                             <h3>Your potential career path is</h3>
@@ -108,12 +108,6 @@ export default function ResultTen() {
                                 </summary>
                                 <span className={styles.textDetails}>
                                     <ul>
-                                        {/* <li>Science students have multiple career options such as MBBS, BE / B.Tech, BDS, BAMS, MBA, CS, CA, ME, Commercial Pilot Course, etc.</li>
-                                    <li>Best education institutes to study such as IITs, NITS, and AIIMs.</li>
-                                    <li>It helps to develop a creative mindset and problem-solving ability.</li>
-                                    <li>It helps to become a master in the technical field.</li>
-                                    <li>It is easy to find a job with a very good salary for science students.</li>
-                                    <li>Easy to switch stream.</li> */}
                                         {data[choice].points.map((sample) => (
                                             <li key={sample.point}>{sample.point}</li>
                                         ))}

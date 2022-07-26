@@ -1,9 +1,11 @@
 import Head from "next/head"
+import Image from "next/image"
 import React, { useEffect, useState } from "react"
-import { BallTriangle } from "react-loading-icons"
+import { Bars } from "react-loading-icons"
 import styles from "../../styles/result.module.css"
 import MarkDisplayComponent from "../../components/MarkDisplayComponent"
 import { fetchResultTwelve } from "../../service/fetchResult"
+import data from "../../result_info.json"
 
 export default function ResultTwelve() {
     const [choice, setChoice] = useState()
@@ -95,24 +97,49 @@ export default function ResultTwelve() {
             {answerMapTwelve ? (
                 <MarkDisplayComponent answerMap={answerMapTwelve} stream={stream} />
             ) : null}
+
             <div className={styles.bottom}>
-                <div className={styles.lleft}>
-                    <h3>Your potential career path is</h3>
-                    <br />
-                    {choice ? (
-                        <p>{choice}</p>
-                    ) : (
-                        <BallTriangle
-                            className={styles.loadingIcon}
-                            stroke="#00000020"
-                            fill="#ffffff"
-                            fill-opacity={"#ffffff"}
-                            height="50"
-                            width="50"
-                        />
-                    )}
-                </div>
-                <div className={styles.rright}></div>
+                {choice ? (
+                    <div className={styles.lleft}>
+                        <div className={styles.choice}>
+                            <h3>Your potential career path is</h3>
+                            <p>{choice}</p>
+                            <div className={styles.imgHolder}>
+                                <Image
+                                    src={data[choice].image}
+                                    alt="image"
+                                    objectFit="cover"
+                                    width="10%"
+                                    height="10%"
+                                    layout="responsive"
+                                />
+                            </div>
+                        </div>
+                        <div className={styles.info}>
+                            <details>
+                                <summary className={styles.textSummary}>
+                                    Know more about the course.
+                                </summary>
+                                <span className={styles.textDetails}>
+                                    <ul>
+                                        {data[choice].points.map((sample) => (
+                                            <li key={sample.point}>{sample.point}</li>
+                                        ))}
+                                    </ul>
+                                </span>
+                            </details>
+                        </div>
+                    </div>
+                ) : (
+                    <Bars
+                        className={styles.loadingIcon}
+                        stroke="#00000020"
+                        fill="#ffffff"
+                        fill-opacity={"#ffffff"}
+                        height="50"
+                        width="50"
+                    />
+                )}
             </div>
         </>
     )
