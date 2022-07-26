@@ -1,5 +1,5 @@
-[
-    {
+{
+    "Biology Science": {
         "image": "/dna.png",
         "points": [
             {
@@ -23,5 +23,230 @@
         ],
         "compulsory": "Biology, Physics, Chemistry, and English",
         "optional": "Biotechnology, Home Science, Psychology, Mathematics, Economics, and Physical Education."
+    },
+    "Computer Science": {
+        "image": "/computer.png",
+        "points": [
+            {
+                "point": "Computer Science students have multiple career options such as Btech"
+            },
+            {
+                "point": "Best education institutes to study such as IITs, NITS"
+            },
+            {
+                "point": "It helps to develop a creative mindset and problem-solving ability."
+            },
+            {
+                "point": "It helps to become a master in the technical field."
+            },
+            {
+                "point": "It is easy to find a job with a very good salary for science students."
+            },
+            {
+                "point": "Easy to switch stream."
+            }
+        ],
+        "compulsory": "Computer Science, Physics, Chemistry, and English",
+        "optional": "Biotechnology, Home Science, Psychology, Mathematics, Economics, and Physical Education."
+    },
+    "Commerce": {
+        "image": "/commerce.png",
+        "points": [
+            {
+                "point": "Computer Science students have multiple career options such as Btech"
+            },
+            {
+                "point": "Best education institutes to study such as IITs, NITS"
+            },
+            {
+                "point": "It helps to develop a creative mindset and problem-solving ability."
+            },
+            {
+                "point": "It helps to become a master in the technical field."
+            },
+            {
+                "point": "It is easy to find a job with a very good salary for science students."
+            },
+            {
+                "point": "Easy to switch stream."
+            }
+        ],
+        "compulsory": "Computer Science, Physics, Chemistry, and English",
+        "optional": "Biotechnology, Home Science, Psychology, Mathematics, Economics, and Physical Education."
+    },
+    "Humanities": {
+        "image": "/humanities.png",
+        "points": [
+            {
+                "point": "Computer Science students have multiple career options such as Btech"
+            },
+            {
+                "point": "Best education institutes to study such as IITs, NITS"
+            },
+            {
+                "point": "It helps to develop a creative mindset and problem-solving ability."
+            },
+            {
+                "point": "It helps to become a master in the technical field."
+            },
+            {
+                "point": "It is easy to find a job with a very good salary for science students."
+            },
+            {
+                "point": "Easy to switch stream."
+            }
+        ],
+        "compulsory": "Computer Science, Physics, Chemistry, and English",
+        "optional": "Biotechnology, Home Science, Psychology, Mathematics, Economics, and Physical Education."
+    },
+    "Engineering": {
+        "image": "/engineer.png",
+        "points": [
+            {
+                "point": "Computer Science students have multiple career options such as Btech"
+            },
+            {
+                "point": "Best education institutes to study such as IITs, NITS"
+            },
+            {
+                "point": "It helps to develop a creative mindset and problem-solving ability."
+            },
+            {
+                "point": "It helps to become a master in the technical field."
+            },
+            {
+                "point": "It is easy to find a job with a very good salary for science students."
+            },
+            {
+                "point": "Easy to switch stream."
+            }
+        ],
+        "compulsory": "Computer Science, Physics, Chemistry, and English",
+        "optional": "Biotechnology, Home Science, Psychology, Mathematics, Economics, and Physical Education."
+    },
+    "Medicine": {
+        "image": "/dna.png",
+        "points": [
+            {
+                "point": "Computer Science students have multiple career options such as Btech"
+            },
+            {
+                "point": "Best education institutes to study such as IITs, NITS"
+            },
+            {
+                "point": "It helps to develop a creative mindset and problem-solving ability."
+            },
+            {
+                "point": "It helps to become a master in the technical field."
+            },
+            {
+                "point": "It is easy to find a job with a very good salary for science students."
+            },
+            {
+                "point": "Easy to switch stream."
+            }
+        ],
+        "compulsory": "Computer Science, Physics, Chemistry, and English",
+        "optional": "Biotechnology, Home Science, Psychology, Mathematics, Economics, and Physical Education."
+    },
+    "Pharmacy": {
+        "image": "/dna.png",
+        "points": [
+            {
+                "point": "Computer Science students have multiple career options such as Btech"
+            },
+            {
+                "point": "Best education institutes to study such as IITs, NITS"
+            },
+            {
+                "point": "It helps to develop a creative mindset and problem-solving ability."
+            },
+            {
+                "point": "It helps to become a master in the technical field."
+            },
+            {
+                "point": "It is easy to find a job with a very good salary for science students."
+            },
+            {
+                "point": "Easy to switch stream."
+            }
+        ],
+        "compulsory": "Computer Science, Physics, Chemistry, and English",
+        "optional": "Biotechnology, Home Science, Psychology, Mathematics, Economics, and Physical Education."
+    },
+    "Nursing": {
+        "image": "/nurse.png",
+        "points": [
+            {
+                "point": "Computer Science students have multiple career options such as Btech"
+            },
+            {
+                "point": "Best education institutes to study such as IITs, NITS"
+            },
+            {
+                "point": "It helps to develop a creative mindset and problem-solving ability."
+            },
+            {
+                "point": "It helps to become a master in the technical field."
+            },
+            {
+                "point": "It is easy to find a job with a very good salary for science students."
+            },
+            {
+                "point": "Easy to switch stream."
+            }
+        ],
+        "compulsory": "Computer Science, Physics, Chemistry, and English",
+        "optional": "Biotechnology, Home Science, Psychology, Mathematics, Economics, and Physical Education."
+    },
+    "Arts": {
+        "image": "/humanities.png",
+        "points": [
+            {
+                "point": "Computer Science students have multiple career options such as Btech"
+            },
+            {
+                "point": "Best education institutes to study such as IITs, NITS"
+            },
+            {
+                "point": "It helps to develop a creative mindset and problem-solving ability."
+            },
+            {
+                "point": "It helps to become a master in the technical field."
+            },
+            {
+                "point": "It is easy to find a job with a very good salary for science students."
+            },
+            {
+                "point": "Easy to switch stream."
+            }
+        ],
+        "compulsory": "Computer Science, Physics, Chemistry, and English",
+        "optional": "Biotechnology, Home Science, Psychology, Mathematics, Economics, and Physical Education."
+    },
+    "Management": {
+        "image": "/businessman.png",
+        "points": [
+            {
+                "point": "Computer Science students have multiple career options such as Btech"
+            },
+            {
+                "point": "Best education institutes to study such as IITs, NITS"
+            },
+            {
+                "point": "It helps to develop a creative mindset and problem-solving ability."
+            },
+            {
+                "point": "It helps to become a master in the technical field."
+            },
+            {
+                "point": "It is easy to find a job with a very good salary for science students."
+            },
+            {
+                "point": "Easy to switch stream."
+            }
+        ],
+        "compulsory": "Computer Science, Physics, Chemistry, and English",
+        "optional": "Biotechnology, Home Science, Psychology, Mathematics, Economics, and Physical Education."
     }
-]
+}

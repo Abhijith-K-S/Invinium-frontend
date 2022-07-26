@@ -1,6 +1,6 @@
 import Head from "next/head"
 import React, { useEffect, useState } from "react"
-import { BallTriangle } from "react-loading-icons"
+import { Bars } from "react-loading-icons"
 import styles from "../../styles/result.module.css"
 import Image from "next/image"
 import MarkDisplayComponent from "../../components/MarkDisplayComponent"
@@ -8,17 +8,10 @@ import { fetchResultTen } from "../../service/fetchResult"
 import data from "../../result_info.json"
 
 export default function ResultTen() {
-    const [choice, setChoice] = useState()
-    const [result, setResult] = useState("")
+    const [choice, setChoice] = useState("Management")
+    const [result, setResult] = useState()
     const [subject, setSubject] = useState(0)
     const [answerMapTen, setAnswerMapTen] = useState(new Map())
-
-    var subjects = {
-        biology: 0,
-        cs: 1,
-        commerce: 2,
-        humanities: 3
-    }
 
     const getResult = async () => {
         if (typeof window !== "undefined") {
@@ -59,15 +52,15 @@ export default function ResultTen() {
                 console.log(response)
             }
 
-            let max = 0
-            Object.entries(response).forEach((item) => {
-                if (item[1] > max) {
-                    max = item[1]
-                    if (item[0] == "cs") setChoice("Computer Science")
-                    else if (item[0] == "biology") setChoice("Biology Science")
-                    else setChoice(item[0].charAt(0).toUpperCase() + item[0].slice(1))
-                }
-            })
+            // let max = 0
+            // Object.entries(response).forEach((item) => {
+            //     if (item[1] > max) {
+            //         max = item[1]
+            //         if (item[0] == "cs") setChoice("Computer Science")
+            //         else if (item[0] == "biology") setChoice("Biology Science")
+            //         else setChoice(item[0].charAt(0).toUpperCase() + item[0].slice(1))
+            //     }
+            // })
         }
     }
 
@@ -92,14 +85,14 @@ export default function ResultTen() {
             {answerMapTen ? <MarkDisplayComponent answerMap={answerMapTen} /> : null}
 
             <div className={styles.bottom}>
-                {true ? (
+                {true? (
                     <div className={styles.lleft}>
                         <div className={styles.choice}>
                             <h3>Your potential career path is</h3>
                             <p>{choice}</p>
                             <div className={styles.imgHolder}>
                                 <Image
-                                    src={data[subject].image}
+                                    src={data[choice].image}
                                     alt="image"
                                     objectFit="cover"
                                     width="10%"
@@ -121,20 +114,20 @@ export default function ResultTen() {
                                     <li>It helps to become a master in the technical field.</li>
                                     <li>It is easy to find a job with a very good salary for science students.</li>
                                     <li>Easy to switch stream.</li> */}
-                                        {data[subject].points.map((sample) => (
+                                        {data[choice].points.map((sample) => (
                                             <li key={sample.point}>{sample.point}</li>
                                         ))}
                                         <h4>Compulsory Subjects</h4>
-                                        <li>{data[subject].compulsory}</li>
+                                        <li>{data[choice].compulsory}</li>
                                         <h4>Optional Subjects</h4>
-                                        <li>{data[subject].optional}</li>
+                                        <li>{data[choice].optional}</li>
                                     </ul>
                                 </span>
                             </details>
                         </div>
                     </div>
                 ) : (
-                    <BallTriangle
+                    <Bars
                         className={styles.loadingIcon}
                         stroke="#00000020"
                         fill="#ffffff"
