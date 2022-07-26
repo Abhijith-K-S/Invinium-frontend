@@ -88,22 +88,22 @@
         "image": "/engineer.png",
         "points": [
             {
-                "point": "Computer Science students have multiple career options such as Btech"
+                "point": "In India, there are over 4200 colleges, including bother government and private colleges that offer B.Tech or B.E degrees in subjects like Computer Science, Mechanical, Electronics, and Tele-Communication, Metallurgy, AI & Machine Learning, Electrical, Civil, Information Technology, etc"
             },
             {
-                "point": "Best education institutes to study such as IITs, NITS"
+                "point": "Best education institutes to study such as IITs, NITs, IIITs, BITS, etc."
             },
             {
                 "point": "It helps to develop a creative mindset and problem-solving ability."
             },
             {
-                "point": "It helps to become a master in the technical field."
+                "point": "The course deals with the technical aspects of Science."
             },
             {
-                "point": "It is easy to find a job with a very good salary for science students."
+                "point": "It is easy to find a job with a very good salary for engineering graduates."
             },
             {
-                "point": "Easy to switch stream."
+                "point": "The course applies the principles of engineering and technology to modify structures and thereby enhance their quality."
             }
         ],
         "compulsory": "Computer Science, Physics, Chemistry, and English",
