@@ -8,7 +8,7 @@ import { fetchResultTen } from "../../service/fetchResult"
 import data from "../../result_info.json"
 
 export default function ResultTen() {
-    const [choice, setChoice] = useState("Management")
+    const [choice, setChoice] = useState("Computer Science")
     const [result, setResult] = useState()
     const [subject, setSubject] = useState(0)
     const [answerMapTen, setAnswerMapTen] = useState(new Map())
