@@ -106,132 +106,108 @@
                 "point": "The course applies the principles of engineering and technology to modify structures and thereby enhance their quality."
             }
         ],
-        "compulsory": "Computer Science, Physics, Chemistry, and English",
-        "optional": "Biotechnology, Home Science, Psychology, Mathematics, Economics, and Physical Education."
+        "compulsory": "",
+        "optional": ""
     },
     "Medicine": {
         "image": "/dna.png",
         "points": [
             {
-                "point": "Computer Science students have multiple career options such as Btech"
+                "point": "Medicine students have multiple career options such as MBBS, MD, BAMS, BHMS."
             },
             {
-                "point": "Best education institutes to study such as IITs, NITS"
+                "point": "Best education institutes to study such as AIIMS, JIPMER."
             },
             {
-                "point": "It helps to develop a creative mindset and problem-solving ability."
+                "point": "Diverse career opportunities."
             },
             {
-                "point": "It helps to become a master in the technical field."
+                "point": "Careers in healthcare offer high salary and job security."
             },
             {
-                "point": "It is easy to find a job with a very good salary for science students."
-            },
-            {
-                "point": "Easy to switch stream."
+                "point": "Abundant opportunities to get involved in research and teaching."
             }
         ],
-        "compulsory": "Computer Science, Physics, Chemistry, and English",
-        "optional": "Biotechnology, Home Science, Psychology, Mathematics, Economics, and Physical Education."
+        "compulsory": "",
+        "optional": ""
     },
     "Pharmacy": {
         "image": "/dna.png",
         "points": [
             {
-                "point": "Computer Science students have multiple career options such as Btech"
+                "point": "Pharmacy students can pursue courses like B.Pharm and D.Pharm"
             },
             {
-                "point": "Best education institutes to study such as IITs, NITS"
+                "point": "Best institutes include Manipal College of Pharmaceutical Sciences,University Institute Of Pharmaceutical Sciences-Chandigarh"
             },
             {
-                "point": "It helps to develop a creative mindset and problem-solving ability."
+                "point": "Its a career with good growth potential."
             },
             {
-                "point": "It helps to become a master in the technical field."
+                "point": "There are science research and development opportunities."
             },
             {
-                "point": "It is easy to find a job with a very good salary for science students."
+                "point": "There is job stablity and flexible career options."
             },
             {
-                "point": "Easy to switch stream."
+                "point": "Pharmacy graduates have demand in a variety of industries."
             }
         ],
-        "compulsory": "Computer Science, Physics, Chemistry, and English",
-        "optional": "Biotechnology, Home Science, Psychology, Mathematics, Economics, and Physical Education."
+        "compulsory": "",
+        "optional": ""
     },
     "Nursing": {
         "image": "/nurse.png",
         "points": [
             {
-                "point": "Computer Science students have multiple career options such as Btech"
+                "point": "Nursing students can pursue courses like B.Sc and M.Sc"
             },
             {
-                "point": "Best education institutes to study such as IITs, NITS"
+                "point": "Best education institutes to study such as AIHS Bangalore, AIIMS Delhi"
             },
             {
-                "point": "It helps to develop a creative mindset and problem-solving ability."
+                "point": "One of the respected job responsibilities in the healthcare industry."
             },
             {
-                "point": "It helps to become a master in the technical field."
+                "point": "Unlimited job opportunities."
             },
             {
-                "point": "It is easy to find a job with a very good salary for science students."
-            },
-            {
-                "point": "Easy to switch stream."
+                "point": "Great service towards humanity."
             }
         ],
-        "compulsory": "Computer Science, Physics, Chemistry, and English",
-        "optional": "Biotechnology, Home Science, Psychology, Mathematics, Economics, and Physical Education."
+        "compulsory": "",
+        "optional": ""
     },
     "Arts": {
         "image": "/humanities.png",
         "points": [
             {
-                "point": "Computer Science students have multiple career options such as Btech"
+                "point": "Arts students can pursue courses like BA, MA, BFD, BJMC and so on."
             },
             {
-                "point": "Best education institutes to study such as IITs, NITS"
-            },
-            {
-                "point": "It helps to develop a creative mindset and problem-solving ability."
-            },
-            {
-                "point": "It helps to become a master in the technical field."
-            },
-            {
-                "point": "It is easy to find a job with a very good salary for science students."
-            },
-            {
-                "point": "Easy to switch stream."
+                "point": "Career opportunities in a variety of industries."
             }
         ],
-        "compulsory": "Computer Science, Physics, Chemistry, and English",
-        "optional": "Biotechnology, Home Science, Psychology, Mathematics, Economics, and Physical Education."
+        "compulsory": "",
+        "optional": ""
     },
     "Management": {
         "image": "/businessman.png",
         "points": [
             {
-                "point": "Computer Science students have multiple career options such as Btech"
+                "point": "Management students can pursue courses like MBA, BBA, PGDM and so on."
             },
             {
-                "point": "Best education institutes to study such as IITs, NITS"
+                "point": "Plethora of career oppotunities."
             },
             {
-                "point": "It helps to develop a creative mindset and problem-solving ability."
+                "point": "Abundant opportunity for entrepreneurship"
             },
             {
-                "point": "It helps to become a master in the technical field."
-            },
-            {
-                "point": "It is easy to find a job with a very good salary for science students."
-            },
-            {
-                "point": "Easy to switch stream."
+                "point": "Personal and professional development."
             }
         ],
-        "compulsory": "Computer Science, Physics, Chemistry, and English",
-        "optional": "Biotechnology, Home Science, Psychology, Mathematics, Economics, and Physical Education."
+        "compulsory": "",
+        "optional": ""
     }
 }
