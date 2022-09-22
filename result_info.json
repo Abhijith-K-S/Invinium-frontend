@@ -1,0 +1,213 @@
+{
+    "Biology Science": {
+        "image": "/dna.png",
+        "points": [
+            {
+                "point": "Biology Science students have multiple career options such as MBBS, BE / B.Tech, BDS, BAMS, MBA, CS, CA, ME, Commercial Pilot Course, etc."
+            },
+            {
+                "point": "Best education institutes to study such as IITs, NITS, and AIIMs."
+            },
+            {
+                "point": "It helps to develop a creative mindset and problem-solving ability."
+            },
+            {
+                "point": "It helps to become a master in the technical field."
+            },
+            {
+                "point": "It is easy to find a job with a very good salary for science students."
+            },
+            {
+                "point": "Easy to switch stream."
+            }
+        ],
+        "compulsory": "Biology, Physics, Chemistry, and English",
+        "optional": "Biotechnology, Home Science, Psychology, Mathematics, Economics, and Physical Education."
+    },
+    "Computer Science": {
+        "image": "/computer.png",
+        "points": [
+            {
+                "point": "A computer science stream will prepare you for in-demand jobs today and it provides one of the highest salaried jobs"
+            },
+            {
+                "point": "Best education institutes to study such as IITs, NITS."
+            },
+            {
+                "point": "Computer scientists or computer science researchers, Data scientists, Software engineers, Systems analysts,are some of the jobs that can be availed by a computer science degree. ."
+            },
+            {
+                "point": "It helps to become a master in the technical field."
+            },
+            {
+                "point": "Computer technologies are integral to modern life and are likely in high demand across many different industries."
+            }
+        ],
+        "compulsory": "Computer Science, Physics, Chemistry,Mathematics and English",
+        "optional": "Psychology, Economics, and Physical Education."
+    },
+    "Commerce": {
+        "image": "/commerce.png",
+        "points": [
+            {
+                "point": "Commerce sector is expanding daily with new work prospects flooding the market and employment rates rising globally."
+            },
+            {
+                "point": "Commerce students have multiple career options such as MBA, MCom, MCA, CS, CA, CMA, etc."
+            },
+            {
+                "point": "Commerce field offers various well-paid career options for students and has seen an increase in demands for various job positions."
+            },
+            {
+                "point": "The Commerce stream is the best stream after the 10th class in marketing, finance, accounting, banking, and management field."
+            }
+        ],
+        "compulsory": "Economics, Business Studies, English and Accountancy",
+        "optional": "Information Practice, Mathematics,Entrepreneurship, Psychology,Computer Science, Fine Arts,Physical Education etc."
+    },
+    "Humanities": {
+        "image": "/humanities.png",
+        "points": [
+            {
+                "point": "A humanities major often prepares you to pursue roles that require an understanding of people, creativity, communication, planning."
+            },
+            {
+                "point": "It is an academic discipline which deals with the study of the Human Condition, utilizing methodologies that are usually analytical, critical or speculative."
+            },
+            {
+                "point": "The courses in humanities help to improve the professional and analytical skills of students in writing, analysis, and reading skills."
+            },
+            {
+                "point": "Humanities students have multiple career options such as LAW, Journalism, Public relations, Advertising etc."
+            }
+        ],
+        "compulsory": "History, Geography, Sociology,Political Science and English",
+        "optional": "Philosophy,Psychology,Economics,Maths,Home Science,Physical Education."
+    },
+    "Engineering": {
+        "image": "/engineer.png",
+        "points": [
+            {
+                "point": "In India, there are over 4200 colleges, including bother government and private colleges that offer B.Tech or B.E degrees in subjects like Computer Science, Mechanical, Electronics, and Tele-Communication, Metallurgy, AI & Machine Learning, Electrical, Civil, Information Technology, etc"
+            },
+            {
+                "point": "Best education institutes to study such as IITs, NITs, IIITs, BITS, etc."
+            },
+            {
+                "point": "It helps to develop a creative mindset and problem-solving ability."
+            },
+            {
+                "point": "The course deals with the technical aspects of Science."
+            },
+            {
+                "point": "It is easy to find a job with a very good salary for engineering graduates."
+            },
+            {
+                "point": "The course applies the principles of engineering and technology to modify structures and thereby enhance their quality."
+            }
+        ],
+        "compulsory": "",
+        "optional": ""
+    },
+    "Medicine": {
+        "image": "/dna.png",
+        "points": [
+            {
+                "point": "Medicine students have multiple career options such as MBBS, MD, BAMS, BHMS."
+            },
+            {
+                "point": "Best education institutes to study such as AIIMS, JIPMER."
+            },
+            {
+                "point": "Diverse career opportunities."
+            },
+            {
+                "point": "Careers in healthcare offer high salary and job security."
+            },
+            {
+                "point": "Abundant opportunities to get involved in research and teaching."
+            }
+        ],
+        "compulsory": "",
+        "optional": ""
+    },
+    "Pharmacy": {
+        "image": "/dna.png",
+        "points": [
+            {
+                "point": "Pharmacy students can pursue courses like B.Pharm and D.Pharm"
+            },
+            {
+                "point": "Best institutes include Manipal College of Pharmaceutical Sciences,University Institute Of Pharmaceutical Sciences-Chandigarh"
+            },
+            {
+                "point": "Its a career with good growth potential."
+            },
+            {
+                "point": "There are science research and development opportunities."
+            },
+            {
+                "point": "There is job stablity and flexible career options."
+            },
+            {
+                "point": "Pharmacy graduates have demand in a variety of industries."
+            }
+        ],
+        "compulsory": "",
+        "optional": ""
+    },
+    "Nursing": {
+        "image": "/nurse.png",
+        "points": [
+            {
+                "point": "Nursing students can pursue courses like B.Sc and M.Sc"
+            },
+            {
+                "point": "Best education institutes to study such as AIHS Bangalore, AIIMS Delhi"
+            },
+            {
+                "point": "One of the respected job responsibilities in the healthcare industry."
+            },
+            {
+                "point": "Unlimited job opportunities."
+            },
+            {
+                "point": "Great service towards humanity."
+            }
+        ],
+        "compulsory": "",
+        "optional": ""
+    },
+    "Arts": {
+        "image": "/humanities.png",
+        "points": [
+            {
+                "point": "Arts students can pursue courses like BA, MA, BFD, BJMC and so on."
+            },
+            {
+                "point": "Career opportunities in a variety of industries."
+            }
+        ],
+        "compulsory": "",
+        "optional": ""
+    },
+    "Management": {
+        "image": "/businessman.png",
+        "points": [
+            {
+                "point": "Management students can pursue courses like MBA, BBA, PGDM and so on."
+            },
+            {
+                "point": "Plethora of career oppotunities."
+            },
+            {
+                "point": "Abundant opportunity for entrepreneurship"
+            },
+            {
+                "point": "Personal and professional development."
+            }
+        ],
+        "compulsory": "",
+        "optional": ""
+    }
+}
