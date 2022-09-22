@@ -107,7 +107,7 @@ export default function AptitudeTen() {
                         expiryTimestamp={time}
                         expiryAction={() => {
                             alert("Time expired")
-                            router.push("/result")
+                            router.push("/result/ten")
                         }}
                     />
                 </div>

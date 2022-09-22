@@ -115,7 +115,7 @@ export default function AptitudeTwelve() {
                         expiryTimestamp={time}
                         expiryAction={() => {
                             alert("Time expired")
-                            router.push("/result")
+                            router.push("/result/twelve")
                         }}
                     />
                 </div>
