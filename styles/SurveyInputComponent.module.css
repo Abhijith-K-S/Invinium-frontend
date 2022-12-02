@@ -34,14 +34,21 @@
 }
 
 .choiceLayout {
-    display: flex;
-    flex: 1;
+    display: grid;
+    gap: 10px 10px;
+    grid-template-columns: 1fr 1fr ;
+    /* flex: 1;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-evenly; */
 }
 
 .radio {
     -ms-transform: scale(1.5);
     -webkit-transform: scale(1.5); 
     transform: scale(1.5);
+    cursor:pointer;
+}
+.question{
+    padding-left: 5px;
+    cursor: auto;
 }

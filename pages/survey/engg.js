@@ -4,56 +4,80 @@ import React, { useState } from "react"
 import styles from "../../styles/survey.module.css"
 import SurveyInputSliderComponent from "../../components/SurveyInputComponent/SurveyInputSliderComponent"
 import SurveyInputChoiceComponent from "../../components/SurveyInputComponent/SurveyInputChoiceComponent"
+import SurveyInputNumComponent from "../../components/SurveyInputComponent/SurveyInputNumComponent"
 
 export default function SurveyEngg() {
     const router = useRouter()
 
     const [gender, setGender] = useState(0)
-    const [boardEngg, setBoardEngg] = useState(0)
+    const [boardTwelve, setBoardTwelve] = useState(0)
     const [stream, setStream] = useState(0)
-    const [likedCareer, setLikedCareer] = useState(0)
+    const [likedTopicMath, setLikedTopicMath] = useState(0)
+    const [likedTopicPhy, setLikedTopicPhy] = useState(0)
     const [tution, setTution] = useState(0)
-    const [entrance, setEntrance] = useState(0)
+    const [exhib, setExhib] = useState(0)
+    const [fig, setFig] = useState(0)
+    const [likedBranch, setLikedBranch] = useState(0)
+    const [softJob, setSoftJob] = useState(0)
+    const [IES, setIES] = useState(0)
+    const [work, setWork] = useState(0)
+    const [likedTopic, setLikedTopic] = useState(0)
+    const [PSU, setPSU] = useState(0)
+    const [reason, setReason] = useState(0)
     const [learningMethod, setlearningMethod] = useState(0)
     const [socialPreference, setSocialPreference] = useState(0)
     const [approach, setApproach] = useState(0)
-    const [jobPreference, setJobPreference] = useState(0)
-    const [research, setResearch] = useState(0)
+    const [progknowledge, setProgknowledge] = useState(0)
     const [studyHours, setStudyHours] = useState(0)
     const [extracurricular, setExtracurricular] = useState(0)
-
+    const [bookRefer, setBookRefer] = useState(0)
+    
     const evaluateSurvey = () => {
         if (
             gender == "" ||
-            boardEngg == "" ||
+            boardTwelve == "" ||
             stream == "" ||
-            likedCareer == "" ||
+            likedTopicMath == "" ||
+            likedTopicPhy == "" ||
             tution == "" ||
-            entrance == "" ||
+            exhib == "" ||
+            fig == "" ||
+            likedBranch==""||
+            softJob==""||
+            IES==""||
+            work==""||
+            likedTopic == "" ||
+            PSU==""||
+            reason==""||
             learningMethod == "" ||
             socialPreference == "" ||
-            approach == "" ||
-            jobPreference == "" ||
-            research == "" ||
-            studyHours == "" ||
-            extracurricular == ""
+            approach == ""
         ) {
             alert("Please fill all entries")
         } else {
             const surveyMapEngg = new Map([
                 ["gender", parseInt(gender)],
-                ["boardEngg", parseInt(boardEngg)],
+                ["boardTwelve", parseInt(boardTwelve)],
                 ["stream", parseInt(stream)],
-                ["likedCareer", parseInt(likedCareer)],
+                ["likedTopicMath", parseInt(likedTopicMath)],
+                ["likedTopicPhy", parseInt(likedTopicPhy)],
                 ["tution", parseInt(tution)],
-                ["entrance", parseInt(entrance)],
+                ["exhib", parseInt(exhib)],
+                ["fig", parseInt(fig)],
+                ["likedBranch", parseInt(likedBranch)],
+                ["softJob", parseInt(softJob)],
+                ["IES", parseInt(IES)],
+                ["work", parseInt(work)],
+                ["likedTopic", parseInt(likedTopic)],
+                ["PSU", parseInt(PSU)],
                 ["learningMethod", parseInt(learningMethod)],
                 ["socialPreference", parseInt(socialPreference)],
                 ["approach", parseInt(approach)],
-                ["jobPreference", parseInt(jobPreference)],
-                ["research", parseInt(research)],
+                ["reason", parseInt(reason)],
+                ["progknowledge", parseInt(progknowledge)],
                 ["studyHours", parseInt(studyHours)],
-                ["extracurricular", parseInt(extracurricular)]
+                ["extracurricular", parseInt(extracurricular)],
+                ["bookRefer", parseInt(setBookRefer)]
             ])
 
             if (typeof window !== "undefined") {
@@ -90,44 +114,111 @@ export default function SurveyEngg() {
                 options={{ Male: 0, Female: 1, Other: 1 }}
                 getData={setGender}
             />
-            <SurveyInputChoiceComponent
+            {/* <SurveyInputChoiceComponent
                 question={"University"}
                 options={{ "KTU": 0, IIT: 1, NIT: 2 }}
-                getData={setBoardEngg}
-            />
+                getData={setBoardTwelve}
+            /> */}
             <SurveyInputChoiceComponent
-                question={"What brach are you studying in"}
-                options={{ "Computer Science": 1, Biology: 0, Commerce: 2 }}
+                question={"Course studied in class 12"}
+                options={{ "Computer Science": 1, "Biology": 0, "Commerce": 2 }}
                 getData={setStream}
             />
             <SurveyInputChoiceComponent
-                question={"Do you attend extra classes after college"}
-                options={{ Yes: 1, No: 0 }}
+                question={"Favorite subject from class 12"}
+                options={{ "Mathematics": 1, "Physics": 2, "Chemistry": 3, "Computer Science": 0 }}
                 getData={setTution}
             />
             <SurveyInputChoiceComponent
-                question={
-                    "Do you attend any coaching for entrance examinations? If yes choose the appropriate option:"
-                }
-                options={{ Medicine: 1, Engineering: 2, Law: 3, None: 0 }}
-                getData={setEntrance}
+                question={"Favorite topic from class 12 Mathematics"}
+                options={{
+                    "Relations and Functions": 0,
+                    "Algebra": 1,
+                    "Calculus": 2,
+                    "Vectors and Geometry": 3,
+                    "Statistics  and Linear Programming": 4,
+                    "Probability": 5
+                }}
+                getData={setLikedTopicMath}
             />
             <SurveyInputChoiceComponent
-                question={"What career do you wish to pursue after class 12?"}
+                question={"Favorite topic from class 12 Physics"}
                 options={{
-                    Engineering: 0,
-                    Medicine: 1,
-                    Pharmacy: 2,
-                    Commerce: 3,
-                    Arts: 4,
-                    Nursing: 5,
-                    Management: 6
+                    "Mechanics": 0,
+                    "Electrostatics and Magnetism": 1,
+                    "Optics and Modern Physics": 2,
+                    "Heat and Thermodynamic": 3,
+                    "Current Electricity and Electromagnetic Induction": 4,
+                    "Semiconductors and Communication systems": 5
                 }}
-                getData={setLikedCareer}
+                getData={setLikedTopicPhy}
+            />
+            
+            <SurveyInputChoiceComponent
+                question={
+                    "Have you participated in any science exhibitions?:"
+                }
+                options={{ "Yes":1, "No": 0 }}
+                getData={setExhib}
+            />
+            <SurveyInputChoiceComponent
+                question={
+                    "Do you like to draw figures?:"
+                }
+                options={{ "Yes":1, "No": 0 }}
+                getData={setFig}
+            />
+            <SurveyInputChoiceComponent
+                question={"Which engineering branch do you want to get?"}
+                options={{
+                    "Computer Science Engineering or Related branches": 0,
+                    "Mechanical Engineering or Related branches": 1,
+                    "Electronics or Related branches": 2,
+                    "Electrical Engineering": 3,
+                    "Civil Engineering": 4,
+                    "Chemical Engineering": 5
+                }}
+                getData={setLikedBranch}
+            />
+            {/* <SurveyInputNumComponent
+                question={"What is your KEAM rank ?:"}
+                getData={setRank}
+            /> */}
+            <SurveyInputChoiceComponent
+                question={"Do you like to work in software related jobs"}
+                options={{ Yes: 1, No: 0 }}
+                getData={setSoftJob}
+            />
+            <SurveyInputChoiceComponent
+                question={"Do you plan to write Indian Engineering Service (IES ) Examination?"}
+                options={{ Yes: 1, No: 0 }}
+                getData={setIES}
+            />
+            <SurveyInputChoiceComponent
+                question={"Preferred mode of work?"}
+                options={{ "Outdoor work": 1, "Indoor work": 0 }}
+                getData={setWork}
+            />
+            {/* <SurveyInputChoiceComponent
+                question={"Topics you wish to study?"}
+                options={{
+                    "Power System and Electrical Machines": 0,
+                    "Network ,Circuits and Communications": 1,
+                    "Programming , Data Structures and Algorithms , System Software, Theory of Computation": 2,
+                    "Structural, Environmental,Transportation Engineering": 3,
+                    "Applied Mechanics ,Fluid Mechanics and Thermal Sciences": 4,
+                    "Thermodynamics,Heat Transfer, Mass Transfer,Chemical Reaction Engineering": 5
+                }}
+                getData={setLikedTopic}
+            /> */}
+            <SurveyInputChoiceComponent
+                question={"Do you like to work in a Public Sector Unit (PSU) ??"}
+                options={{ Yes: 1, No: 0 }}
+                getData={setPSU}
             />
             <SurveyInputChoiceComponent
                 question={"Which learning method do you prefer"}
-                options={{ Practical: 0, Theoretical: 1 }}
+                options={{ "Practical": 0, "Theoretical": 1 }}
                 getData={setlearningMethod}
             />
             <SurveyInputChoiceComponent
@@ -136,25 +227,42 @@ export default function SurveyEngg() {
                 getData={setSocialPreference}
             />
             <SurveyInputChoiceComponent
-                question={
-                    "How would you approach  a problem in front of you in a real world scenario?"
+                question={"Which of the following mentions your reason for choosing B.Tech?"}
+                options={{
+                    "Quick Job": 0,
+                    "Academic Research": 1,
+                    "Government Job": 2,
+                    "Higher Studies": 3,
+                    "Parents or Friends opinion": 4
+                }}
+                getData={setReason}
+            />
+            <SurveyInputChoiceComponent
+                question={"How would you approach a problem in front of you in a real world scenario?"
                 }
-                options={{ Intiuitively: 0, Conceptually: 1, Computationally: 2 }}
+                options={{ "Intiuitively": 0, "Conceptually": 1, "Computationally": 2 }}
                 getData={setApproach}
             />
             <SurveyInputChoiceComponent
-                question={"Your preference of jobs"}
-                options={{ Professional: 0, "Non-professional": 1 }}
-                getData={setJobPreference}
-            />
-            <SurveyInputChoiceComponent
-                question={"Do you prefer a course involving intensive research"}
-                options={{ Yes: 1, No: 0 }}
-                getData={setResearch}
+                question={"How often do you revise academic topics"}
+                options={{ "Regularly": 0, "During exam times": 1 }}
+                getData={setSocialPreference}
             />
             <SurveyInputSliderComponent
-                question={"How much hours do you spend on study after school?"}
-                max={10}
+                question={"How often do you refer reference books?(0 being never and 5 being frequently)"}
+                max={5}
+                min={0}
+                getData={setBookRefer}
+            />
+            <SurveyInputSliderComponent
+                question={"Rate your knowledge of programming at the school level? (0 being the no experience and 5 being high experience)?"}
+                max={5}
+                min={0}
+                getData={setProgknowledge}
+            />
+            <SurveyInputSliderComponent
+                question={"Average study time per day spent during your class 12 studies (in hours):?"}
+                max={12}
                 min={0}
                 getData={setStudyHours}
             />
