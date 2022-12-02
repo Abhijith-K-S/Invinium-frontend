@@ -9,8 +9,8 @@ export const fetchResultTen = async (request) => {
         })
 
         if (response.ok) {
-            let questionData = await response.json()
-            return questionData
+            let resultData = await response.json()
+            return resultData
         } else {
             alert("Error fetching result")
         }
@@ -28,12 +28,31 @@ export const fetchResultTwelve = async (request) => {
         })
 
         if (response.ok) {
-            let questionData = await response.json()
-            return questionData
+            let resultData = await response.json()
+            return resultData
         } else {
             alert("Error fetching result")
         }
     } catch (error) {
+        console.log(error)
+    }
+}
+
+export const fetchResultBtech = async(request) => {
+    try{
+        const response = await fetch(BASE_URL+"/api/result/btech"+request,{
+            mode:"cors",
+            method:"GET",
+            headers:requestHeader
+        })
+
+        if(response.ok){
+            let resultData = await response.json()
+            return resultData
+        }else{
+            alert("Error fetching result")
+        }
+    }catch(error){
         console.log(error)
     }
 }
