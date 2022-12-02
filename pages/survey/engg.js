@@ -10,18 +10,18 @@ export default function SurveyEngg() {
     const router = useRouter()
 
     const [gender, setGender] = useState(0)
-    const [boardTwelve, setBoardTwelve] = useState(0)
+    // const [boardTwelve, setBoardTwelve] = useState(0)
     const [stream, setStream] = useState(0)
     const [likedTopicMath, setLikedTopicMath] = useState(0)
     const [likedTopicPhy, setLikedTopicPhy] = useState(0)
     const [tution, setTution] = useState(0)
     const [exhib, setExhib] = useState(0)
     const [fig, setFig] = useState(0)
-    const [likedBranch, setLikedBranch] = useState(0)
+    // const [likedBranch, /] = useState(0)
     const [softJob, setSoftJob] = useState(0)
     const [IES, setIES] = useState(0)
     const [work, setWork] = useState(0)
-    const [likedTopic, setLikedTopic] = useState(0)
+    // const [likedTopic, setLikedTopic] = useState(0)
     const [PSU, setPSU] = useState(0)
     const [reason, setReason] = useState(0)
     const [learningMethod, setlearningMethod] = useState(0)
@@ -35,18 +35,15 @@ export default function SurveyEngg() {
     const evaluateSurvey = () => {
         if (
             gender == "" ||
-            boardTwelve == "" ||
             stream == "" ||
             likedTopicMath == "" ||
             likedTopicPhy == "" ||
             tution == "" ||
             exhib == "" ||
             fig == "" ||
-            likedBranch==""||
             softJob==""||
             IES==""||
             work==""||
-            likedTopic == "" ||
             PSU==""||
             reason==""||
             learningMethod == "" ||
@@ -57,18 +54,15 @@ export default function SurveyEngg() {
         } else {
             const surveyMapEngg = new Map([
                 ["gender", parseInt(gender)],
-                ["boardTwelve", parseInt(boardTwelve)],
                 ["stream", parseInt(stream)],
                 ["likedTopicMath", parseInt(likedTopicMath)],
                 ["likedTopicPhy", parseInt(likedTopicPhy)],
                 ["tution", parseInt(tution)],
                 ["exhib", parseInt(exhib)],
                 ["fig", parseInt(fig)],
-                ["likedBranch", parseInt(likedBranch)],
                 ["softJob", parseInt(softJob)],
                 ["IES", parseInt(IES)],
                 ["work", parseInt(work)],
-                ["likedTopic", parseInt(likedTopic)],
                 ["PSU", parseInt(PSU)],
                 ["learningMethod", parseInt(learningMethod)],
                 ["socialPreference", parseInt(socialPreference)],
@@ -77,7 +71,7 @@ export default function SurveyEngg() {
                 ["progknowledge", parseInt(progknowledge)],
                 ["studyHours", parseInt(studyHours)],
                 ["extracurricular", parseInt(extracurricular)],
-                ["bookRefer", parseInt(setBookRefer)]
+                ["bookRefer", parseInt(bookRefer)]
             ])
 
             if (typeof window !== "undefined") {
@@ -168,7 +162,7 @@ export default function SurveyEngg() {
                 options={{ "Yes":1, "No": 0 }}
                 getData={setFig}
             />
-            <SurveyInputChoiceComponent
+            {/* <SurveyInputChoiceComponent
                 question={"Which engineering branch do you want to get?"}
                 options={{
                     "Computer Science Engineering or Related branches": 0,
@@ -179,7 +173,7 @@ export default function SurveyEngg() {
                     "Chemical Engineering": 5
                 }}
                 getData={setLikedBranch}
-            />
+            /> */}
             {/* <SurveyInputNumComponent
                 question={"What is your KEAM rank ?:"}
                 getData={setRank}
