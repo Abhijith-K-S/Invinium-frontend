@@ -37,10 +37,10 @@ export const fetchQuestionTwelve = async (request) => {
         console.log(error)
     }
 }
-
-export const fetchQuestionBtech = async (request) => {
+export const fetchQuestionEngg = async (request) => {
+    console.log(request)
     try {
-        const response = await fetch(BASE_URL + "/api/question/btech/" + request, {
+        const response = await fetch(BASE_URL + "/api/question/btech", {
             mode: "cors",
             method: "GET",
             headers: requestHeader

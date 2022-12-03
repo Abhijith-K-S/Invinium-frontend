@@ -38,21 +38,21 @@ export const fetchResultTwelve = async (request) => {
     }
 }
 
-export const fetchResultBtech = async(request) => {
-    try{
-        const response = await fetch(BASE_URL+"/api/result/btech"+request,{
-            mode:"cors",
-            method:"GET",
-            headers:requestHeader
+export const fetchResultEngg = async (request) => {
+    try {
+        const response = await fetch(BASE_URL + "/api/result/btech/" + request, {
+            mode: "cors",
+            method: "GET",
+            headers: requestHeader
         })
 
-        if(response.ok){
+        if (response.ok) {
             let resultData = await response.json()
             return resultData
-        }else{
+        } else {
             alert("Error fetching result")
         }
-    }catch(error){
+    } catch (error) {
         console.log(error)
     }
 }

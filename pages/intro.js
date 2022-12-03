@@ -72,16 +72,22 @@ export default function Intro() {
                             onClick={(event) => setChoice(event.target.value)}
                         />
                         <label>12th</label>
+                        <input
+                            type="radio"
+                            id="option3"
+                            name="choice"
+                            value={"engg"}
+                            onClick={(event) => setChoice(event.target.value)}
+                        />
+                        <label>B.Tech</label>
                         <br />
                         <br />
                     </div>
                     <button
                         className={styles.buttonStyle}
                         onClick={() => {
-                            if(choice=="")
-                                alert("Choose an option")
-                            else
-                                router.push("/survey/"+choice)
+                            if (choice == "") alert("Choose an option")
+                            else router.push("/survey/" + choice)
                         }}
                     >
                         Begin Test
