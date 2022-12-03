@@ -23,15 +23,11 @@ export default function AptitudeEngg() {
         ["analytical", 0],
         ["quantitative", 0],
         ["verbal", 0],
-        ["maths", 0],
-        ["physics", 0],
-        ["cs", 0],
-        ["chemistry", 0],
-        ["biology", 0],
-        ["Mechanical", 0],
-        ["Electrical", 0],
-        ["Electronics", 0],
-        ["Computer Science", 0]
+        ["mechanical", 0],
+        ["electrical", 0],
+        ["electronics", 0],
+        ["computer science", 0],
+        ["civil", 0]
     ])
 
     const trackAnswers = (option) => {
@@ -59,7 +55,7 @@ export default function AptitudeEngg() {
             localStorage.setItem("answerMapEngg", JSON.stringify(Object.fromEntries(answerMap)))
         }
 
-        router.push("/result/Engg")
+        router.push("/result/engg")
     }
 
     useEffect(() => {
@@ -112,7 +108,8 @@ export default function AptitudeEngg() {
                         expiryTimestamp={time}
                         expiryAction={() => {
                             alert("Time expired")
-                            router.push("/result/Engg")
+                            evaluateAnswers()
+                            router.push("/result/engg")
                         }}
                     />
                 </div>

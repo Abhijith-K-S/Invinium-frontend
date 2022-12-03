@@ -20,35 +20,47 @@ export default function ResultEngg() {
             let answerMapEngg = new Map(Object.entries(answer))
             let survey = JSON.parse(localStorage.getItem("surveyMapEngg"))
 
-            let phyOrAcc, chemOrBs
-            let stream = localStorage.getItem("stream")
+            let mechanical = answer["mechanical"]
+            let electrical = answer["electrical"]
+            let electronics = answer["electronics"]
+            let computer = answer["computer science"]
+            let civil = answer["civil"]
 
-            if (stream == "commerce") {
-                phyOrAcc = "accountancy"
-                chemOrBs = "business"
-            } else {
-                phyOrAcc = "physics"
-                chemOrBs = "chemistry"
-            }
+            let highScore = Math.max(mechanical, electrical, electronics, computer, civil)
+            let preferredSubject
+            if (highScore == electrical) preferredSubject = 0
+            else if (highScore == computerScience) preferredSubject = 1
+            else if (highScore == civil) preferredSubject = 2
+            else if (highScore == electronics) preferredSubject = 3
+            else preferredSubject = 4
 
             var input = [
                 survey["gender"],
-                survey["boardEngg"],
                 survey["stream"],
-                answer["maths"],
-                answer[phyOrAcc],
-                answer[chemOrBs],
-                answer[stream],
-                answer["verbal"],
+                survey["maths"],
+                survey["physics"],
+                survey["chemistry"],
+                survey["other"],
+                survey["favouriteSubject"],
+                survey["likedTopicMath"],
+                survey["likedTopicPhy"],
+                survey["exhibition"],
+                survey["figure"],
+                survey["programmingKnowledge"],
                 survey["studyHours"],
-                survey["tution"],
-                survey["entrance"],
+                survey["softwareJob"],
+                survey["IES"],
+                survey["work"],
+                preferredSubject,
+                survey["PSU"],
                 survey["learningMethod"],
                 survey["socialPreference"],
+                survey["reason"],
+                survey["revision"],
+                survey["difficulty"],
+                survey["bookRefer"],
                 survey["extracurricular"],
                 survey["approach"],
-                survey["jobPreference"],
-                survey["research"],
                 answer["logical"],
                 answer["quantitative"],
                 answer["analytical"],
@@ -57,11 +69,9 @@ export default function ResultEngg() {
 
             console.log(input)
             setAnswerMapEngg(answerMapEngg)
-            setStream(localStorage.getItem("stream"))
-
+            console.log(JSON.stringify(input))
             var response = await fetchResultEngg(JSON.stringify(input))
             if (response) {
-                console.log("response = " + response)
                 setResult(response)
                 console.log(response)
             }
