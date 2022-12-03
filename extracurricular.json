@@ -1,0 +1,43 @@
+{
+    "ComputerScience": {
+        "points": [
+            "Choose a programming language of your choice",
+            "Practice basic programming concepts",
+            "Start studying data structures and algorithms",
+            "Identify your interests: \n\t- Web Development,\n\t- ML,\n\t- Android development,\n\t- Cybersecurity,\n\t- Blockchain",
+            "Start by learning the basics of the domains of your interests",
+            "Try to build projects of your own and learn along the way",
+            "After gaining some experience, start applying for internships",
+            "Keep learning and keep building projects",
+            "After graduation, you could opt for a post graduate course in M.Tech. Popular M.Tech programs for Computer Science include: Artificial Intelligence, Big Data, Cybersecurity etc."
+        ]
+    },
+    "Mechanical": {
+        "points": [
+            "Have a thorough knowledge of fundamentals - Mechanics, Thermodynamics, Mathematics, Fluid Dynamics, Materials, Energy Systems..",
+            "Learn design theory. Major topics include Design for Assembly, Design for Manufacture, Product life cycle, Prototying etc.",
+            "Start learning the basics of CAD. Practice 3D modelling, drafting and rendering.",
+            "Start learning the concepts of CAE - Computational Fluid Dynamics, Finite Element Analysis, Multibody Dynamics.",
+            "Learn about common components used in industry - Flow control, Heating & Cooling, Lifting & Pulling, Piping and Tubing and so on.",
+            "Develop your knowledge of manufacturing awareness - Cutting, Forming, Sawing, Material Selection etc.",
+            "Learn thesoft skills and develop the etiquette for working in the industry - Problem solving, Interview skills, Teamwork, Communication etc.",
+            "After graduation, you could opt for a post graduate course in M.Tech. Popular M.Tech programs for Mechanical Engineering include: Thermal Engineering, Automobile engineering, Material Technology etc."
+        ]
+    },
+    "Electrical": {
+        "points": [
+            "After graduation, you could opt for a post graduate course in M.Tech. Popular M.Tech programs for Electrical Engineering include: Control Systems, Power and Energy Systems, Micro Electronics & VLSI etc."
+        ]
+    },
+    "Electronics": {
+        "points": [
+            "Develop a thorough understanding of the core subjects - Mathematics,Signals and Systems, Control Systems, Digital Electronics, Analog Electronics, Microprocessors, Microcontrollers, Power Electronics, Communications systems, etc.",
+            "Explore the various domains of electronics - VLSI, Embedded Systems, Robotics, Signal Processing, etc. Identify the one which aligns the most with your interests.",
+            "Apply for internships in the domain of your interest",
+            "After graduation, you could opt for a post graduate course in M.Tech. Popular M.Tech programs for Electronics Engineering include: Communication & Networks, Micro Electronics, T etc."
+        ]
+    },
+    "Civil": {
+        "points": []
+    }
+}

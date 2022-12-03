@@ -9,8 +9,8 @@ export const fetchResultTen = async (request) => {
         })
 
         if (response.ok) {
-            let questionData = await response.json()
-            return questionData
+            let resultData = await response.json()
+            return resultData
         } else {
             alert("Error fetching result")
         }
@@ -28,8 +28,8 @@ export const fetchResultTwelve = async (request) => {
         })
 
         if (response.ok) {
-            let questionData = await response.json()
-            return questionData
+            let resultData = await response.json()
+            return resultData
         } else {
             alert("Error fetching result")
         }
@@ -47,8 +47,8 @@ export const fetchResultEngg = async (request) => {
         })
 
         if (response.ok) {
-            let questionData = await response.json()
-            return questionData
+            let resultData = await response.json()
+            return resultData
         } else {
             alert("Error fetching result")
         }
