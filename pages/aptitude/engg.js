@@ -28,9 +28,10 @@ export default function AptitudeEngg() {
         ["cs", 0],
         ["chemistry", 0],
         ["biology", 0],
-        ["accountancy", 0],
-        ["business", 0],
-        ["economics", 0]
+        ["Mechanical", 0],
+        ["Electrical", 0],
+        ["Electronics", 0],
+        ["Computer Science", 0]
     ])
 
     const trackAnswers = (option) => {
@@ -64,11 +65,7 @@ export default function AptitudeEngg() {
     useEffect(() => {
         const fetchQuestion = async () => {
             try {
-                let streamName
-                if (typeof window !== "undefined") {
-                    streamName = localStorage.getItem("stream")
-                }
-                const questionData = await fetchQuestionEngg(streamName)
+                const questionData = await fetchQuestionEngg()
                 setData(questionData)
             } catch (error) {
                 console.log(error)

@@ -37,3 +37,22 @@ export const fetchResultTwelve = async (request) => {
         console.log(error)
     }
 }
+
+export const fetchResultEngg = async (request) => {
+    try {
+        const response = await fetch(BASE_URL + "/api/result/btech/" + request, {
+            mode: "cors",
+            method: "GET",
+            headers: requestHeader
+        })
+
+        if (response.ok) {
+            let questionData = await response.json()
+            return questionData
+        } else {
+            alert("Error fetching result")
+        }
+    } catch (error) {
+        console.log(error)
+    }
+}
