@@ -40,13 +40,13 @@ export default function AptitudeEngg() {
     const evaluateAnswers = () => {
         for (var i = 0; i < data.length; ++i) {
             if (data[i].answer == answers[i]) {
-                var score = answerMap.get(data[i].category)
+                var score = answerMap.get(data[i].category.toLowerCase())
 
                 if (data[i].level.toLowerCase() == "easy") score = score + 1
                 else if (data[i].level.toLowerCase() == "moderate") score = score + 2
                 else if (data[i].level.toLowerCase() == "hard") score = score + 3
 
-                answerMap.set(data[i].category, score)
+                answerMap.set(data[i].category.toLowerCase(), score)
                 console.log("set" + data[i].category + "to " + score)
             }
         }

@@ -4,8 +4,7 @@
     margin-top: 2vh;
 }
 
-.layout:hover{
-    ;
+.layout:hover {
 }
 
 .leftLayout {
@@ -66,6 +65,9 @@
     display: flex;
     margin-bottom: 0;
     font-weight: bold;
+    white-space: pre-wrap;
+    word-break: break-word;
+    text-align: center;
 }
 
 .markStyle {
@@ -76,11 +78,11 @@
 
 .totalScore {
     display: flex;
-    flex:1;
+    flex: 1;
     font-size: 75px;
     font-weight: 900;
     margin-bottom: 0;
-    color:white
+    color: white;
 }
 
 .score {
@@ -88,5 +90,5 @@
     font-size: 50px;
     font-weight: 500;
     margin-top: 0;
-    color:white
+    color: white;
 }

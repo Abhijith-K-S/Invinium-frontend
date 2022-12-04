@@ -5,12 +5,11 @@ import { Bars } from "react-loading-icons"
 import styles from "../../styles/result.module.css"
 import MarkDisplayComponent from "../../components/MarkDisplayComponent"
 import { fetchResultEngg } from "../../service/fetchResult"
-import data from "../../result_info.json"
+import data from "../../extracurricular.json"
 
 export default function ResultEngg() {
-    const [choice, setChoice] = useState()
-    const [result, setResult] = useState("")
-    const [stream, setStream] = useState("")
+    const [choice, setChoice] = useState("")
+    const [choiceText, setChoiceText] = useState("")
 
     const [answerMapEngg, setAnswerMapEngg] = useState(new Map())
 
@@ -29,7 +28,7 @@ export default function ResultEngg() {
             let highScore = Math.max(mechanical, electrical, electronics, computer, civil)
             let preferredSubject
             if (highScore == electrical) preferredSubject = 0
-            else if (highScore == computerScience) preferredSubject = 1
+            else if (highScore == computer) preferredSubject = 1
             else if (highScore == civil) preferredSubject = 2
             else if (highScore == electronics) preferredSubject = 3
             else preferredSubject = 4
@@ -72,17 +71,35 @@ export default function ResultEngg() {
             console.log(JSON.stringify(input))
             var response = await fetchResultEngg(JSON.stringify(input))
             if (response) {
-                setResult(response)
                 console.log(response)
-            }
-
-            let max = 0
-            Object.entries(response).forEach((item) => {
-                if (item[1] > max) {
-                    max = item[1]
-                    setChoice(item[0].charAt(0).toUpperCase() + item[0].slice(1))
+                let max = 0
+                let branch = ""
+                Object.entries(response).forEach((item) => {
+                    if (item[1] > max) {
+                        max = item[1]
+                        branch = item[0]
+                        setChoice(item[0])
+                    }
+                })
+                
+                switch (branch) {
+                    case "electronics":
+                        setChoiceText("Electronics Engineering")
+                        break
+                    case "computer":
+                        setChoiceText("Computer Science Engineering")
+                        break
+                    case "mechanical":
+                        setChoiceText("Mechanical Engineering")
+                        break
+                    case "civil":
+                        setChoiceText("Civil Engineering")
+                        break
+                    case "electrical":
+                        setChoiceText("Electrical Engineering")
+                        break
                 }
-            })
+            }
         }
     }
 
@@ -104,21 +121,19 @@ export default function ResultEngg() {
                     </div>
                 </div>
             </div>
-            {answerMapEngg ? (
-                <MarkDisplayComponent answerMap={answerMapEngg} stream={stream} />
-            ) : null}
+            {answerMapEngg ? <MarkDisplayComponent answerMap={answerMapEngg} /> : null}
 
             <div className={styles.bottom}>
-                {choice ? (
+                {choiceText ? (
                     <div className={styles.lleft}>
                         <div className={styles.choice}>
-                            <h3>Your potential career path is</h3>
-                            <p>{choice}</p>
+                            <h3>Your potential engineering stream is</h3>
+                            <p>{choiceText}</p>
                             <div className={styles.imgHolder}>
                                 <Image
                                     src={data[choice].image}
                                     alt="image"
-                                    objectFit="cover"
+                                    objectFit="contain"
                                     width="10%"
                                     height="10%"
                                     layout="responsive"
@@ -128,12 +143,14 @@ export default function ResultEngg() {
                         <div className={styles.info}>
                             <details>
                                 <summary className={styles.textSummary}>
-                                    Know more about the course.
+                                    Know more about the career building practices
                                 </summary>
                                 <span className={styles.textDetails}>
                                     <ul>
                                         {data[choice].points.map((sample) => (
-                                            <li key={sample.point}>{sample.point}</li>
+                                            <li key={sample} style={{ marginTop: 20 }}>
+                                                {sample}
+                                            </li>
                                         ))}
                                     </ul>
                                 </span>
