@@ -29,6 +29,9 @@
     "electrical": {
         "image": "/electrical.jpg",
         "points": [
+            "Develop a thorough understanding of the core subjects - Power Electronics, Analog and Digital Electronics, Control Systems, Signals and Systems, Power System, Electromagnetic Fields, Electrical Machines etc.",
+            "Explore the various domains of electrical engineering - Power Systems, Control Systems, Embedded Systems, Robotics, Signal Processing, etc. Identify the one which aligns the most with your interests.",
+            "Try to do internships in domains of your interest",
             "After graduation, you could opt for a post graduate course in M.Tech. Popular M.Tech programs for Electrical Engineering include: Control Systems, Power and Energy Systems, Micro Electronics & VLSI etc."
         ]
     },
@@ -38,11 +41,17 @@
             "Develop a thorough understanding of the core subjects - Mathematics,Signals and Systems, Control Systems, Digital Electronics, Analog Electronics, Microprocessors, Microcontrollers, Power Electronics, Communications systems, etc.",
             "Explore the various domains of electronics - VLSI, Embedded Systems, Robotics, Signal Processing, etc. Identify the one which aligns the most with your interests.",
             "Apply for internships in the domain of your interest",
-            "After graduation, you could opt for a post graduate course in M.Tech. Popular M.Tech programs for Electronics Engineering include: Communication & Networks, Micro Electronics, T etc."
+            "After graduation, you could opt for a post graduate course in M.Tech. Popular M.Tech programs for Electronics Engineering include: Communication & Networks, Micro Electronics etc."
         ]
     },
     "civil": {
         "image": "/civil.png",
-        "points": []
+        "points": [
+            "Develop a thorough understanding of the core subjects - Engineering mechanics, Solid mechanics, Mechanics of materials etc.",
+            "Explore the various domains of civil engineering - Structural engineering, Geotechnical engineering, Transportation engineering, Water resources engineering, Environmental engineering, etc. Identify the one which aligns the most with your interests.",
+            "Getting a good knowledge of AutoCAD will prove good for your career",
+            "Apply for internships in the domain of your interest",
+            "After graduation, you could opt for a post graduate course in M.Tech. Popular M.Tech programs for Civil Engineering include: Geotechnical Engineering, Building Science & Technology, Hydraulics Engineering etc."
+        ]
     }
 }

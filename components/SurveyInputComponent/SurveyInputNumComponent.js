@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import styles from "../../styles/SurveyInputComponent.module.css"
 
-export default function SurveyInputChoiceComponent(props) {
+export default function SurveyInputNumComponent(props) {
     const [inputValue, setInputValue] = useState("")
 
     useEffect(() => {
@@ -16,12 +16,11 @@ export default function SurveyInputChoiceComponent(props) {
                             type="number"
                             // className={styles.radio}
                             name={props.question}
-                            value={"KEAM Rank"}
+                            value={inputValue}
                             onChange={(event) => {
                                 setInputValue(event.target.value)
                             }}
                         />
-                        <label>{"KEAM Rank"}</label>
             </div>
         </div>
     )

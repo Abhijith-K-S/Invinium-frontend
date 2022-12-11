@@ -4,6 +4,7 @@ import React, { useState } from "react"
 import styles from "../../styles/survey.module.css"
 import SurveyInputSliderComponent from "../../components/SurveyInputComponent/SurveyInputSliderComponent"
 import SurveyInputChoiceComponent from "../../components/SurveyInputComponent/SurveyInputChoiceComponent"
+import SurveyInputNumComponent from "../../components/SurveyInputComponent/SurveyInputNumComponent"
 
 export default function SurveyEngg() {
     const router = useRouter()
@@ -33,6 +34,8 @@ export default function SurveyEngg() {
     const [studyHours, setStudyHours] = useState(0)
     const [extracurricular, setExtracurricular] = useState(0)
     const [bookRefer, setBookRefer] = useState(0)
+    const [likedBranch, setLikedBranch] = useState(0)
+    const [rank, setRank] = useState(0)
 
     const evaluateSurvey = () => {
         if (
@@ -197,7 +200,7 @@ export default function SurveyEngg() {
                 options={{ Yes: 1, No: 0 }}
                 getData={setFig}
             />
-            {/* <SurveyInputChoiceComponent
+            <SurveyInputChoiceComponent
                 question={"Which engineering branch do you want to get?"}
                 options={{
                     "Computer Science Engineering or Related branches": 0,
@@ -208,11 +211,11 @@ export default function SurveyEngg() {
                     "Chemical Engineering": 5
                 }}
                 getData={setLikedBranch}
-            /> */}
-            {/* <SurveyInputNumComponent
+            />
+            <SurveyInputNumComponent
                 question={"What is your KEAM rank ?:"}
                 getData={setRank}
-            /> */}
+            />
             <SurveyInputChoiceComponent
                 question={"Do you like to work in software related jobs"}
                 options={{ Yes: 1, No: 0 }}

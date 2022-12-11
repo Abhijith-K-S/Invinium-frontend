@@ -54,32 +54,40 @@ export default function Intro() {
                     </p>
                     <h4 className={styles.subTextStyle}>Begin Test whenever you are ready</h4>
                     <div className={styles.inputStyle}>
-                        <h3>Your current education level is</h3>
-                        <input
-                            className={styles.option1}
-                            type="radio"
-                            id="option1"
-                            name="choice"
-                            value={"ten"}
-                            onClick={(event) => setChoice(event.target.value)}
-                        />
-                        <label>10th</label>
-                        <input
-                            type="radio"
-                            id="option2"
-                            name="choice"
-                            value={"twelve"}
-                            onClick={(event) => setChoice(event.target.value)}
-                        />
-                        <label>12th</label>
-                        <input
-                            type="radio"
-                            id="option3"
-                            name="choice"
-                            value={"engg"}
-                            onClick={(event) => setChoice(event.target.value)}
-                        />
-                        <label>B.Tech</label>
+                        <h3>Chooose your test</h3>
+                        <div className={styles.optionSpace}>
+                            <input
+                                className={styles.option}
+                                type="radio"
+                                id="option1"
+                                name="choice"
+                                value={"ten"}
+                                onClick={(event) => setChoice(event.target.value)}
+                            />
+                            <label>For class 10 students</label>
+                            <br/>
+                            <br/>
+                            <input
+                                className={styles.option}
+                                type="radio"
+                                id="option2"
+                                name="choice"
+                                value={"twelve"}
+                                onClick={(event) => setChoice(event.target.value)}
+                            />
+                            <label>For class 12 students</label>
+                            <br/>
+                            <br/>
+                            <input
+                                className={styles.option}
+                                type="radio"
+                                id="option3"
+                                name="choice"
+                                value={"engg"}
+                                onClick={(event) => setChoice(event.target.value)}
+                            />
+                            <label>B.Tech stream prediction</label>
+                        </div>
                         <br />
                         <br />
                     </div>
