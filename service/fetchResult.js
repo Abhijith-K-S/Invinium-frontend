@@ -1,11 +1,15 @@
 import { BASE_URL, requestHeader } from "./network"
 
-export const fetchResultTen = async (request) => {
+export const fetchResultTen = async (username, resultMap) => {
     try {
-        const response = await fetch(BASE_URL + "/api/result/ten/" + request, {
+        const response = await fetch(BASE_URL + "/api/result/ten/", {
             mode: "cors",
-            method: "GET",
-            headers: requestHeader
+            method: "PUT",
+            headers: requestHeader,
+            body: JSON.stringify({
+                username: username,
+                resultMap: resultMap
+            })
         })
 
         if (response.ok) {

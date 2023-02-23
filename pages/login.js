@@ -27,7 +27,13 @@ export default function Home() {
             })
             try {
                 var token = await loginUser(request)
-                if (token) router.push("/intro")
+                if (token) {
+                    if (typeof window !== "undefined") {
+                        localStorage.setItem("username", username)
+                        localStorage.setItem("token", token)
+                    }
+                    router.push("/intro")
+                }
             } catch (error) {
                 alert(error.message)
             }

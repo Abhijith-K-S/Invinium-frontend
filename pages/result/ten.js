@@ -9,8 +9,6 @@ import data from "../../result_info.json"
 
 export default function ResultTen() {
     const [choice, setChoice] = useState()
-    const [result, setResult] = useState()
-    const [subject, setSubject] = useState(0)
     const [answerMapTen, setAnswerMapTen] = useState(new Map())
 
     const getResult = async () => {
@@ -18,38 +16,17 @@ export default function ResultTen() {
             let answer = JSON.parse(localStorage.getItem("answerMapTen"))
             let answerMapTen = new Map(Object.entries(answer))
             let survey = JSON.parse(localStorage.getItem("surveyMapTen"))
+            let username = localStorage.getItem("username")
 
-            var input = [
-                survey["gender"],
-                answer["maths"],
-                answer["physics"],
-                answer["chemistry"],
-                answer["biology"],
-                answer["social"],
-                answer["verbal"],
-                survey["boardTen"],
-                survey["boardTwelve"],
-                survey["studyHours"],
-                survey["tution"],
-                survey["learningMethod"],
-                survey["socialPreference"],
-                survey["extracurricular"],
-                survey["approach"],
-                survey["jobPreference"],
-                survey["research"],
-                answer["logical"],
-                answer["quantitative"],
-                answer["analytical"],
-                answer["verbal"]
-            ]
-
+            var resultMap = {
+                ...survey,
+                ...answer
+            }
             setAnswerMapTen(answerMapTen)
 
-            var response = await fetchResultTen(JSON.stringify(input))
+            var response = await fetchResultTen(username, resultMap)
             if (response) {
                 console.log("response = " + response)
-                setResult(response)
-                console.log(response)
             }
 
             let max = 0
@@ -65,7 +42,12 @@ export default function ResultTen() {
     }
 
     useEffect(() => {
-        getResult()
+        try {
+            getResult()
+        } catch (error) {
+            console.log(error)
+            alert("Error fetching result")
+        }
     }, [setAnswerMapTen])
 
     return (
@@ -85,7 +67,7 @@ export default function ResultTen() {
             {answerMapTen ? <MarkDisplayComponent answerMap={answerMapTen} /> : null}
 
             <div className={styles.bottom}>
-                {choice? (
+                {choice ? (
                     <div className={styles.lleft}>
                         <div className={styles.choice}>
                             <h3>Your potential career path is</h3>
