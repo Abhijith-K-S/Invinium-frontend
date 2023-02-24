@@ -92,7 +92,7 @@ export default function Registration() {
                         getData={setConfirmPassword}
                         isHidden={true}
                     />
-                    <h6 style={{ color: "#f5f5f5", marginLeft: 20 }}>
+                    <h6 style={{ color: "#000000", marginLeft: 20 }}>
                         Note: Password must contain atleast an uppercase letter, a lowercase letter,
                         a digit and a special character
                     </h6>

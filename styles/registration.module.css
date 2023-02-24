@@ -60,6 +60,7 @@
     background-color: #69939c;
     color: #000000;
     font-size: 20px;
+    cursor: pointer;
 }
 
 .buttonStyle:hover {

@@ -8,7 +8,7 @@
     align-items: center;
     text-align: center;
     margin-top: 9vh;
-    color: #ffffff !important;
+    color: #000000 !important;
 }
 .alink {
     font-family: "Noto Sans";
@@ -38,7 +38,7 @@
     height: 100vh;
     /* border-radius: 10px; */
     /* background-color: #3e6a72; */
-    background-image: linear-gradient(to bottom right, #4f7f88, #74a6b1);
+    background-image: linear-gradient(to bottom right, #97bec5, #cae2e7);
     overflow: auto;
     align-items: stretch;
 }

@@ -4,7 +4,7 @@
 .top{
     display: flex;
     justify-content: center;  
-    background-color: #041C32;
+    background-color: #3e6a72;
     height: 14vh;
     padding: 8px;
     color: white;
@@ -20,7 +20,7 @@
     flex-direction: column;
     text-align: center;
     /* justify-content: center; */
-    background-color: #041C32;
+    background-color: #578b94;
     height: auto;
     width: 44vw;
     padding: 8px;
