@@ -49,15 +49,15 @@ export default function ResultTwelve() {
             var response = await fetchResultTwelve(username, resultMap)
             if (response) {
                 console.log("response = " + response)
-            }
 
-            let max = 0
-            Object.entries(response).forEach((item) => {
-                if (item[1] > max) {
-                    max = item[1]
-                    setChoice(item[0].charAt(0).toUpperCase() + item[0].slice(1))
-                }
-            })
+                let max = 0
+                Object.entries(response).forEach((item) => {
+                    if (item[1] > max) {
+                        max = item[1]
+                        setChoice(item[0].charAt(0).toUpperCase() + item[0].slice(1))
+                    }
+                })
+            }
         }
     }
 

@@ -27,17 +27,17 @@ export default function ResultTen() {
             var response = await fetchResultTen(username, resultMap)
             if (response) {
                 console.log("response = " + response)
-            }
 
-            let max = 0
-            Object.entries(response).forEach((item) => {
-                if (item[1] > max) {
-                    max = item[1]
-                    if (item[0] == "cs") setChoice("Computer Science")
-                    else if (item[0] == "biology") setChoice("Biology Science")
-                    else setChoice(item[0].charAt(0).toUpperCase() + item[0].slice(1))
-                }
-            })
+                let max = 0
+                Object.entries(response).forEach((item) => {
+                    if (item[1] > max) {
+                        max = item[1]
+                        if (item[0] == "cs") setChoice("Computer Science")
+                        else if (item[0] == "biology") setChoice("Biology Science")
+                        else setChoice(item[0].charAt(0).toUpperCase() + item[0].slice(1))
+                    }
+                })
+            }
         }
     }
 

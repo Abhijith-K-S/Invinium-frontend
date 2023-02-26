@@ -10,7 +10,6 @@ import data from "../../extracurricular.json"
 export default function ResultEngg() {
     const [choice, setChoice] = useState("")
     const [choiceText, setChoiceText] = useState("")
-
     const [answerMapEngg, setAnswerMapEngg] = useState(new Map())
 
     const getResult = async () => {
@@ -18,6 +17,7 @@ export default function ResultEngg() {
             let answer = JSON.parse(localStorage.getItem("answerMapEngg"))
             let answerMapEngg = new Map(Object.entries(answer))
             let survey = JSON.parse(localStorage.getItem("surveyMapEngg"))
+            let username = localStorage.getItem("username")
 
             let mechanical = answer["mechanical"]
             let electrical = answer["electrical"]
@@ -33,43 +33,16 @@ export default function ResultEngg() {
             else if (highScore == electronics) preferredSubject = 3
             else preferredSubject = 4
 
-            var input = [
-                survey["gender"],
-                survey["stream"],
-                survey["maths"],
-                survey["physics"],
-                survey["chemistry"],
-                survey["other"],
-                survey["favouriteSubject"],
-                survey["likedTopicMath"],
-                survey["likedTopicPhy"],
-                survey["exhibition"],
-                survey["figure"],
-                survey["programmingKnowledge"],
-                survey["studyHours"],
-                survey["softwareJob"],
-                survey["IES"],
-                survey["work"],
-                preferredSubject,
-                survey["PSU"],
-                survey["learningMethod"],
-                survey["socialPreference"],
-                survey["reason"],
-                survey["revision"],
-                survey["difficulty"],
-                survey["bookRefer"],
-                survey["extracurricular"],
-                survey["approach"],
-                answer["logical"],
-                answer["quantitative"],
-                answer["analytical"],
-                answer["verbal"]
-            ]
+            var resultMap = {
+                ...survey,
+                ...answer,
+                preferredSubject: preferredSubject
+            }
 
-            console.log(input)
+            console.log(resultMap)
             setAnswerMapEngg(answerMapEngg)
-            console.log(JSON.stringify(input))
-            var response = await fetchResultEngg(JSON.stringify(input))
+
+            var response = await fetchResultEngg(username, resultMap)
             if (response) {
                 console.log(response)
                 let max = 0
@@ -81,7 +54,7 @@ export default function ResultEngg() {
                         setChoice(item[0])
                     }
                 })
-                
+
                 switch (branch) {
                     case "electronics":
                         setChoiceText("Electronics Engineering")
@@ -104,7 +77,12 @@ export default function ResultEngg() {
     }
 
     useEffect(() => {
-        getResult()
+        try {
+            getResult()
+        } catch (error) {
+            console.log(error)
+            alert("Error fetching result")
+        }
     }, [setAnswerMapEngg])
 
     return (
