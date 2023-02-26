@@ -9,9 +9,7 @@ import data from "../../result_info.json"
 
 export default function ResultTwelve() {
     const [choice, setChoice] = useState()
-    const [result, setResult] = useState("")
     const [stream, setStream] = useState("")
-
     const [answerMapTwelve, setAnswerMapTwelve] = useState(new Map())
 
     const getResult = async () => {
@@ -19,6 +17,7 @@ export default function ResultTwelve() {
             let answer = JSON.parse(localStorage.getItem("answerMapTwelve"))
             let answerMapTwelve = new Map(Object.entries(answer))
             let survey = JSON.parse(localStorage.getItem("surveyMapTwelve"))
+            let username = localStorage.getItem("username")
 
             let phyOrAcc, chemOrBs
             let stream = localStorage.getItem("stream")
@@ -31,39 +30,25 @@ export default function ResultTwelve() {
                 chemOrBs = "chemistry"
             }
 
-            var input = [
-                survey["gender"],
-                survey["boardTwelve"],
-                survey["stream"],
-                answer["maths"],
-                answer[phyOrAcc],
-                answer[chemOrBs],
-                answer[stream],
-                answer["verbal"],
-                survey["studyHours"],
-                survey["tution"],
-                survey["entrance"],
-                survey["learningMethod"],
-                survey["socialPreference"],
-                survey["extracurricular"],
-                survey["approach"],
-                survey["jobPreference"],
-                survey["research"],
-                answer["logical"],
-                answer["quantitative"],
-                answer["analytical"],
-                answer["verbal"]
-            ]
+            var resultMap = {
+                ...survey
+            }
 
-            console.log(input)
+            resultMap["maths"] = answer["maths"]
+            resultMap["phyOrAcc"] = answer[phyOrAcc]
+            resultMap["chemOrBs"] = answer[chemOrBs]
+            resultMap["stream"] = answer[stream]
+            resultMap["verbal"] = answer["verbal"]
+            resultMap["logical"] = answer["logical"]
+            resultMap["quantitative"] = answer["quantitative"]
+            resultMap["analytical"] = answer["analytical"]
+
             setAnswerMapTwelve(answerMapTwelve)
             setStream(localStorage.getItem("stream"))
 
-            var response = await fetchResultTwelve(JSON.stringify(input))
+            var response = await fetchResultTwelve(username, resultMap)
             if (response) {
                 console.log("response = " + response)
-                setResult(response)
-                console.log(response)
             }
 
             let max = 0
@@ -77,7 +62,12 @@ export default function ResultTwelve() {
     }
 
     useEffect(() => {
-        getResult()
+        try {
+            getResult()
+        } catch (error) {
+            console.log(error)
+            alert("Error fetching result")
+        }
     }, [setAnswerMapTwelve])
 
     return (

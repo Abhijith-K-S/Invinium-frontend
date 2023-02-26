@@ -23,12 +23,16 @@ export const fetchResultTen = async (username, resultMap) => {
     }
 }
 
-export const fetchResultTwelve = async (request) => {
+export const fetchResultTwelve = async (username, resultMap) => {
     try {
-        const response = await fetch(BASE_URL + "/api/result/twelve/" + request, {
+        const response = await fetch(BASE_URL + "/api/result/twelve/", {
             mode: "cors",
-            method: "GET",
-            headers: requestHeader
+            method: "PUT",
+            headers: requestHeader,
+            body: JSON.stringify({
+                username: username,
+                resultMap: resultMap
+            })
         })
 
         if (response.ok) {
