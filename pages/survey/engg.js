@@ -115,8 +115,8 @@ export default function SurveyEngg() {
                 <link rel="icon" href="./favicon.ico" />
             </Head>
             <div className={styles.top}>
-                <h1 style={{ color: "#ffffff" }}>Introduction</h1>
-                <h2 style={{ color: "#ffffff", marginTop: 0 }}>Tell me a bit about yourself</h2>
+                <h1>Introduction</h1>
+                <h2 style={{marginTop: 0 }}>Tell me a bit about yourself</h2>
             </div>
             <SurveyInputChoiceComponent
                 question={"Gender"}
