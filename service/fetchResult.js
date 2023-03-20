@@ -68,3 +68,26 @@ export const fetchResultEngg = async (username, resultMap) => {
         console.log(error)
     }
 }
+
+export const fetchResultGraduate = async (username, resultMap) => {
+    try {
+        const response = await fetch(BASE_URL + "/api/result/graduate/", {
+            mode: "cors",
+            method: "PUT",
+            headers: requestHeader,
+            body: JSON.stringify({
+                username: username,
+                resultMap: resultMap
+            })
+        })
+
+        if (response.ok) {
+            let resultData = await response.json()
+            return resultData
+        } else {
+            alert("Error fetching result")
+        }
+    } catch (error) {
+        console.log(error)
+    }
+}
