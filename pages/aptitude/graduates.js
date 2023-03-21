@@ -4,10 +4,10 @@ import { useRouter } from "next/router"
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md"
 import styles from "../../styles/aptitude.module.css"
 import { Timer } from "../../components/TimerComponent"
-import { fetchQuestionEngg } from "../../service/fetchQuestion"
+import { fetchQuestionGraduates } from "../../service/fetchQuestion"
 import { Logo } from "../../components/LogoComponent"
 
-export default function AptitudeEngg() {
+export default function AptitudeGraduates() {
     const router = useRouter()
 
     const [data, setData] = useState("")
@@ -19,15 +19,16 @@ export default function AptitudeEngg() {
     const [currentSelection, setCurrentSelection] = useState("")
 
     const answerMap = new Map([
-        ["logical", 0],
-        ["analytical", 0],
-        ["quantitative", 0],
-        ["verbal", 0],
-        ["mechanical", 0],
-        ["electrical", 0],
+        ["operating system", 0],
+        ["algorithm", 0],
+        ["programming", 0],
+        ["software", 0],
+        ["computer networks", 0],
         ["electronics", 0],
-        ["computer science", 0],
-        ["civil", 0]
+        ["computer architecture", 0],
+        ["maths", 0],
+        ["verbal", 0],
+        ["logical", 0]
     ])
 
     const trackAnswers = (option) => {
@@ -52,16 +53,19 @@ export default function AptitudeEngg() {
         }
 
         if (typeof window !== "undefined") {
-            localStorage.setItem("answerMapGrad", JSON.stringify(Object.fromEntries(answerMap)))
+            localStorage.setItem(
+                "answerMapGraduates",
+                JSON.stringify(Object.fromEntries(answerMap))
+            )
         }
 
-        router.push("/result/engg")
+        router.push("/result/graduates")
     }
 
     useEffect(() => {
         const fetchQuestion = async () => {
             try {
-                const questionData = await fetchQuestionEngg()
+                const questionData = await fetchQuestionGraduates()
                 setData(questionData)
             } catch (error) {
                 console.log(error)

@@ -45,7 +45,7 @@ export default function SurveyEngg() {
             selfLearning == "" ||
             extraCourses == "" ||
             certifications == "" ||
-            workshops=="" ||
+            workshops == "" ||
             talentTest == "" ||
             languageSkills == "" ||
             memory == "" ||
@@ -63,13 +63,38 @@ export default function SurveyEngg() {
             introvert == ""
         ) {
             alert("Please fill all entries")
+            //print which value is empty
+            if (hours == "") console.log("hours")
+            if (hackathons == "") console.log("hackathons")
+            if (codingSkill == "") console.log("codingSkill")
+            if (publicSpeaking == "") console.log("publicSpeaking")
+            if (overtime == "") console.log("overtime")
+            if (selfLearning == "") console.log("selfLearning")
+            if (extraCourses == "") console.log("extraCourses")
+            if (certifications == "") console.log("certifications")
+            if (workshops == "") console.log("workshops")
+            if (talentTest == "") console.log("talentTest")
+            if (languageSkills == "") console.log("languageSkills")
+            if (memory == "") console.log("memory")
+            if (subject == "") console.log("subject")
+            if (career == "") console.log("career")
+            if (jobOrStudies == "") console.log("jobOrStudies")
+            if (company == "") console.log("company")
+            if (seniors == "") console.log("seniors")
+            if (games == "") console.log("games")
+            if (behaviour == "") console.log("behaviour")
+            if (managementOrTechnical == "") console.log("managementOrTechnical")
+            if (salaryOrWork == "") console.log("salaryOrWork")
+            if (hardOrSmart == "") console.log("hardOrSmart")
+            if (teams == "") console.log("teams")
+            if (introvert == "") console.log("introvert")
         } else {
-            const surveyMapGrad = new Map([
+            const surveyMapGraduates = new Map([
                 ["hours", parseInt(hours)],
                 ["hackathons", parseInt(hackathons)],
                 ["codingSkill", parseInt(codingSkill)],
                 ["publicSpeaking", parseInt(publicSpeaking)],
-                ["workLongTime", parseInt(workLongTime)],
+                ["workLongTime", parseInt(overtime)],
                 ["selfLearning", parseInt(selfLearning)],
                 ["extraCourses", parseInt(extraCourses)],
                 ["certifications", parseInt(certifications)],
@@ -88,17 +113,17 @@ export default function SurveyEngg() {
                 ["salaryOrWork", parseInt(salaryOrWork)],
                 ["hardOrSmart", parseInt(hardOrSmart)],
                 ["teams", parseInt(teams)],
-                ["introvert", parseInt(introvert)],
+                ["introvert", parseInt(introvert)]
             ])
 
             if (typeof window !== "undefined") {
                 localStorage.setItem(
-                    "surveyMapGrad",
-                    JSON.stringify(Object.fromEntries(surveyMapGrad))
+                    "surveyMapGraduates",
+                    JSON.stringify(Object.fromEntries(surveyMapGraduates))
                 )
             }
 
-            router.push("/aptitude/grad")
+            router.push("/aptitude/graduates")
         }
     }
 
@@ -111,7 +136,7 @@ export default function SurveyEngg() {
             </Head>
             <div className={styles.top}>
                 <h1>Introduction</h1>
-                <h2 style={{marginTop: 0 }}>Tell me a bit about yourself</h2>
+                <h2 style={{ marginTop: 0 }}>Tell me a bit about yourself</h2>
             </div>
             <SurveyInputChoiceComponent
                 question={"Gender"}
@@ -172,10 +197,10 @@ export default function SurveyEngg() {
                     "Python Programming": 3,
                     "R Programming": 4,
                     "Information Security": 5,
-                    "Hadoop": 6,
+                    Hadoop: 6,
                     "Distro Making": 7,
                     "Full Stack Development": 8,
-                    "Nil": 9,
+                    Nil: 9
                 }}
                 getData={setCertificate}
             />
@@ -190,7 +215,7 @@ export default function SurveyEngg() {
                     "Ethical Hacking": 5,
                     "Game Development": 6,
                     "System Designing": 7,
-                    "Nil":2
+                    Nil: 2
                 }}
                 getData={setWorkshop}
             />
@@ -201,12 +226,12 @@ export default function SurveyEngg() {
             />
             <SurveyInputChoiceComponent
                 question={"How do you rate your Language Skills?"}
-                options={{ "Excellent": 2, "Medium": 1, "Poor":0 }}
+                options={{ Excellent: 2, Medium: 1, Poor: 0 }}
                 getData={setLangSkills}
             />
             <SurveyInputChoiceComponent
                 question={"How do you rate your Memory Capability?"}
-                options={{ "Excellent": 2, "Medium": 1, "Poor":0 }}
+                options={{ Excellent: 2, Medium: 1, Poor: 0 }}
                 getData={setMemoryCapability}
             />
             <SurveyInputChoiceComponent
@@ -216,13 +241,13 @@ export default function SurveyEngg() {
                     "Computer Networks": 1,
                     "Ethical Hacking": 2,
                     "Computer Architecture": 3,
-                    "Programming": 4,
+                    Programming: 4,
                     "Parallel Computing": 5,
                     "Internet Of Things": 6,
                     "Data Engineering": 7,
                     "Software Engineering": 8,
                     "Management Training": 9,
-                    "Nil":4
+                    Nil: 4
                 }}
                 getData={setInterestedSubjects}
             />
@@ -240,30 +265,28 @@ export default function SurveyEngg() {
             />
             <SurveyInputChoiceComponent
                 question={"Do you wish to get a Job or go for Higher Studies?"}
-                options={{ "Job": 0, "Higher Studies": 1 }}
+                options={{ Job: 0, "Higher Studies": 1 }}
                 getData={setJobOrHigher}
             />
             <SurveyInputChoiceComponent
                 question={"Type of Company in which you wish to work: "}
                 options={{
                     "Web Services": 0,
-                    "SAaS services": 1,
+                    "SaaS services": 1,
                     "Sales and Marketing": 2,
                     "Testing and Maintainance Services": 3,
-                    "product development": 4,
-                    "BPA": 5,
+                    "Product development": 4,
+                    BPA: 5,
                     "Service Based": 6,
                     "product Product based": 7,
                     "Cloud Services": 8,
-                    "Finance": 9
+                    Finance: 9
                 }}
                 getData={setCompanyType}
             />
             <SurveyInputChoiceComponent
-                question={
-                    "Did you consult seniors for advice?"
-                }
-                options={{ Yes:1,No:0 }}
+                question={"Did you consult seniors for advice?"}
+                options={{ Yes: 1, No: 0 }}
                 getData={setSeniorsAdvice}
             />
             <SurveyInputChoiceComponent
@@ -273,38 +296,32 @@ export default function SurveyEngg() {
             />
             <SurveyInputChoiceComponent
                 question={"Are you a Stubborn person or a Gentle person?"}
-                options={{ "Stubborn": 1, "Gentle": 0 }}
+                options={{ Stubborn: 1, Gentle: 0 }}
                 getData={setStubbornOrGentle}
             />
             <SurveyInputChoiceComponent
                 question={"Do you want to work in a Management or a Technical position?"}
-                options={{ "Management": 0, "Technical": 1 }}
+                options={{ Management: 0, Technical: 1 }}
                 getData={setManagementOrTechnical}
             />
             <SurveyInputChoiceComponent
                 question={"Which one is more important for you, salary or work?"}
-                options={{ "Salary": 0, "Work": 1 }}
+                options={{ Salary: 0, Work: 1 }}
                 getData={setSalaryOrWork}
             />
             <SurveyInputChoiceComponent
-                question={
-                    "Are you a hard worker or a smart worker?"
-                }
-                options={{ "Hard": 0, "Smart": 1 }}
+                question={"Are you a hard worker or a smart worker?"}
+                options={{ Hard: 0, Smart: 1 }}
                 getData={setHardOrSmart}
             />
             <SurveyInputChoiceComponent
-                question={
-                    "Have you ever worked in a team?"
-                }
-                options={{ Yes:1,No:0 }}
+                question={"Have you ever worked in a team?"}
+                options={{ Yes: 1, No: 0 }}
                 getData={setWorkedInTeam}
             />
             <SurveyInputChoiceComponent
-                question={
-                    "Are you an Introvert?"
-                }
-                options={{ Yes:1,No:0 }}
+                question={"Are you an Introvert?"}
+                options={{ Yes: 1, No: 0 }}
                 getData={setIntrovert}
             />
             <div className={styles.buttonPanel}>

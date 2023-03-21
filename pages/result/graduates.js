@@ -4,124 +4,61 @@ import React, { useEffect, useState } from "react"
 import { Bars } from "react-loading-icons"
 import styles from "../../styles/result.module.css"
 import MarkDisplayComponent from "../../components/MarkDisplayComponent"
-import { fetchResultEngg } from "../../service/fetchResult"
-import data from "../../extracurricular.json"
+import { fetchResultGraduate } from "../../service/fetchResult"
+import data from "../../result_info.json"
 
-export default function ResultEngg() {
-    const [choice, setChoice] = useState("")
-    const [choiceText, setChoiceText] = useState("")
-
-    const [answerMapGrad, setAnswerMapGrad] = useState(new Map())
+export default function ResultGraduates() {
+    const [choice, setChoice] = useState()
+    const [answerMapGraduates, setAnswerMapGraduates] = useState(new Map())
 
     const getResult = async () => {
         if (typeof window !== "undefined") {
-            let answer = JSON.parse(localStorage.getItem("answerMapGrad"))
-            let answerMapGrad = new Map(Object.entries(answer))
-            let survey = JSON.parse(localStorage.getItem("surveyMapGrad"))
+            let answer = JSON.parse(localStorage.getItem("answerMapGraduates"))
+            let answerMapGraduates = new Map(Object.entries(answer))
+            let survey = JSON.parse(localStorage.getItem("surveyMapGraduates"))
+            let username = localStorage.getItem("username")
 
-            let businessAnalyst = answer["Business Analyst"]
-            let dataEngineer = answer["Data Engineer"]
-            let systemEngineer = answer["System Engineer"]
-            let securityEngineer = answer["Security Engineer"]
-            let Developer = answer["Developer"]
-            let UI_UX = answer["UI/UX"]
-            let qualityAssurance = answer["Quality Assurance"]
-            let projectManager = answer["Project Manager"]
-            let technicalSupport = answer["Technical Support"]
-            let networkEngineer = answer["Security Engineer"]
-            let solutionsArchitect = answer["Solutions Architect"]
+            var resultMap = {
+                ...survey
+            }
 
-            let highScore = Math.max(businessAnalyst, dataEngineer, systemEngineer, securityEngineer, Developer, UI_UX, qualityAssurance, projectManager, technicalSupport, networkEngineer, solutionsArchitect)
-            let preferredSubject
-            if (highScore == businessAnalyst) preferredSubject = 0
-            else if (highScore == dataEngineer) preferredSubject = 1
-            else if (highScore == systemEngineer) preferredSubject = 2
-            else if (highScore == securityEngineer) preferredSubject = 3
-            else if (highScore == Developer) preferredSubject = 4
-            else if (highScore == UI_UX) preferredSubject = 5
-            else if (highScore == qualityAssurance) preferredSubject = 6
-            else if (highScore == projectManager) preferredSubject = 7
-            else if (highScore == technicalSupport) preferredSubject = 8
-            else if (highScore == networkEngineer) preferredSubject = 9
-            else preferredSubject = 10
+            resultMap["os"] = answer["operating system"]
+            resultMap["algorithms"] = answer["algorithm"]
+            resultMap["programming"] = answer["programming"]
+            resultMap["software"] = answer["software"]
+            resultMap["networks"] = answer["computer networks"]
+            resultMap["electronics"] = answer["electronics"]
+            resultMap["architecture"] = answer["computer architecture"]
+            resultMap["maths"] = answer["maths"]
+            resultMap["verbal"] = answer["verbal"]
+            resultMap["logical"] = answer["logical"]
 
-            const result = [
-                resultMap["os"],
-                resultMap["algorithms"],
-                resultMap["programming"],
-                resultMap["software"],
-                resultMap["networks"],
-                resultMap["electronics"],
-                resultMap["architecture"],
-                resultMap["maths"],
-                resultMap["verbal"],
-                resultMap["logical"],
-                resultMap["hours"],
-                resultMap["hackathons"],
-                resultMap["codingSkill"],
-                resultMap["publicSpeaking"],
-                resultMap["workLongTime"],
-                resultMap["selfLearning"],
-                resultMap["extraCourses"],
-                resultMap["certifications"],
-                resultMap["workshops"],
-                resultMap["talentTest"],
-                resultMap["languageSkills"],
-                resultMap["memory"],
-                resultMap["subject"],
-                resultMap["career"],
-                resultMap["jobOrStudies"],
-                resultMap["company"],
-                resultMap["seniors"],
-                resultMap["games"],
-                resultMap["behaviour"],
-                resultMap["managementOrTechnical"],
-                resultMap["salaryOrWork"],
-                resultMap["hardOrSmart"],
-                resultMap["teams"],
-                resultMap["introvert"]
-            ]
+            console.log(resultMap)
+            setAnswerMapGraduates(answerMapGraduates)
 
-            console.log(input)
-            setAnswerMapGrad(answerMapGrad)
-            console.log(JSON.stringify(input))
-            var response = await fetchResultEngg(JSON.stringify(input))
+            var response = await fetchResultGraduate(username, resultMap)
             if (response) {
                 console.log(response)
+
                 let max = 0
-                let branch = ""
                 Object.entries(response).forEach((item) => {
                     if (item[1] > max) {
                         max = item[1]
-                        branch = item[0]
                         setChoice(item[0])
                     }
                 })
-                //ToDo
-                switch (branch) {
-                    case "electronics":
-                        setChoiceText("Electronics Engineering")
-                        break
-                    case "computer":
-                        setChoiceText("Computer Science Engineering")
-                        break
-                    case "mechanical":
-                        setChoiceText("Mechanical Engineering")
-                        break
-                    case "civil":
-                        setChoiceText("Civil Engineering")
-                        break
-                    case "electrical":
-                        setChoiceText("Electrical Engineering")
-                        break
-                }
             }
         }
     }
 
     useEffect(() => {
-        getResult()
-    }, [setAnswerMapGrad])
+        try {
+            getResult()
+        } catch (error) {
+            console.log(error)
+            alert("Error fetching result")
+        }
+    }, [setAnswerMapGraduates])
 
     return (
         <>
@@ -137,19 +74,19 @@ export default function ResultEngg() {
                     </div>
                 </div>
             </div>
-            {answerMapGrad ? <MarkDisplayComponent answerMap={answerMapGrad} /> : null}
+            {answerMapGraduates ? <MarkDisplayComponent answerMap={answerMapGraduates} /> : null}
 
             <div className={styles.bottom}>
-                {choiceText ? (
+                {choice ? (
                     <div className={styles.lleft}>
                         <div className={styles.choice}>
-                            <h3>Your potential engineering stream is</h3>
-                            <p>{choiceText}</p>
-                            <div className={styles.imgHolder}>
+                            <h3>Your potential career path is</h3>
+                            <p>{choice}</p>
+                            {/* <div className={styles.imgHolder}>
                                 <Image
                                     src={data[choice].image}
                                     alt="image"
-                                    objectFit="contain"
+                                    objectFit="cover"
                                     width="10%"
                                     height="10%"
                                     layout="responsive"
@@ -159,18 +96,20 @@ export default function ResultEngg() {
                         <div className={styles.info}>
                             <details>
                                 <summary className={styles.textSummary}>
-                                    Know more about the career building practices
+                                    Know more about the course.
                                 </summary>
                                 <span className={styles.textDetails}>
                                     <ul>
                                         {data[choice].points.map((sample) => (
-                                            <li key={sample} style={{ marginTop: 20 }}>
-                                                {sample}
-                                            </li>
+                                            <li key={sample.point}>{sample.point}</li>
                                         ))}
+                                        <h4>Compulsory Subjects</h4>
+                                        <li>{data[choice].compulsory}</li>
+                                        <h4>Optional Subjects</h4>
+                                        <li>{data[choice].optional}</li>
                                     </ul>
                                 </span>
-                            </details>
+                            </details>*/}   
                         </div>
                     </div>
                 ) : (
