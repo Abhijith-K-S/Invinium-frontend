@@ -15,7 +15,7 @@
     flex-wrap: wrap;
     flex-direction: row;
     padding: 2vh;
-    background-color: #578b94;
+    background-color: #A9BCD0;
     border-radius: 20px;
     margin-left: 40px;
 }
@@ -82,7 +82,7 @@
     font-size: 75px;
     font-weight: 900;
     margin-bottom: 0;
-    color: white;
+    color: #1b1b1e;
 }
 
 .score {
@@ -90,5 +90,5 @@
     font-size: 50px;
     font-weight: 500;
     margin-top: 0;
-    color: white;
+    color: #1b1b1e;
 }

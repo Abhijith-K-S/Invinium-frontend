@@ -4,7 +4,7 @@ import React, { useState } from "react"
 import styles from "../../styles/survey.module.css"
 import SurveyInputSliderComponent from "../../components/SurveyInputComponent/SurveyInputSliderComponent"
 import SurveyInputChoiceComponent from "../../components/SurveyInputComponent/SurveyInputChoiceComponent"
-import SurveyInputNumComponent from "../../components/SurveyInputComponent/SurveyInputNumComponent"
+import SurveyInputMultiChoiceComponent from "../../components/SurveyInputComponent/SurveyInputMultiChoiceComponent"
 
 export default function SurveyEngg() {
     const router = useRouter()
@@ -188,7 +188,7 @@ export default function SurveyEngg() {
                 options={{ Yes: 1, No: 0 }}
                 getData={setCourse}
             />
-            <SurveyInputChoiceComponent
+            <SurveyInputMultiChoiceComponent
                 question={"Do you have certifications in any of the below mentioned fields?"}
                 options={{
                     "Shell Programming": 0,
@@ -197,14 +197,14 @@ export default function SurveyEngg() {
                     "Python Programming": 3,
                     "R Programming": 4,
                     "Information Security": 5,
-                    Hadoop: 6,
+                    "Big Data Analytics Tools": 6,
                     "Distro Making": 7,
                     "Full Stack Development": 8,
                     Nil: 9
                 }}
                 getData={setCertificate}
             />
-            <SurveyInputChoiceComponent
+            <SurveyInputMultiChoiceComponent
                 question={"Have you attended workshops in any of the below mentioned fields?"}
                 options={{
                     "Cloud Computing": 0,
@@ -234,24 +234,24 @@ export default function SurveyEngg() {
                 options={{ Excellent: 2, Medium: 1, Poor: 0 }}
                 getData={setMemoryCapability}
             />
-            <SurveyInputChoiceComponent
+            <SurveyInputMultiChoiceComponent
                 question={"Which of the following subjects are you Interested?"}
                 options={{
                     "Cloud Computing": 0,
                     "Computer Networks": 1,
                     "Ethical Hacking": 2,
                     "Computer Architecture": 3,
-                    Programming: 4,
+                    "Competitive Programming": 4,
                     "Parallel Computing": 5,
                     "Internet Of Things": 6,
                     "Data Engineering": 7,
                     "Software Engineering": 8,
                     "Management Training": 9,
-                    Nil: 4
+                    "Nil": 4
                 }}
                 getData={setInterestedSubjects}
             />
-            <SurveyInputChoiceComponent
+            <SurveyInputMultiChoiceComponent
                 question={"Which of the following Career Titles are you Interested in?"}
                 options={{
                     "System Developer": 0,
@@ -268,7 +268,7 @@ export default function SurveyEngg() {
                 options={{ Job: 0, "Higher Studies": 1 }}
                 getData={setJobOrHigher}
             />
-            <SurveyInputChoiceComponent
+            <SurveyInputMultiChoiceComponent
                 question={"Type of Company in which you wish to work: "}
                 options={{
                     "Web Services": 0,
@@ -276,11 +276,11 @@ export default function SurveyEngg() {
                     "Sales and Marketing": 2,
                     "Testing and Maintainance Services": 3,
                     "Product development": 4,
-                    BPA: 5,
+                    "Business process automation": 5,
                     "Service Based": 6,
                     "product Product based": 7,
                     "Cloud Services": 8,
-                    Finance: 9
+                    "Finance": 9
                 }}
                 getData={setCompanyType}
             />
