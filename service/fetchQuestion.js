@@ -57,3 +57,23 @@ export const fetchQuestionEngg = async (request) => {
         console.log(error)
     }
 }
+
+export const fetchQuestionGraduates = async (request) => {
+    console.log(request)
+    try {
+        const response = await fetch(BASE_URL + "/api/question/graduate", {
+            mode: "cors",
+            method: "GET",
+            headers: requestHeader
+        })
+
+        if (response.ok) {
+            let questionData = await response.json()
+            return questionData
+        } else {
+            alert("Error fetching questions")
+        }
+    } catch (error) {
+        console.log(error)
+    }
+}

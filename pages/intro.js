@@ -87,6 +87,17 @@ export default function Intro() {
                                 onClick={(event) => setChoice(event.target.value)}
                             />
                             <label>B.Tech stream prediction</label>
+                            <br/>
+                            <br/>
+                            <input
+                                className={styles.option}
+                                type="radio"
+                                id="option3"
+                                name="choice"
+                                value={"graduates"}
+                                onClick={(event) => setChoice(event.target.value)}
+                            />
+                            <label>Graduates Job Prediction</label>
                         </div>
                         <br />
                         <br />
