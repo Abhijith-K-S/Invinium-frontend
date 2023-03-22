@@ -20,7 +20,7 @@
     align-items: center;
     text-align: center;
     text-decoration: underline;
-    color: #0b243f;
+    color: #1b1b1e;
 }
 .acclink {
     display: flex;
@@ -38,7 +38,7 @@
     height: 100vh;
     /* border-radius: 10px; */
     /* background-color: #3e6a72; */
-    background-image: linear-gradient(to bottom right, #97bec5, #cae2e7);
+    background-color: #A9BCD0;
     overflow: auto;
     align-items: stretch;
 }
@@ -82,7 +82,7 @@
 .heading {
     display: flex;
     flex-direction: column;
-    background-color: #57799d;
+    background-color: #A9BCD0;
     align-items: center;
 }
 
@@ -116,14 +116,14 @@
     padding: 10px;
     padding-left: 20px;
     padding-right: 20px;
-    background-color: #01122480;
+    background-color: #1b1b1e;
     color: #ffffff;
     font-size: 20px;
     cursor: pointer;
 }
 
 .buttonStyle:hover {
-    background-color: #041f3b;
+    background-color: #030303;
 }
 
 .loadingIcon {
