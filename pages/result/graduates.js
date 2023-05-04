@@ -37,7 +37,6 @@ export default function ResultGraduates() {
             setAnswerMapGraduates(answerMapGraduates)
 
             var response = await fetchResultGraduate(username, resultMap)
-
             console.log(response)
             if (response) {
                 console.log(response)
@@ -49,6 +48,9 @@ export default function ResultGraduates() {
                         setChoice(item[0])
                     }
                 })
+            }
+            if (typeof window !== "undefined") {
+                localStorage.setItem("result",choice)
             }
         }
     }
