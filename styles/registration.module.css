@@ -34,7 +34,7 @@
 .heading {
     display: flex;
     flex-direction: column;
-    background-image: linear-gradient(to bottom right, #3e6a72, #b5dae2);
+    background-color: #A9BCD0;
     align-items: center;
 }
 
@@ -57,12 +57,12 @@
     margin-top: 5%;
     border-radius: 20px;
     padding: 10px;
-    background-color: #69939c;
-    color: #000000;
+    background-color: #1b1b1e;
+    color: #ffffff;
     font-size: 20px;
     cursor: pointer;
 }
 
 .buttonStyle:hover {
-    background-color: #3e6a72;
+    background-color: #030303;
 }

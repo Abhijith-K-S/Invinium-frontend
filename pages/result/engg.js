@@ -139,8 +139,8 @@ export default function ResultEngg() {
                     <Bars
                         className={styles.loadingIcon}
                         stroke="#00000020"
-                        fill="#ffffff"
-                        fill-opacity={"#ffffff"}
+                        fill="#000000"
+                        fillOpacity={"#000000"}
                         height="50"
                         width="50"
                     />

@@ -5,7 +5,7 @@ import { Bars } from "react-loading-icons"
 import styles from "../../styles/result.module.css"
 import MarkDisplayComponent from "../../components/MarkDisplayComponent"
 import { fetchResultGraduate } from "../../service/fetchResult"
-import data from "../../result_info.json"
+import data from "../../grad.json"
 
 export default function ResultGraduates() {
     const [choice, setChoice] = useState()
@@ -37,6 +37,7 @@ export default function ResultGraduates() {
             setAnswerMapGraduates(answerMapGraduates)
 
             var response = await fetchResultGraduate(username, resultMap)
+            console.log(response)
             if (response) {
                 console.log(response)
 
@@ -60,6 +61,12 @@ export default function ResultGraduates() {
         }
     }, [setAnswerMapGraduates])
 
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            localStorage.setItem("jobKeyword", choice)
+        }
+    }, [choice])
+
     return (
         <>
             <Head>
@@ -82,7 +89,7 @@ export default function ResultGraduates() {
                         <div className={styles.choice}>
                             <h3>Your potential career path is</h3>
                             <p>{choice}</p>
-                            {/* <div className={styles.imgHolder}>
+                            <div className={styles.imgHolder}>
                                 <Image
                                     src={data[choice].image}
                                     alt="image"
@@ -96,28 +103,24 @@ export default function ResultGraduates() {
                         <div className={styles.info}>
                             <details>
                                 <summary className={styles.textSummary}>
-                                    Know more about the course.
+                                    Know more about the Job.
                                 </summary>
                                 <span className={styles.textDetails}>
                                     <ul>
                                         {data[choice].points.map((sample) => (
                                             <li key={sample.point}>{sample.point}</li>
                                         ))}
-                                        <h4>Compulsory Subjects</h4>
-                                        <li>{data[choice].compulsory}</li>
-                                        <h4>Optional Subjects</h4>
-                                        <li>{data[choice].optional}</li>
                                     </ul>
                                 </span>
-                            </details>*/}   
+                            </details>
                         </div>
                     </div>
                 ) : (
                     <Bars
                         className={styles.loadingIcon}
                         stroke="#00000020"
-                        fill="#ffffff"
-                        fill-opacity={"#ffffff"}
+                        fill="#000000"
+                        fillOpacity={"#000000"}
                         height="50"
                         width="50"
                     />

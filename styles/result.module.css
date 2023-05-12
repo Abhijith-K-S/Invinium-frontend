@@ -5,7 +5,7 @@
 .top{
     display: flex;
     justify-content: center;  
-    background-image: linear-gradient(to bottom right, #3e6a72, #87b1bb);
+    background-color: #373F51;
     height: 14vh;
     padding: 8px;
     color: white;
@@ -22,11 +22,11 @@
     flex-direction: column;
     text-align: center;
     /* justify-content: center; */
-    background-image: linear-gradient(to bottom right, #3e6a72, #88b3bd);
+    background-color: #A9BCD0;
     height: auto;
     width: 44vw;
     padding: 8px;
-    color: white;
+    color: #000000;
     font-size: x-large;
     border-radius: 10px;
     /* overflow: */

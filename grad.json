@@ -1,0 +1,269 @@
+{
+    "Analyst": {
+        "image": "/analyst.jpg",
+        "points": [
+            {
+                "point": "An analyst is responsible for analyzing data and information to identify trends, patterns, and insights that can help organizations make better decisions."
+            },
+            {
+                "point": "They use various statistical and analytical tools to gather, clean, and analyze data from different sources."
+            },
+            {
+                "point": "They work closely with stakeholders to understand business requirements and help them interpret data and insights to make informed decisions."
+            },
+            {
+                "point": "They also develop reports, dashboards, and visualizations to communicate findings and insights to stakeholders."
+            },
+            {
+                "point": "Strong analytical and critical thinking skills."
+            },
+            {
+                "point": "Proficiency in data analysis and visualization tools such as Excel, SQL, R, Python, and Tableau."
+            },
+            {
+                "point": "Knowledge of statistical analysis techniques such as regression analysis, clustering, and classification."
+            },
+            {
+                "point": "Familiarity with data modeling and database design principles."
+            }
+        ]
+    },
+    "System Engineer": {
+        "image": "/dataengineer.webp",
+        "points": [
+            {
+                "point": "A System Engineer is responsible for designing, implementing, and maintaining complex systems, such as computer networks, cloud infrastructure, or industrial control systems."
+            },
+            {
+                "point": "They work closely with other engineers and stakeholders to gather requirements, design solutions, and ensure that systems are scalable, reliable, and secure."
+            },
+            {
+                "point": "They are responsible for configuring and testing systems, troubleshooting issues, and ensuring that systems meet performance and availability requirements."
+            },
+            {
+                "point": "They also oversee the implementation of new technologies, upgrades, and patches, and ensure that they integrate with existing systems."
+            },
+            {
+                "point": "Understanding of system engineering principles such as systems thinking, requirements engineering, and system design."
+            },
+            {
+                "point": "Familiarity with operating systems such as Windows, MacOS, or Linux."
+            },
+            {
+                "point": "Knowledge of network protocols and technologies such as TCP/IP, DNS, and DHCP.Familiarity with cloud infrastructure and technologies such as AWS, Azure, or Google Cloud."
+            },
+            {
+                "point": "Understanding of security principles and technologies such as firewalls, intrusion detection, and encryption."
+            },
+            {
+                "point": "Strong problem-solving and analytical skills.Excellent communication and interpersonal skills to collaborate with different stakeholders."
+            }
+        ]
+    },
+    "Data Engineer": {
+        "image": "/data.jpg",
+        "points": [
+            {
+                "point": "A data engineer is responsible for designing, building, and maintaining the infrastructure and systems needed to store, process, and analyze large volumes of data."
+            },
+            {
+                "point": "They work closely with data scientists, analysts, and other stakeholders to ensure that data is collected, stored, and processed in a way that meets their needs."
+            },
+            {
+                "point": "They use various tools and technologies to build and maintain data pipelines, data warehouses, and other systems that enable data-driven decision-making."
+            },
+            {
+                "point": "They are also responsible for ensuring data quality, security, and privacy, and for troubleshooting any issues that arise with data systems."
+            },
+            {
+                "point": "Proficiency in programming languages such as Python, Java, or Scala.Expertise in database technologies such as SQL, NoSQL, and Hadoop."
+            },
+            {
+                "point": "Knowledge of distributed computing systems such as Spark, Kafka, and Flink.Understanding of cloud-based technologies such as AWS, Azure, or Google Cloud Platform."
+            },
+            {
+                "point": "Familiarity with data modeling and database design principles.Experience with data pipeline and workflow management tools such as Apache Airflow or Luigi."
+            },
+            {
+                "point": "Understanding of software engineering principles such as version control, code reviews, and testing."
+            }
+        ]
+    },
+    "Security Engineer": {
+        "image": "/security.jpg",
+        "points": [
+            {
+                "point": "A security engineer is responsible for designing, implementing, and maintaining the security measures that protect an organization's systems, networks, and data from unauthorized access, attacks, and breaches."
+            },
+            {
+                "point": "They assess risks and vulnerabilities, and develop and implement strategies and solutions to mitigate them."
+            },
+            {
+                "point": "They also monitor and analyze security logs and alerts to identify and respond to potential security incidents."
+            },
+            {
+                "point": "They work closely with other IT and business teams to ensure that security is integrated into all aspects of the organization's operations."
+            },
+            {
+                "point": "Proficiency in network and system security technologies and protocols, such as firewalls, intrusion detection and prevention systems, VPNs, and SSL/TLS."
+            },
+            {
+                "point": "Understanding of common security vulnerabilities and attack vectors, such as phishing, social engineering, and malware."
+            },
+            {
+                "point": "Knowledge of security compliance and regulatory standards, such as PCI-DSS, HIPAA, and GDPR."
+            },
+            {
+                "point": "Familiarity with security assessment and testing tools, such as vulnerability scanners and penetration testing frameworks.Experience with security incident response and disaster recovery planning."
+            }
+        ]
+        },
+    "Developer": {
+        "image": "/programmer.png",
+        "points": [
+            {
+                "point": "A software developer is responsible for designing, building, and maintaining software applications that meet the needs of users and organizations."
+            },
+            {
+                "point": "They work closely with stakeholders to understand requirements and develop software solutions that meet those needs."
+            },
+            {
+                "point": "They use various programming languages, frameworks, and tools to develop and test software applications."
+            },
+            {
+                "point": "They are also responsible for troubleshooting issues and bugs that arise in software systems and implementing updates and improvements to those systems."
+            },
+            {
+                "point": "Proficiency in programming languages such as Java, Python, C++, or JavaScript."
+            },
+            {
+                "point": "Familiarity with software development frameworks and tools such as Spring, Django, or React."
+            },
+            {
+                "point": "Knowledge of database technologies such as SQL, NoSQL, and MongoDB."
+            },
+            {
+                "point": "Familiarity with cloud-based technologies such as AWS, Azure, or Google Cloud Platform."
+            },
+            {
+                "point": "Strong problem-solving and analytical skills.Excellent communication and interpersonal skills to collaborate with different stakeholders."
+            }
+        ]
+    },
+    "UI/UX Engineer": {
+        "image": "/uiux.jpg",
+        "points": [
+            {
+                "point": "A UI/UX Engineer is responsible for designing and developing the user interface (UI) and user experience (UX) of software applications or websites."
+            },
+            {
+                "point": "They work closely with stakeholders, such as product managers and software developers, to ensure that the UI/UX aligns with the goals and needs of the organization and its users."
+            },
+            {
+                "point": "They use various design tools and technologies to create wireframes, prototypes, and final UI designs that are aesthetically pleasing, intuitive, and user-friendly."
+            },
+            {
+                "point": "They are also responsible for conducting user testing and research to identify areas for improvement in the UI/UX and iterating on designs based on feedback."
+            },
+            {
+                "point": "Proficiency in design tools such as Adobe Creative Suite, Sketch, or Figma."
+            },
+            {
+                "point": "Understanding of user interface design principles such as layout, typography, and color theory."
+            },
+            {
+                "point": "Familiarity with user experience design principles such as user research, information architecture, and usability testing."
+            },
+            {
+                "point": "Knowledge of front-end development technologies such as HTML, CSS, and JavaScript."
+            }
+        ]
+    },
+    "Quality Assurance Engineer": {
+        "image": "/qae.jpg",
+        "points": [
+            {
+                "point": "A Quality Assurance (QA) Engineer is responsible for ensuring that software applications or products meet the organization's quality standards and user requirements."
+            },
+            {
+                "point": "They work closely with software developers and other stakeholders to create and execute test plans that identify issues, bugs, and defects in software systems."
+            },
+            {
+                "point": "They use various testing methodologies and tools to conduct functional, integration, regression, and performance testing."
+            },
+            {
+                "point": "They also work to automate testing processes and create testing scripts to increase efficiency and reduce the likelihood of errors."
+            },
+            {
+                "point": "Understanding of software development principles such as agile development, version control, and testing."
+            },
+            {
+                "point": "Familiarity with testing methodologies such as black-box testing, white-box testing, and grey-box testing.Understanding of testing automation and scripting."
+            },
+            {
+                "point": "Knowledge of testing tools and technologies such as Selenium, JMeter, or Postman."
+            },
+            {
+                "point": "Knowledge of programming languages such as Java, Python, or Ruby.Familiarity with database technologies such as SQL, NoSQL, and MongoDB."
+            },
+            {
+                "point": "Strong problem-solving and analytical skills.Excellent communication and interpersonal skills to collaborate with different stakeholders."
+            }
+        ]
+    },
+    "Project Manager": {
+        "image": "/manager.jpg",
+        "points": [
+            {
+                "point": "A Project Manager is responsible for leading and managing projects from conception to completion, ensuring that they are delivered on time, within budget, and meet the desired outcomes."
+            },
+            {
+                "point": "They work closely with stakeholders, such as clients, product owners, and team members, to define project requirements and scope, create project plans, and track progress."
+            },
+            {
+                "point": "They are responsible for allocating resources, managing budgets, and ensuring that project risks are identified and mitigated."
+            },
+            {
+                "point": "They also oversee communication and collaboration among team members, facilitate meetings, and ensure that project documentation is up-to-date and accurate."
+            },
+            {
+                "point": "Understanding of project management methodologies such as Agile, Waterfall, or Scrum.Familiarity with project management tools such as Asana, Trello, or JIRA."
+            },
+            {
+                "point": "Knowledge of budgeting and financial management principles.Understanding of risk management and mitigation strategies."
+            },
+            {
+                "point": "Strong leadership and team management skills.Excellent communication and interpersonal skills to manage relationships with stakeholders."
+            }
+        ]
+    },
+    "Technical Support": {
+        "image": "/TechSupport.png",
+        "points": [
+            {
+                "point": "A Technical Support Engineer is responsible for providing technical assistance and support to customers or end-users who are experiencing issues with software applications or products."
+            },
+            {
+                "point": "They work closely with the customer service team and software developers to diagnose and resolve technical problems."
+            },
+            {
+                "point": "They also provide training and guidance to customers on how to use software products effectively and efficiently."
+            },
+            {
+                "point": "They are responsible for documenting customer issues and resolutions and tracking customer feedback."
+            },
+            {
+                "point": "Understanding of software development principles such as debugging, troubleshooting, and testing."
+            },
+            {
+                "point": "Familiarity with operating systems such as Windows, MacOS, or Linux.Knowledge of programming languages such as Java, Python, or C++."
+            },
+            {
+                "point": "Understanding of network protocols and technologies such as TCP/IP, DNS, and DHCP.Familiarity with database technologies such as SQL, NoSQL, and MongoDB."
+            },
+            {
+                "point": "Excellent communication and interpersonal skills to communicate with customers and team members."
+            }
+        ]
+    }
+}
