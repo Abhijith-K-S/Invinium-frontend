@@ -49,9 +49,6 @@ export default function ResultGraduates() {
                     }
                 })
             }
-            if (typeof window !== "undefined") {
-                localStorage.setItem("result",choice)
-            }
         }
     }
 
@@ -63,6 +60,12 @@ export default function ResultGraduates() {
             alert("Error fetching result")
         }
     }, [setAnswerMapGraduates])
+
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            localStorage.setItem("jobKeyword", choice)
+        }
+    }, [choice])
 
     return (
         <>
