@@ -1,5 +1,4 @@
 import Head from "next/head"
-import Image from "next/image"
 import React, { useState, useEffect } from "react"
 import styles from "../styles/jobs.module.css"
 import { Bars } from "react-loading-icons"
@@ -46,17 +45,21 @@ export default function Jobs() {
                                 const job = jobsList[key]
                                 const skillArray = job.skills.split(",")
                                 return (
-                                    <a
-                                        href={job.job_url}
-                                        key={key}
-                                        rel="noreferrer"
-                                        target="_blank"
-                                    >
-                                        <div className={styles.boxy}>
-                                            <h3 className={styles.company}>
-                                                {job.company.toUpperCase()}
-                                            </h3>
-                                            <div className={styles.locationPanel}>
+                                    <div className={styles.boxy} key={key}>
+                                        <a href={job.job_url} rel="noreferrer" target="_blank">
+                                            <div>
+                                                <img
+                                                    src="/building-solid.svg"
+                                                    width={30}
+                                                    height={30}
+                                                    alt="company"
+                                                    align="left"
+                                                />
+                                                <h3 className={styles.company}>
+                                                    {job.company.toUpperCase()}
+                                                </h3>
+                                            </div>
+                                            <div>
                                                 <img
                                                     src="/loc.svg"
                                                     width={30}
@@ -64,11 +67,13 @@ export default function Jobs() {
                                                     alt="location"
                                                     align="left"
                                                 />
-                                                <p className={styles.loc}>{job.Location?job.Location : "-"}</p>
+                                                <p className={styles.loc}>
+                                                    {job.Location ? job.Location : "-"}
+                                                </p>
                                             </div>
                                             <div key={job} className={styles.skills}>
                                                 <h4>Skills Required: </h4>
-                                                <div>
+                                                <div className={styles.skillsitem}>
                                                     {skillArray.map((skill) => {
                                                         return (
                                                             <span
@@ -81,8 +86,8 @@ export default function Jobs() {
                                                     })}
                                                 </div>
                                             </div>
-                                        </div>
-                                    </a>
+                                        </a>
+                                    </div>
                                 )
                             })}
                         </div>
