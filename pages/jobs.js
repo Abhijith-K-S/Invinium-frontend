@@ -64,7 +64,7 @@ export default function Jobs() {
                                                     alt="location"
                                                     align="left"
                                                 />
-                                                <p className={styles.loc}>{job.Location}</p>
+                                                <p className={styles.loc}>{job.Location?job.Location : "-"}</p>
                                             </div>
                                             <div key={job} className={styles.skills}>
                                                 <h4>Skills Required: </h4>
