@@ -14,7 +14,7 @@ export default function ResultGraduates() {
     const [choice3, setChoice3] = useState()
     const [answerMapGraduates, setAnswerMapGraduates] = useState(new Map())
     const router = useRouter()
-    
+
     const getResult = async () => {
         if (typeof window !== "undefined") {
             let answer = JSON.parse(localStorage.getItem("answerMapGraduates"))
@@ -138,8 +138,22 @@ export default function ResultGraduates() {
                             </details>
                             <h4>Some other jobs that'll suit you are..</h4>
                             <ul>
-                                <li>{choice2}</li>
-                                <li>{choice3}</li>
+                                <li 
+                                    className={styles.listItem}
+                                    onClick={() => {
+                                        let temp=choice
+                                        setChoice(choice2)
+                                        setChoice2(temp)
+                                    }}
+                                ><div className={styles.tooltip}>{choice2} <span className={styles.tooltiptext}>Click to view info about {choice2}</span></div></li>
+                                <li 
+                                    className={styles.listItem}
+                                    onClick={() => {
+                                        let temp=choice
+                                        setChoice(choice3)
+                                        setChoice3(temp)
+                                    }}
+                                ><div className={styles.tooltip}>{choice3} <span className={styles.tooltiptext}>Click to view info about {choice3}</span></div></li>
                             </ul>
                         </div>
                     </div>
