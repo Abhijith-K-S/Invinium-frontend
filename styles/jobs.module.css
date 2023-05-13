@@ -1,4 +1,4 @@
-.layout{
+.layout {
     color: rgb(0, 0, 0);
     padding-left: 5%;
     padding-right: 5%;
@@ -7,60 +7,79 @@
     flex-direction: column;
     background-color: white;
 }
-.box{
+.box {
     display: grid;
     gap: 10px 10px;
-    grid-template-columns: 1fr 1fr ;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 }
-.boxy{
-
+.boxy {
+    display: flex;
     background-color: #d3dfeb;
     padding-top: 0px;
-    padding: 10px;
+    padding: 20px;
     margin: 5px;
     border-radius: 15px;
 }
 .boxy:hover {
     background-color: #bfccd8;
     /* border: 1px solid; */
-    padding: 10px;
+    padding: 18px;
     box-shadow: 3px 5px #dbdbdb;
-    transition-delay:.15s;
+    transition-delay: 0.15s;
 }
-.skills{
+.skills {
     /* border: 2px;
     border-color: rgb(0, 0, 0); */
-}
-.skillsin{
-    padding-left: 5px;
-}
-.top{
     display: flex;
-    justify-content: center;  
-    background-color: #373F51;
+    flex-direction: column;    
+}
+.skillsitem {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.skillsin {
+    padding-left: 5px;
+    display: flex;
+}
+.top {
+    display: flex;
+    justify-content: center;
+    background-color: #373f51;
     height: 14vh;
     padding: 8px;
     color: white;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: x-large;
 }
-.header{
+.header {
     text-align: center;
 }
-.loc{
-    vertical-align:text-bottom;
-    margin-left: 35px;    
+.company {
+    margin-left: 35px;
+    font-size: large;
+}
+.loc {
+    vertical-align: text-bottom;
+    margin-left: 35px;
     line-height: 35px;
 }
-.skillsep{
-    /* border: 1px solid; */
+.skillsep {
+    border: 1px solid;
     margin: 4px;
     padding: 1px;
     padding-left: 4px;
     padding-right: 4px;
-    white-space:break-spaces;
+    white-space: break-spaces;
     background-color: #e5e4e2;
     line-height: 190%;
     border-radius: 2px;
     color: #3f3f3f;
+}
+.loadingIcon {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 8%;
 }
