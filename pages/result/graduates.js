@@ -6,11 +6,15 @@ import styles from "../../styles/result.module.css"
 import MarkDisplayComponent from "../../components/MarkDisplayComponent"
 import { fetchResultGraduate } from "../../service/fetchResult"
 import data from "../../grad.json"
+import { useRouter } from "next/router"
 
 export default function ResultGraduates() {
     const [choice, setChoice] = useState()
+    const [choice2, setChoice2] = useState()
+    const [choice3, setChoice3] = useState()
     const [answerMapGraduates, setAnswerMapGraduates] = useState(new Map())
-
+    const router = useRouter()
+    
     const getResult = async () => {
         if (typeof window !== "undefined") {
             let answer = JSON.parse(localStorage.getItem("answerMapGraduates"))
@@ -41,13 +45,32 @@ export default function ResultGraduates() {
             if (response) {
                 console.log(response)
 
-                let max = 0
+                let max = 0,max1=0,max2=0;
+                let temp0="",temp1="",temp2=""
                 Object.entries(response).forEach((item) => {
                     if (item[1] > max) {
+                        if (temp1!="") temp2=temp1
+                        if (temp0!="")  temp1=temp0
+                        temp0=item[0]
+                        max2=max1
+                        max1=max
                         max = item[1]
-                        setChoice(item[0])
+                    }
+                    else if (item[1] > max1){
+                        if (temp1!="") temp2=temp1
+                        temp1=item[0]
+                        max2=max1
+                        max1=item[1]
+                    }
+            
+                    else if (item[1] > max2){
+                        temp2=item[0]
+                        max2 = item[1];
                     }
                 })
+                setChoice(temp0)
+                setChoice2(temp1)
+                setChoice3(temp2)
             }
         }
     }
@@ -113,6 +136,11 @@ export default function ResultGraduates() {
                                     </ul>
                                 </span>
                             </details>
+                            <h4>Some other jobs that'll suit you are..</h4>
+                            <ul>
+                                <li>{choice2}</li>
+                                <li>{choice3}</li>
+                            </ul>
                         </div>
                     </div>
                 ) : (
@@ -126,6 +154,14 @@ export default function ResultGraduates() {
                     />
                 )}
             </div>
+            <button
+                className={styles.buttonStyle}
+                onClick={() => {
+                    router.push("/jobs")
+                }}
+            >
+                Job Suggestions
+            </button>
         </>
     )
 }

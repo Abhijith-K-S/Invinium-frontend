@@ -65,3 +65,18 @@
     padding-left: 4px;
     text-align: left;
 }
+.buttonStyle {
+    margin: 0 auto;
+    display: flex;
+    border-radius: 20px;
+    padding: 15px;
+    background-color: #373F51;
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+.buttonStyle:hover {
+    background-color: #202633;
+}
