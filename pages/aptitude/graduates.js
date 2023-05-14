@@ -73,7 +73,7 @@ export default function AptitudeGraduates() {
         }
         fetchQuestion()
         const timeSet = new Date()
-        timeSet.setMinutes(timeSet.getMinutes() + 30)
+        timeSet.setMinutes(timeSet.getMinutes() + 60)
         setTime(timeSet)
     }, [setTime])
 
