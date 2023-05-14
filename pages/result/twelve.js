@@ -37,12 +37,13 @@ export default function ResultTwelve() {
             resultMap["maths"] = answer["maths"]
             resultMap["phyOrAcc"] = answer[phyOrAcc]
             resultMap["chemOrBs"] = answer[chemOrBs]
-            resultMap["stream"] = answer[stream]
+            if (stream == "commerce") resultMap["stream"] = answer["economics"]
+            else resultMap["stream"] = answer[stream]
             resultMap["verbal"] = answer["verbal"]
             resultMap["logical"] = answer["logical"]
             resultMap["quantitative"] = answer["quantitative"]
             resultMap["analytical"] = answer["analytical"]
-
+            console.log(resultMap)
             setAnswerMapTwelve(answerMapTwelve)
             setStream(localStorage.getItem("stream"))
 
