@@ -278,7 +278,7 @@ export default function SurveyEngg() {
                     "Product development": 4,
                     "Business process automation": 5,
                     "Service Based": 6,
-                    "product Product based": 7,
+                    "Product based": 7,
                     "Cloud Services": 8,
                     "Finance": 9
                 }}

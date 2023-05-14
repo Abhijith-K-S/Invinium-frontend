@@ -75,6 +75,7 @@
     line-height: 190%;
     border-radius: 2px;
     color: #3f3f3f;
+    border-radius: 10px;
 }
 .loadingIcon {
     display: flex;

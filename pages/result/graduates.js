@@ -45,27 +45,28 @@ export default function ResultGraduates() {
             if (response) {
                 console.log(response)
 
-                let max = 0,max1=0,max2=0;
-                let temp0="",temp1="",temp2=""
+                let max = 0,
+                    max1 = 0,
+                    max2 = 0
+                let temp0 = "",
+                    temp1 = "",
+                    temp2 = ""
                 Object.entries(response).forEach((item) => {
                     if (item[1] > max) {
-                        if (temp1!="") temp2=temp1
-                        if (temp0!="")  temp1=temp0
-                        temp0=item[0]
-                        max2=max1
-                        max1=max
+                        if (temp1 != "") temp2 = temp1
+                        if (temp0 != "") temp1 = temp0
+                        temp0 = item[0]
+                        max2 = max1
+                        max1 = max
                         max = item[1]
-                    }
-                    else if (item[1] > max1){
-                        if (temp1!="") temp2=temp1
-                        temp1=item[0]
-                        max2=max1
-                        max1=item[1]
-                    }
-            
-                    else if (item[1] > max2){
-                        temp2=item[0]
-                        max2 = item[1];
+                    } else if (item[1] > max1) {
+                        if (temp1 != "") temp2 = temp1
+                        temp1 = item[0]
+                        max2 = max1
+                        max1 = item[1]
+                    } else if (item[1] > max2) {
+                        temp2 = item[0]
+                        max2 = item[1]
                     }
                 })
                 setChoice(temp0)
@@ -136,26 +137,48 @@ export default function ResultGraduates() {
                                     </ul>
                                 </span>
                             </details>
-                            <h4>Some other jobs that'll suit you are..</h4>
+                            <h4>Some other jobs that will suit you are..</h4>
                             <ul>
-                                <li 
+                                <li
                                     className={styles.listItem}
                                     onClick={() => {
-                                        let temp=choice
+                                        let temp = choice
                                         setChoice(choice2)
                                         setChoice2(temp)
                                     }}
-                                ><div className={styles.tooltip}>{choice2} <span className={styles.tooltiptext}>Click to view info about {choice2}</span></div></li>
-                                <li 
+                                >
+                                    <div className={styles.tooltip}>
+                                        {choice2}{" "}
+                                        <span className={styles.tooltiptext}>
+                                            Click to view info about {choice2}
+                                        </span>
+                                    </div>
+                                </li>
+                                <li
                                     className={styles.listItem}
                                     onClick={() => {
-                                        let temp=choice
+                                        let temp = choice
                                         setChoice(choice3)
                                         setChoice3(temp)
                                     }}
-                                ><div className={styles.tooltip}>{choice3} <span className={styles.tooltiptext}>Click to view info about {choice3}</span></div></li>
+                                >
+                                    <div className={styles.tooltip}>
+                                        {choice3}{" "}
+                                        <span className={styles.tooltiptext}>
+                                            Click to view info about {choice3}
+                                        </span>
+                                    </div>
+                                </li>
                             </ul>
                         </div>
+                        <button
+                            className={styles.buttonStyle}
+                            onClick={() => {
+                                router.push("/jobs")
+                            }}
+                        >
+                            Job Suggestions
+                        </button>
                     </div>
                 ) : (
                     <Bars
@@ -168,14 +191,6 @@ export default function ResultGraduates() {
                     />
                 )}
             </div>
-            <button
-                className={styles.buttonStyle}
-                onClick={() => {
-                    router.push("/jobs")
-                }}
-            >
-                Job Suggestions
-            </button>
         </>
     )
 }
